@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import Link from 'next/link'; // Gunakan Link Next.js
+import Link from 'next/link';
+import Image from 'next/Image';
 
 const links = [
     { label: 'Layanan', href: '#services' },
@@ -30,14 +31,19 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
                 {/* Logo Section */}
                 <Link href="/" className="flex items-center gap-3 group">
-                    <div className="w-9 h-9 rounded border border-[#B88A6E]/60 flex items-center justify-center group-hover:border-[#B88A6E] transition-colors duration-300">
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                            <path d="M9 1L16 6V17H2V6L9 1Z" stroke="#B88A6E" strokeWidth="1.2" fill="none" />
-                            <path d="M6 17V11H12V17" stroke="#B88A6E" strokeWidth="1.2" />
-                        </svg>
+                    <div className="relative w-10 h-10 overflow-hidden">
+                        <Image 
+                            src="/images/LOGO RUMAH TROPIS.JPG.webp" 
+                            alt="Logo Rumah Tropis"
+                            fill
+                            className="object-contain"
+                            priority 
+                        />
                     </div>
                     <div>
-                        <span className="font-serif text-[#F5F2ED] text-lg tracking-wide">Rumah Tropis</span>
+                        <span className="font-serif text-[#F5F2ED] text-lg tracking-wide uppercase">
+                            Rumah Tropis
+                        </span>
                     </div>
                 </Link>
 
