@@ -33,7 +33,7 @@ export default function Navbar() {
                 <Link href="/" className="flex items-center gap-3 group">
                     <div className="relative w-10 h-10 overflow-hidden">
                         <Image 
-                            src="/images/LOGO RUMAH TROPIS.JPG.webp" 
+                            src="/images/logo-rumah-tropis.webp" 
                             alt="Logo Rumah Tropis"
                             fill
                             className="object-contain"
