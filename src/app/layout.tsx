@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Rumah Tropis" }],
 
   icons: {
-    icon: "images/logo-rumah-tropiss.webp", 
+    icon: "/images/logo-rumah-tropiss.webp", 
   },
   openGraph: {
     title: "Rumah Tropis | Ciptakan Bangunan Bernilai Tinggi Gaya Tropis",
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
     siteName: "Rumah Tropis",
     images: [
       {
-        url: "images/logo-rumah-tropiss.webp",
-        width: 1200,
-        height: 630,
+        url: "/images/logo-rumah-tropiss.webp",
+        width: 1600,
+        height: 730,
         alt: "Rumah Tropis Logo",
       },
     ],
