@@ -30,29 +30,29 @@ export default function Navbar() {
 >
 
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-                {/* Logo Section */}
-                <Link href="/" className="flex items-center gap-6 group py-2">
-                    {/* Container Logo: Dibuat besar (w-28) dan animasi cuma scale halus pas di-hover */}
-                    <div className="relative w-24 h-24 md:w-32 md:h-32 transition-transform duration-500 group-hover:scale-105">
-                        <Image 
-                        src="/images/logo-rumah-tropiss.webp" 
-                        alt="Logo Rumah Tropis"
-                        fill
-                        className="object-contain"
-                        priority 
-                        />
-                    </div>
+            <Link href="/" className="flex items-center gap-5 group py-1">
+  {/* Container Logo: Ukuran dikecilkan biar lebih manis di Navbar */}
+  <div className="relative w-14 h-14 md:w-18 md:h-18 transition-transform duration-500 group-hover:scale-105">
+    <Image 
+      src="/images/logo-rumah-tropiss.webp" 
+      alt="Logo Rumah Tropis"
+      fill
+      className="object-contain"
+      priority 
+    />
+  </div>
 
-                    {/* Text Logo: Dibuat bersih, elegan, tanpa animasi aneh-aneh */}
-                    <div className="flex flex-col border-l border-gold/30 pl-6">
-                        <span className="font-serif text-[#FEF9ED] text-2xl md:text-3xl leading-none tracking-wider uppercase">
-                        Rumah Tropis
-                        </span>
-                        <span className="text-xs md:text-sm text-gold tracking-[0.4em] uppercase mt-2 font-light">
-                        Private Paradise
-                        </span>
-                    </div>
-                </Link>
+  {/* Text Logo: Border lebih tipis dan padding disesuaikan */}
+  <div className="flex flex-col border-l border-gold/20 pl-5">
+    <span className="font-serif text-[#FEF9ED] text-xl md:text-2xl leading-none tracking-widest uppercase">
+      Rumah Tropis
+    </span>
+    {/* Tagline tipis biar nggak kosong banget */}
+    <span className="text-[10px] text-gold tracking-[0.3em] uppercase mt-1 opacity-80">
+      Private Paradise
+    </span>
+  </div>
+</Link>
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-8">
