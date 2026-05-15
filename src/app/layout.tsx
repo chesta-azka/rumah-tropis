@@ -35,8 +35,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/logo-rumah-tropiss.webp",
-        width: 1600,
-        height: 730,
+        width: 1200,
+        height: 630,
         alt: "Rumah Tropis Logo",
       },
     ],

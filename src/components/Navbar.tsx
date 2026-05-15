@@ -31,25 +31,25 @@ export default function Navbar() {
 
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
                 {/* Logo Section */}
-                <Link href="/" className="flex items-center gap-4 group">
-                    {/* Container Logo dengan efek Glow tipis saat Hover */}
-                    <div className="relative w-12 h-12 overflow-hidden transition-transform duration-500 group-hover:scale-110">
+                <Link href="/" className="flex items-center gap-5 group py-2">
+                {/* Container Logo: Kita naikin ke w-20 h-20 (80px) biar mantap */}
+                    <div className="relative w-16 h-16 md:w-20 md:h-20 transition-all duration-700 group-hover:rotate-[360deg] group-hover:scale-110">
                         <Image 
                         src="/images/logo-rumah-tropiss.webp" 
                         alt="Logo Rumah Tropis"
                         fill
-                        className="object-contain filter drop-shadow-[0_0_8px_rgba(184,138,110,0.2)]"
+                        className="object-contain drop-shadow-[0_0_15px_rgba(184,138,110,0.4)]"
                         priority 
                         />
                     </div>
 
-                    {/* Text Logo dengan Detail Sub-title */}
-                    <div className="flex flex-col">
-                        <span className="font-serif text-[#FEF9ED] text-xl leading-none tracking-wider uppercase transition-colors duration-300 group-hover:text-[#B88A6E]">
+                    {/* Text Logo: Ukuran teks juga kita gas pol */}
+                    <div className="flex flex-col border-l border-gold/20 pl-5">
+                        <span className="font-serif text-[#FEF9ED] text-2xl md:text-3xl leading-none tracking-[0.1em] uppercase transition-all duration-500 group-hover:tracking-[0.2em] group-hover:text-gold">
                         Rumah Tropis
                         </span>
-                        <span className="text-[10px] text-[#B88A6E] tracking-[0.3em] uppercase mt-1 opacity-80 font-sans">
-                        Indonesia
+                        <span className="text-xs md:text-sm text-gold tracking-[0.5em] uppercase mt-2 font-light opacity-90">
+                        Private Paradise
                         </span>
                     </div>
                 </Link>
