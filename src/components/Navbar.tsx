@@ -47,10 +47,6 @@ export default function Navbar() {
     <span className="font-serif text-[#FEF9ED] text-xl md:text-2xl leading-none tracking-widest uppercase">
       Rumah Tropis
     </span>
-    {/* Tagline tipis biar nggak kosong banget */}
-    <span className="text-[10px] text-gold tracking-[0.3em] uppercase mt-1 opacity-80">
-      Private Paradise
-    </span>
   </div>
 </Link>
 
