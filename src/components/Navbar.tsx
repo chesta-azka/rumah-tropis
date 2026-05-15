@@ -33,7 +33,7 @@ export default function Navbar() {
                 {/* Logo Section */}
                 <Link href="/" className="flex items-center gap-5 group py-2">
                 {/* Container Logo: Kita naikin ke w-20 h-20 (80px) biar mantap */}
-                    <div className="relative w-16 h-16 md:w-20 md:h-20 transition-all duration-700 group-hover:rotate-[360deg] group-hover:scale-110">
+                    <div className="relative w-25 h-25 md:w-20 md:h-20 transition-all duration-700 group-hover:rotate-[360deg] group-hover:scale-110">
                         <Image 
                         src="/images/logo-rumah-tropiss.webp" 
                         alt="Logo Rumah Tropis"
