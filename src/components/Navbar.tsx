@@ -31,20 +31,26 @@ export default function Navbar() {
 
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
                 {/* Logo Section */}
-                <Link href="/" className="flex items-center gap-3 group">
-                    <div className="relative w-10 h-10 overflow-hidden">
+                <Link href="/" className="flex items-center gap-4 group">
+                    {/* Container Logo dengan efek Glow tipis saat Hover */}
+                    <div className="relative w-12 h-12 overflow-hidden transition-transform duration-500 group-hover:scale-110">
                         <Image 
-                            src="images/logo-rumah-tropiss.webp" 
-                            alt="Logo Rumah Tropis"
-                            fill
-                            className="object-contain"
-                            priority 
+                        src="/images/logo-rumah-tropiss.webp" 
+                        alt="Logo Rumah Tropis"
+                        fill
+                        className="object-contain filter drop-shadow-[0_0_8px_rgba(184,138,110,0.2)]"
+                        priority 
                         />
                     </div>
-                    <div>
-                            {/* Pakai warna teks Filtered Sunbeam */}
-                        <span className="font-serif text-[#FEF9ED] text-lg tracking-wide">Rumah Tropis</span>
 
+                    {/* Text Logo dengan Detail Sub-title */}
+                    <div className="flex flex-col">
+                        <span className="font-serif text-[#FEF9ED] text-xl leading-none tracking-wider uppercase transition-colors duration-300 group-hover:text-[#B88A6E]">
+                        Rumah Tropis
+                        </span>
+                        <span className="text-[10px] text-[#B88A6E] tracking-[0.3em] uppercase mt-1 opacity-80 font-sans">
+                        Indonesia
+                        </span>
                     </div>
                 </Link>
 

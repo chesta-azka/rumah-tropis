@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google"; // Pakai Playfair untuk kesan Luxury
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Rumah Tropis" }],
 
   icons: {
-    icon: "/images/logo-rumah-tropiss.webp", 
+    icon: "images/logo-rumah-tropiss.webp", 
   },
   openGraph: {
     title: "Rumah Tropis | Ciptakan Bangunan Bernilai Tinggi Gaya Tropis",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "Rumah Tropis",
     images: [
       {
-        url: "/images/logo-rumah-tropiss.webp",
+        url: "images/logo-rumah-tropiss.webp",
         width: 1200,
         height: 630,
         alt: "Rumah Tropis Logo",
