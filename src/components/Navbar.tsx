@@ -24,10 +24,11 @@ export default function Navbar() {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-                scrolled ? 'bg-[#1C1510]/95 backdrop-blur-md border-b border-[#B88A6E]/10 py-4' : 'py-6'
-            }`}
-        >
+    className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? 'bg-[#4D3C2F]/95 backdrop-blur-md border-b border-[#B88A6E]/20 py-4' : 'py-6'
+    }`}
+>
+
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
                 {/* Logo Section */}
                 <Link href="/" className="flex items-center gap-3 group">
@@ -41,9 +42,9 @@ export default function Navbar() {
                         />
                     </div>
                     <div>
-                        <span className="font-serif text-[#F5F2ED] text-lg tracking-wide uppercase">
-                            Rumah Tropis
-                        </span>
+                            {/* Pakai warna teks Filtered Sunbeam */}
+                        <span className="font-serif text-[#FEF9ED] text-lg tracking-wide">Rumah Tropis</span>
+
                     </div>
                 </Link>
 

@@ -1,26 +1,22 @@
-/* Biar font Google-nya jalan, tambahin import ini di paling atas */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap');
-
 @import "tailwindcss";
 
 @theme {
-  /* --- CUSTOM COLORS (RUMAH TROPIS) --- */
+  /* --- CUSTOM COLORS (RUMAH TROPIS - BASED ON DESIGN SOURCE) --- */
+  /* Aged Teak (#4D3C2F) - Warna Background Utama */
   --color-bark: #4D3C2F;
-  --color-bark-light: #6B5344;
-  --color-bark-dark: #2E231B;
-  --color-bark-deeper: #1C1510;
-
+  --color-bark-darker: #1C1510;
+  
+  /* Premium Copper-Bronze (#B88A6E) - Warna Aksen/Emas */
   --color-gold: #B88A6E;
-  --color-gold-light: #D4AD8F;
-  --color-gold-dark: #8A6045;
-
+  
+  /* Filtered Sunbeam (#FEF9ED) - Warna Teks Utama */
   --color-cream: #FEF9ED;
-  --color-cream-muted: #EDE5D0;
-  --color-cream-dim: #C8BBA0;
-
+  
+  /* Sandy Travertine (#F5E6D3) - Warna Highlight/Netral */
+  --color-travertine: #F5E6D3;
+  
+  /* Rainforest Moss (#5B6A56) - Warna Hijau Organik */
   --color-forest: #5B6A56;
-  --color-forest-light: #7A8A74;
-  --color-forest-dark: #3E4B3A;
 
   /* --- CUSTOM FONTS --- */
   --font-serif: "Playfair Display", Georgia, serif;
@@ -28,42 +24,38 @@
 
   /* --- ANIMATIONS --- */
   @keyframes fade-up {
-    0% {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
   }
-
   @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
-
   @keyframes ken-burns {
-    0% {
-      transform: scale(1);
-    }
-
-    50% {
-      transform: scale(1.08);
-    }
-
-    100% {
-      transform: scale(1);
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
   }
 
   --animate-fade-up: fade-up 0.8s ease forwards;
   --animate-fade-in: fade-in 1s ease forwards;
   --animate-ken-burns: ken-burns 20s ease infinite;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bark text-cream antialiased selection:bg-gold/30;
+  }
+}
+
+/* Utilitas tambahan buat tekstur mewah */
+.glass-dark {
+  @apply bg-bark/90 backdrop-blur-md border-b border-gold/10;
+}
+
+.text-gradient-gold {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-gold via-travertine to-gold;
 }
