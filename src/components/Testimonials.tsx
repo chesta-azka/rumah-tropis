@@ -1,160 +1,148 @@
 "use client";
 
-import { useInView } from '@/hooks/useInView';
-import { useState } from 'react';
-import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Quote } from 'lucide-react';
 
 const testimonials = [
     {
-        name: 'Bapak Hendra Wijaya',
-        title: 'Pengusaha, Jakarta',
-        rating: 5,
-        text: 'Rumah Tropis benar-benar memahami visi kami. Mereka tidak sekadar membangun — mereka menciptakan ruang yang terasa hidup. Setiap detail diperhatikan, dari pemilihan batu alam hingga sirkulasi udara yang sempurna.',
-        project: 'Villa Pribadi, Bali',
-        img: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg',
+        id: 1,
+        name: "Client Story 01",
+        role: "Homeowner",
+        content: "Kepuasan luar biasa atas detail arsitektur yang diberikan. Rumah kami bukan sekadar bangunan, tapi karya seni.",
+        img: "/images/portfolio/IMG_7838.webp",
     },
     {
-        name: 'Ibu Sari Puspita',
-        title: 'Direktur F&B, Surabaya',
-        rating: 5,
-        text: 'Kami memercayakan proyek boutique hotel kami kepada Rumah Tropis dan hasilnya melampaui ekspektasi. Progress report mingguan membuat kami tenang meski ada di kota berbeda. Sangat profesional.',
-        project: 'Boutique Hotel, Lombok',
-        img: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg',
+        id: 2,
+        name: "Client Story 02",
+        role: "Villa Owner",
+        content: "Tim yang sangat profesional. Mereka berhasil mewujudkan konsep tropis modern yang kami impikan selama bertahun-tahun.",
+        img: "/images/portfolio/IMG_7840.webp",
     },
     {
-        name: 'Bapak Rizky Santosa',
-        title: 'Arsitek Independen, Bandung',
-        rating: 5,
-        text: 'Sebagai arsitek, saya sangat kritis soal kualitas konstruksi. Rumah Tropis adalah salah satu kontraktor yang benar-benar menghormati gambar desain dan menjalankannya dengan presisi tinggi.',
-        project: 'Rumah Tinggal, Bandung',
-        img: 'https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg',
+        id: 3,
+        name: "Client Story 03",
+        role: "Private Investor",
+        content: "Investasi yang sangat sepadan. Nilai properti kami naik drastis setelah pengerjaan desain dari Rumah Tropis.",
+        img: "/images/portfolio/IMG_7841.webp",
     },
     {
-        name: 'Keluarga Budiman',
-        title: 'Klien Residensial, Yogyakarta',
-        rating: 5,
-        text: 'Dari konsultasi pertama hingga serah terima kunci, tim Rumah Tropis selalu responsif dan transparan. Budget control mereka sangat membantu kami tetap on track tanpa mengorbankan kualitas.',
-        project: 'Hunian Tropis, Yogyakarta',
-        img: 'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg',
+        id: 4,
+        name: "Client Story 04",
+        role: "Residency Owner",
+        content: "Detail material dan pencahayaan alaminya juara. Rumah jadi terasa sangat luas dan sejuk setiap harinya.",
+        img: "/images/portfolio/IMG_7842.webp",
     },
+    {
+        id: 5,
+        name: "Client Story 05",
+        role: "Estate Owner",
+        content: "Komunikasi tim sangat transparan. Meskipun saya jarang ke lokasi, progres pembangunan tetap berjalan sesuai jadwal.",
+        img: "/images/portfolio/IMG_7843.webp",
+    },
+    {
+        id: 6,
+        name: "Client Story 06",
+        role: "Bussiness Owner",
+        content: "Sangat memperhatikan detail dari gambar kerja hingga konstruksi fisik. Hasil akhirnya benar-benar presisi.",
+        img: "/images/portfolio/IMG_7844.webp",
+    },
+    {
+        id: 7,
+        name: "Client Story 07",
+        role: "Architecture Enthusiast",
+        content: "Rumah Tropis mengerti cara membuat hunian yang 'bernafas'. Sirkulasi udaranya membuat rumah sangat nyaman.",
+        img: "/images/portfolio/IMG_7846.webp",
+    },
+    {
+        id: 8,
+        name: "Client Story 08",
+        role: "Homeowner",
+        content: "Proses desainnya sangat solutif. Mereka bisa menggabungkan keinginan saya dengan estetika tropis yang mewah.",
+        img: "/images/portfolio/IMG_7847.webp",
+    },
+    {
+        id: 9,
+        name: "Client Story 09",
+        role: "Modern Villa Owner",
+        content: "Tim yang energik dan penuh ambisi. Mereka memberikan dedikasi 100% untuk hasil yang terbaik.",
+        img: "/images/portfolio/IMG_7849.webp",
+    },
+    {
+        id: 10,
+        name: "Client Story 10",
+        role: "Family Home Owner",
+        content: "Mewujudkan rumah impian keluarga kami dengan pengerjaan yang rapi dan material yang berkualitas tinggi.",
+        img: "/images/portfolio/IMG_7851.webp",
+    }
 ];
 
 export default function Testimonials() {
-    const { ref, inView } = useInView(0.1);
-    const [current, setCurrent] = useState(0);
-
-    const prev = () => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1));
-    const next = () => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1));
-
     return (
-        <section
-            ref={ref as React.RefObject<HTMLElement>}
-            className="py-28 px-6"
-            style={{ backgroundColor: '#4D3C2F' }}
-        >
-            <div className="max-w-7xl mx-auto">
-                <div className={`text-center mb-16 reveal ${inView ? 'visible' : ''}`}>
-                    <span className="text-gold text-xs tracking-[0.3em] uppercase">Suara Klien</span>
-                    <h2 className="font-serif text-4xl md:text-5xl text-cream mt-4 gold-line-center">
-                        Apa Kata Mereka
-                    </h2>
-                </div>
-
-                {/* Main testimonial card */}
-                <div className={`reveal ${inView ? 'visible' : ''} delay-200 max-w-4xl mx-auto`}>
-                    <div
-                        className="rounded-3xl border border-gold/15 p-10 md:p-14 relative overflow-hidden"
-                        style={{ backgroundColor: 'rgba(28,21,16,0.6)' }}
+        <section className="py-32 bg-bark overflow-hidden">
+            <div className="max-w-7xl mx-auto px-6">
+                
+                {/* Header */}
+                <div className="flex flex-col items-center text-center mb-20">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="space-y-4"
                     >
-                        {/* Large quote mark */}
-                        <Quote
-                            size={80}
-                            className="absolute top-8 right-10 text-gold/8"
-                            strokeWidth={1}
-                        />
-
-                        <div className="flex flex-col md:flex-row gap-8 items-start">
-                            {/* Avatar */}
-                            <div className="flex-shrink-0">
-                                <div className="w-20 h-20 rounded-2xl overflow-hidden border-2 border-gold/30">
-                                    <img
-                                        src={testimonials[current].img}
-                                        alt={testimonials[current].name}
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                            </div>
-
-                            {/* Content */}
-                            <div className="flex-1">
-                                <div className="flex items-center gap-1 mb-4">
-                                    {Array.from({ length: testimonials[current].rating }).map((_, i) => (
-                                        <Star key={i} size={14} className="text-gold fill-gold" />
-                                    ))}
-                                </div>
-                                <p className="text-cream/80 text-lg md:text-xl leading-relaxed font-light italic mb-6">
-                                    "{testimonials[current].text}"
-                                </p>
-                                <div>
-                                    <div className="text-cream font-semibold">{testimonials[current].name}</div>
-                                    <div className="text-cream/40 text-sm mt-0.5">{testimonials[current].title}</div>
-                                    <div className="text-gold text-xs tracking-wide mt-1">{testimonials[current].project}</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Navigation */}
-                    <div className="flex items-center justify-between mt-8">
-                        {/* Dots */}
-                        <div className="flex items-center gap-2">
-                            {testimonials.map((_, i) => (
-                                <button
-                                    key={i}
-                                    onClick={() => setCurrent(i)}
-                                    className={`rounded-full transition-all duration-300 ${i === current ? 'w-8 h-2 bg-gold' : 'w-2 h-2 bg-gold/25 hover:bg-gold/50'
-                                        }`}
-                                />
-                            ))}
-                        </div>
-                        {/* Arrows */}
-                        <div className="flex items-center gap-3">
-                            <button
-                                onClick={prev}
-                                className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center text-gold hover:bg-gold/10 transition-all duration-300"
-                            >
-                                <ChevronLeft size={18} />
-                            </button>
-                            <button
-                                onClick={next}
-                                className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center text-gold hover:bg-gold/10 transition-all duration-300"
-                            >
-                                <ChevronRight size={18} />
-                            </button>
-                        </div>
-                    </div>
+                        <span className="text-gold text-xs tracking-[0.5em] uppercase">Voices of Trust</span>
+                        <h2 className="font-serif text-4xl md:text-6xl text-cream">Apa Kata <span className="italic text-gold">Klien Kami</span></h2>
+                        <div className="w-20 h-[1px] bg-gold/30 mx-auto mt-6" />
+                    </motion.div>
                 </div>
 
-                {/* Mini cards row */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-                    {testimonials.map((t, i) => (
-                        <button
-                            key={i}
-                            onClick={() => setCurrent(i)}
-                            className={`testimonial-card p-4 rounded-xl border text-left transition-all duration-300 ${i === current
-                                ? 'border-gold/40 bg-gold/8'
-                                : 'border-gold/10 hover:border-gold/25'
-                                }`}
-                            style={{ backgroundColor: i === current ? 'rgba(184,138,110,0.08)' : 'rgba(28,21,16,0.4)' }}
+                {/* Testimonial Grid */}
+                <div className="flex flex-wrap justify-center gap-8">
+                    {testimonials.map((item, index) => (
+                        <motion.div
+                            key={item.id}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            className="w-full md:w-[calc(50%-2rem)] lg:w-[calc(25%-2rem)] min-w-[280px]"
                         >
-                            <div className="flex items-center gap-3 mb-2">
-                                <img src={t.img} alt={t.name} className="w-8 h-8 rounded-full object-cover border border-gold/25" />
-                                <div className="text-cream text-xs font-medium truncate">{t.name.split(' ').slice(0, 2).join(' ')}</div>
+                            {/* Card Container */}
+                            <div className="relative bg-bark-lighter p-8 rounded-2xl border border-white/5 h-full flex flex-col justify-between transition-all duration-500 hover:border-gold/30 hover:-translate-y-2">
+                                
+                                <Quote className="text-gold/20 mb-6 group-hover:text-gold/40 transition-colors" size={40} />
+                                
+                                <p className="text-cream/70 font-light leading-relaxed mb-8 italic">
+                                    "{item.content}"
+                                </p>
+
+                                <div className="flex items-center gap-4 mt-auto">
+                                    {/* Avatar dari file asli lu */}
+                                    <div className="w-12 h-12 rounded-full overflow-hidden border border-gold/20">
+                                        <img 
+                                            src={item.img} 
+                                            alt={item.name} 
+                                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
+                                        />
+                                    </div>
+                                    <div>
+                                        <h4 className="text-cream font-serif text-sm">{item.name}</h4>
+                                        <p className="text-gold/60 text-[10px] uppercase tracking-widest">{item.role}</p>
+                                    </div>
+                                </div>
                             </div>
-                            <p className="text-cream/40 text-xs line-clamp-2">{t.text.slice(0, 60)}...</p>
-                        </button>
+                        </motion.div>
                     ))}
                 </div>
+
+                {/* Info Note (Kecil di bawah) */}
+                <motion.p 
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    className="text-center text-white/20 text-[10px] mt-16 uppercase tracking-[0.3em]"
+                >
+                    &copy; Rumah Tropis — Memberikan Bukti, Bukan Janji.
+                </motion.p>
             </div>
         </section>
     );
