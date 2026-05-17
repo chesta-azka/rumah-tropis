@@ -1,22 +1,22 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 
 // --- IMPORT COMPONENTS ---
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
+import Navbar from '../components/molecules/Navigation';
+import Hero from '../components/organisms/Hero';
 import TrustBar from '../components/TrustBar';
 import FilterSection from '../components/FilterSection';
 import Philosophy from '../components/Philosophy';
 import ServiceBento from '../components/ServiceBento';
 import Facilities from '../components/Facilities';
 import Portofolio from '../components/Portfolio';
-import Testimonial from '../components/Testimonials';
+import Testimonial from '../components/organisms/Testimonials';
 import Pricing from '../components/Pricing';
 import ContactCTA from '../components/ContactCTA';
 import FAQ from '../components/FAQ';
-import Footer from '../components/Footer';
+import Footer from '../components/organisms/Footer';
 
 // Variabel animasi untuk scroll-reveal yang konsisten
 const revealVariants: Variants = {
