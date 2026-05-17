@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { CheckCircleIcon, XCircleIcon } from '@heroicons/react/24/solid';
 
 const IdealClientSection = () => {
@@ -18,7 +18,7 @@ const IdealClientSection = () => {
     "Anda tidak siap untuk berkolaborasi secara mendalam.",
   ];
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
   };
