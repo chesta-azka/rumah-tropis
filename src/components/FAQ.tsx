@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiChevronDown } from 'react-icons/fi';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
 interface FAQItemProps {
   question: string;
@@ -26,7 +26,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <FiChevronDown />
+          <ChevronDownIcon className="h-6 w-6" />
         </motion.span>
       </button>
       <AnimatePresence>
