@@ -9,10 +9,12 @@
 
   body {
     background-color: #0B0B0B; /* Hardcoded value to fix build */
-    @apply text-neutral-gray antialiased;
+    color: #A7A7A7; /* Hardcoded value to fix build */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply text-white;
+    color: #FFFFFF; /* Hardcoded value to fix build */
   }
 }
