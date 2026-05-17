@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 const testimonials = [
   {
@@ -24,7 +24,7 @@ const testimonials = [
 ];
 
 const TestimonialSection = () => {
-  const cardVariants = {
+  const cardVariants: Variants = {
     offscreen: { y: 100, opacity: 0 },
     onscreen: {
       y: 0,
