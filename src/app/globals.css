@@ -8,7 +8,8 @@
   }
 
   body {
-    @apply bg-soft-black text-neutral-gray antialiased;
+    background-color: theme('colors.soft-black');
+    @apply text-neutral-gray antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
