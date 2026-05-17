@@ -8,7 +8,7 @@
   }
 
   body {
-    background-color: theme('colors.soft-black');
+    background-color: #0B0B0B; /* Hardcoded value to fix build */
     @apply text-neutral-gray antialiased;
   }
 
