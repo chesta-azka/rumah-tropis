@@ -1,25 +1,91 @@
-const Services = () => {
+'use client';
+
+import { motion } from 'framer-motion';
+import { CheckCircleIcon, XCircleIcon } from '@heroicons/react/24/solid';
+
+const IdealClientSection = () => {
+  const pilihJika = [
+    "Anda ingin desain yang tak lekang oleh waktu.",
+    "Anda memprioritaskan kualitas & detail.",
+    "Anda melihat properti sebagai investasi jangka panjang.",
+    "Anda menghargai proses yang terstruktur & transparan.",
+  ];
+
+  const janganPilihJika = [
+    "Anda mencari solusi desain tercepat & termurah.",
+    "Anda tidak mementingkan detail & kualitas akhir.",
+    "Anda hanya berfokus pada biaya awal yang rendah.",
+    "Anda tidak siap untuk berkolaborasi secara mendalam.",
+  ];
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
+  };
+
   return (
-    <section id="services" className="w-full bg-gray-100 text-black p-16">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-8">Our Services</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-bold mb-4">Architectural Design</h3>
-            <p>We create innovative and sustainable architectural designs that are tailored to your needs.</p>
-          </div>
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-bold mb-4">Interior Design</h3>
-            <p>Our interior design team will transform your space into a beautiful and functional oasis.</p>
-          </div>
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-bold mb-4">Construction</h3>
-            <p>We provide high-quality construction services to bring your dream home to life.</p>
-          </div>
+    <section className="py-20 md:py-32 bg-soft-black">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white">Apakah Kita Jodoh?</h2>
+          <p className="mt-4 text-lg text-neutral-gray max-w-2xl mx-auto">Kami percaya pada kemitraan yang kuat. Lihat apakah gaya kerja kami cocok untuk Anda.</p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+          {/* Card: Pilih Kami Jika... */}
+          <motion.div 
+            className="bg-charcoal border border-rainforest-moss/30 rounded-lg p-8 h-full flex flex-col"
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <div className="flex items-center mb-6">
+              <CheckCircleIcon className="h-10 w-10 text-rainforest-moss mr-4" />
+              <h3 className="text-2xl font-serif font-semibold text-white">Pilih Kami Jika...</h3>
+            </div>
+            <ul className="space-y-4 text-neutral-gray flex-grow">
+              {pilihJika.map((item, index) => (
+                <li key={index} className="flex items-start">
+                  <span className="text-rainforest-moss font-bold mr-3">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Card: Jangan Pilih Kami Jika... */}
+          <motion.div 
+            className="bg-charcoal border border-copper-bronze/30 rounded-lg p-8 h-full flex flex-col"
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="flex items-center mb-6">
+              <XCircleIcon className="h-10 w-10 text-copper-bronze mr-4" />
+              <h3 className="text-2xl font-serif font-semibold text-white">Jangan Pilih Kami Jika...</h3>
+            </div>
+            <ul className="space-y-4 text-neutral-gray flex-grow">
+              {janganPilihJika.map((item, index) => (
+                <li key={index} className="flex items-start">
+                  <span className="text-copper-bronze font-bold mr-3">✗</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
       </div>
     </section>
   );
 };
 
-export default Services;
+export default IdealClientSection;
