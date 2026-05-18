@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
+import { Instagram, Twitter, Linkedin } from 'lucide-react';
+import { FaFacebook } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -40,7 +41,7 @@ const Footer = () => {
             <h4 className="font-semibold text-white mb-4">Ikuti Kami</h4>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-[#C5A880] transition-colors"><Instagram /></a>
-              <a href="#" className="hover:text-[#C5A880] transition-colors"><Facebook /></a>
+              <a href="#" className="hover:text-[#C5A880] transition-colors"><FaFacebook /></a>
               <a href="#" className="hover:text-[#C5A880] transition-colors"><Twitter /></a>
               <a href="#" className="hover:text-[#C5A880] transition-colors"><Linkedin /></a>
             </div>
