@@ -3,65 +3,84 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Menu, X } from './Icons'; // Corrected import
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const navLinks = [
+    { name: "Home", href: "#" },
+    { name: "Qualifications", href: "#why-us" },
+    { name: "Services", href: "#process" },
+    { name: "Portfolio", href: "#portfolio" },
+    { name: "Testimonials", href: "#testimonials" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 10);
     };
-
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-black bg-opacity-80 backdrop-blur-sm' : 'bg-transparent'
-        }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.nav 
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled || isOpen ? 'bg-black/80 backdrop-blur-md' : 'bg-transparent'}`}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <div className="flex-shrink-0">
-            <Link href="/" className="text-white text-2xl font-bold">
-              Rumah Tropis
-            </Link>
+          <Link href="#" className="text-2xl font-serif font-semibold uppercase tracking-widest text-white">
+            Rumah Tropis
+          </Link>
+
+          <div className="hidden md:flex items-center space-x-8">
+            {navLinks.map(link => (
+              <Link key={link.name} href={link.href} className="text-sm uppercase tracking-wider text-[#A3A3A3] hover:text-white transition-colors duration-300">
+                {link.name}
+              </Link>
+            ))}
           </div>
+
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              <Link href="#portfolio" className="text-gray-300 hover:text-[#C5A880] px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Portofolio
-              </Link>
-              <Link href="#process" className="text-gray-300 hover:text-[#C5A880] px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Proses
-              </Link>
-              <Link href="#team" className="text-gray-300 hover:text-[#C5A880] px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Tim
-              </Link>
-              <Link href="#faq" className="text-gray-300 hover:text-[#C5A880] px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                FAQ
-              </Link>
-            </div>
+            <motion.button 
+              whileHover={{ scale: 1.05, backgroundColor: '#C5A880', color: '#000' }}
+              whileTap={{ scale: 0.95 }}
+              className="border border-white/50 text-white text-sm font-medium px-5 py-2 rounded-full transition-colors duration-300">
+              Konsultasi
+            </motion.button>
           </div>
-          <div className="hidden md:block">
-            <Link href="#cta">
-              <button className="bg-[#C5A880] text-black px-4 py-2 rounded-full font-bold text-sm hover:bg-opacity-90 transition-all transform hover:scale-105">
-                Konsultasi Gratis
-              </button>
-            </Link>
+
+          <div className="md:hidden">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
         </div>
       </div>
+
+      {isOpen && (
+        <motion.div 
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden px-4 pb-4 space-y-4 bg-black/80">
+          {navLinks.map(link => (
+            <Link key={link.name} href={link.href} onClick={() => setIsOpen(false)} className="block text-sm uppercase tracking-wider text-[#A3A3A3] hover:text-white py-2">
+              {link.name}
+            </Link>
+          ))}
+          <motion.button 
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="w-full bg-[#C5A880] text-black font-bold text-sm px-6 py-3 rounded-full">
+            Konsultasi
+          </motion.button>
+        </motion.div>
+      )}
     </motion.nav>
   );
 };
