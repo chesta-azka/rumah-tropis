@@ -1,31 +1,31 @@
-'use client';
+import CTA from "@/components/CTA";
+import FAQ from "@/components/FAQ";
+import FilterSection from "@/components/FilterSection";
+import Footer from "@/components/Footer";
+import Guarantee from "@/components/Guarantee";
+import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
+import Portfolio from "@/components/Portfolio";
+import Process from "@/components/Process";
+import Team from "@/components/Team";
+import Testimonials from "@/components/Testimonials";
+import WhyUs from "@/components/WhyUs";
 
-import React from 'react';
-
-// --- IMPORT COMPONENTS ---
-import Navbar from '../components/molecules/Navigation';
-import Hero from '../components/organisms/Hero';
-import VideoSection from '../components/organisms/About'; // Menggunakan file About.tsx untuk VideoSection
-import IdealClientSection from '../components/organisms/Services'; // Menggunakan file Services.tsx untuk IdealClientSection
-import WhyUsSection from '../components/Philosophy'; // Menggunakan file Philosophy.tsx untuk WhyUsSection
-import TestimonialSection from '../components/organisms/Testimonials'; // Menggunakan file Testimonials.tsx untuk TestimonialSection
-import FooterCTASection from '../components/organisms/CTA'; // Menggunakan file CTA.tsx untuk FooterCTASection
-
-export default function LandingPage() {
+export default function Home() {
   return (
-    <div className="bg-soft-black min-h-screen">
+    <main className="bg-[#050505] overflow-x-hidden">
       <Navbar />
-
-      <main>
-        <Hero />
-        <VideoSection />
-        <IdealClientSection />
-        <WhyUsSection />
-        <TestimonialSection />
-      </main>
-
-      <FooterCTASection />
-
-    </div>
+      <Hero />
+      <FilterSection />
+      <WhyUs />
+      <Portfolio />
+      <Process />
+      <Testimonials />
+      <Team />
+      <Guarantee />
+      <FAQ />
+      <CTA />
+      <Footer />
+    </main>
   );
 }

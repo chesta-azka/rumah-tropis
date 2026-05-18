@@ -1,105 +1,67 @@
-import React, { useState } from 'react';
+'use client';
+
+import { useState } from 'react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
-interface FAQItemProps {
-  question: string;
-  answer: string;
-}
+const faqs = [
+  {
+    question: "Berapa lama proses desain hingga selesai konstruksi?",
+    answer: "Tergantung pada skala dan kompleksitas proyek, proses desain biasanya memakan waktu 2-3 bulan, dan konstruksi sekitar 8-12 bulan."
+  },
+  {
+    question: "Apakah saya bisa menggunakan jasa desainnya saja?",
+    answer: "Tentu saja. Kami menyediakan paket layanan yang fleksibel, mulai dari desain arsitektur saja, hingga paket lengkap desain & bangun."
+  },
+  {
+    question: "Bagaimana sistem pembayarannya?",
+    answer: "Pembayaran dilakukan secara bertahap sesuai dengan progres pekerjaan yang tertuang dalam kontrak, sehingga transparan dan aman bagi kedua belah pihak."
+  },
+  {
+    question: "Apakah saya bisa mengajukan revisi pada saat proses desain?",
+    answer: "Ya, kami memberikan beberapa kali kesempatan revisi pada fase desain konseptual untuk memastikan hasil akhir sesuai dengan keinginan Anda."
+  }
+];
 
-const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const FAQ = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const answerVariants = {
-    hidden: { opacity: 0, height: 0 },
-    visible: { opacity: 1, height: 'auto' }
+  const toggleFAQ = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
   };
 
   return (
-    <div className="border-b border-[#654C37]">
-      <button
-        className="w-full flex justify-between items-center py-5 text-left text-lg font-semibold text-[#E1C5A8]"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <span>{question}</span>
-        <motion.span
-          animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <ChevronDownIcon className="h-6 w-6" />
-        </motion.span>
-      </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            variants={answerVariants}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            className="overflow-hidden"
-          >
-            <p className="pb-5 text-[#C3A180]">{answer}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
-
-const FAQ: React.FC = () => {
-  const faqs = [
-    {
-      question: "What makes a 'tropical house' design unique?",
-      answer: "Tropical house designs prioritize natural ventilation, extensive openings, and materials that stay cool, like wood and stone. They often feature large overhangs for shade and seamless integration with the surrounding landscape to create a breezy and open living experience."
-    },
-    {
-      question: "How long does the design and construction process take?",
-      answer: "The timeline varies depending on the complexity of the project and location. On average, the design phase can take 2-4 months, and construction can range from 8-12 months. We provide a detailed timeline after the initial consultation."
-    },
-    {
-      question: "Do you handle both architecture and interior design?",
-      answer: "Yes, we offer a comprehensive service that includes both architectural and interior design. Our team works holistically to ensure the inside of your home is a perfect extension of the architectural style."
-    },
-    {
-      question: "Can you work with a lot I already own?",
-      answer: "Absolutely. We can assess your land and create a custom design that maximizes its potential, taking into account factors like sun orientation, views, and natural landscape features."
-    },
-    {
-      question: "What is your fee structure?",
-      answer: "Our fees are typically a percentage of the total construction cost, but we can also work on a fixed-fee basis. We are transparent about all costs and will provide a detailed proposal before any work begins."
-    }
-  ];
-
-  return (
-    <div className="bg-[#3A2D23] py-20 px-6">
+    <section id="faq" className="w-full bg-[#050505] text-white p-16">
       <div className="max-w-4xl mx-auto">
-        <motion.h2 
-            initial={{ opacity: 0, y: 20 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.6 }} 
-            viewport={{once: true}}
-            className="text-4xl font-bold text-center text-white mb-10"
-        >
-            Frequently Asked Questions
-        </motion.h2>
+        <h2 className="text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <motion.div
-              key={index}
-              variants={{ 
-                  hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0, transition: { delay: index * 0.15 } }
-              }}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              <FAQItem key={index} question={faq.question} answer={faq.answer} />
-            </motion.div>
+            <div key={index} className="bg-[#0D0D0D] rounded-lg">
+              <button
+                onClick={() => toggleFAQ(index)}
+                className="w-full flex justify-between items-center text-left p-6"
+              >
+                <span className="text-lg font-semibold">{faq.question}</span>
+                {activeIndex === index ? <ChevronUp /> : <ChevronDown />}
+              </button>
+              <AnimatePresence>
+                {activeIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0, marginTop: 0, marginBottom: 0, padding: 0 }}
+                    animate={{ height: 'auto', opacity: 1, marginTop: '1rem', marginBottom: '1rem', padding: '1.5rem'}}
+                    exit={{ height: 0, opacity: 0, marginTop: 0, marginBottom: 0, padding: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden"
+                  >
+                    <p className="text-[#A3A3A3]">{faq.answer}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
