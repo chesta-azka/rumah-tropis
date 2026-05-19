@@ -39,7 +39,10 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map(link => (
-              <Link key={link.name} href={link.href} className="text-sm uppercase tracking-wider text-[#A3A3A3] hover:text-white transition-colors duration-300">
+              <Link 
+                key={link.name} 
+                href={link.href} 
+                className="text-sm uppercase tracking-wider text-[#A3A3A3] hover:text-[#C5A880] transition-all duration-300 hover:text-shadow-[0_0_8px_rgba(197,168,128,0.7)]">
                 {link.name}
               </Link>
             ))}
@@ -47,7 +50,7 @@ const Navbar = () => {
 
           <div className="hidden md:block">
             <motion.button 
-              whileHover={{ scale: 1.05, backgroundColor: '#C5A880', color: '#000' }}
+              whileHover={{ scale: 1.05, backgroundColor: '#C5A880', color: '#000', boxShadow: '0px 0px 20px rgba(197, 168, 128, 0.4)' }}
               whileTap={{ scale: 0.95 }}
               className="border border-white/50 text-white text-sm font-medium px-5 py-2 rounded-full transition-colors duration-300">
               Konsultasi
@@ -69,12 +72,16 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden px-4 pb-4 space-y-4 bg-black/80">
           {navLinks.map(link => (
-            <Link key={link.name} href={link.href} onClick={() => setIsOpen(false)} className="block text-sm uppercase tracking-wider text-[#A3A3A3] hover:text-white py-2">
+            <Link 
+                key={link.name} 
+                href={link.href} 
+                onClick={() => setIsOpen(false)} 
+                className="block text-sm uppercase tracking-wider text-[#A3A3A3] hover:text-[#C5A880] py-2 transition-all duration-300 hover:text-shadow-[0_0_8px_rgba(197,168,128,0.7)]">
               {link.name}
             </Link>
           ))}
           <motion.button 
-            whileHover={{ scale: 1.02 }}
+            whileHover={{ scale: 1.02, boxShadow: '0px 0px 20px rgba(197, 168, 128, 0.4)' }}
             whileTap={{ scale: 0.98 }}
             className="w-full bg-[#C5A880] text-black font-bold text-sm px-6 py-3 rounded-full">
             Konsultasi

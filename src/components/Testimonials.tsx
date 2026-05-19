@@ -46,7 +46,8 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.15 }}
-              className="bg-[#121212] rounded-xl p-8 border border-white/10 shadow-lg flex flex-col"
+              className="bg-[#121212] rounded-xl p-8 border border-white/10 flex flex-col"
+              style={{ boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 25px 50px -12px rgba(0, 0, 0, 0.2)" }}
             >
               <Quote className="text-[#C5A880] mb-5" size={36} />
               <p className="text-[#E0E0E0] italic text-base leading-relaxed flex-grow mb-6">

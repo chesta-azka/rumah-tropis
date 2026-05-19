@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -9,32 +10,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Dominant Colors
-        "deep-black": "#050505",
-        "soft-black": "#0B0B0B",
-        charcoal: "#111111",
-
-        // Secondary Colors
-        white: "#FFFFFF",
-        "warm-off-white": "#FEF9ED",
-
-        // Neutral Gray Text
-        "neutral-gray": "#A7A7A7",
-
-        // Supporting Brand Accent Colors
-        "copper-bronze": "#B88A6E",
-        "sandy-travertine": "#F5E6D3",
-        "aged-teak": "#4D3C2F",
-        "rainforest-moss": "#5B6A56",
-        "filtered-sunbeam": "#FEF9ED",
+        bark: "#1E1A17",
+        cream: "#F5F5F5",
+        gold: "#C5A880",
+        tropical: "#2ECC71", // Warna aksen baru kita
       },
       fontFamily: {
-        // Ganti dengan font yang Anda pilih atau sudah ada di project
-        sans: ['var(--font-geist-sans)', 'sans-serif'],
-        serif: ['var(--font-instrument-serif)', 'serif'],
+        sans: ["var(--font-sans)", "sans-serif"],
+        serif: ["var(--font-serif)", "serif"],
       },
+      textShadow: {
+        glow: '0 0 8px rgba(197, 168, 128, 0.7)',
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-textshadow'),
+  ],
 };
 export default config;

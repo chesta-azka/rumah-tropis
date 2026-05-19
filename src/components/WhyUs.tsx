@@ -45,7 +45,7 @@ const WhyUs = () => {
                         transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
                         className="flex items-start"
                     >
-                        <CheckCircle className="text-[#C5A880] mt-1 mr-4 flex-shrink-0" size={22} />
+                        <CheckCircle className="text-tropical mt-1 mr-4 flex-shrink-0" size={22} />
                         <p className="text-base text-[#E0E0E0]">{point}</p>
                     </motion.div>
                 ))}

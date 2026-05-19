@@ -5,17 +5,15 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const projects = [
-  { title: "AD House", image: "/images/portfolio/portfolio-ad-house.webp" },
-  { title: "AI House", image: "/images/portfolio/portfolio-ai-house.webp" },
-  { title: "BF House", image: "/images/portfolio/portfolio-bf-house.webp" },
-  { title: "EA House", image: "/images/portfolio/portfolio-ea-house.webp" },
-  { title: "FL House", image: "/images/portfolio/portfolio-fl-house.webp" },
-  { title: "ND House", image: "/images/portfolio/portfolio-nd-house.webp" },
-  { title: "NN House", image: "/images/portfolio/portfolio-nn-house.webp" },
-  { title: "PN House", image: "/images/portfolio/portfolio-pn-house.webp" },
-  { title: "RA House", image: "/images/portfolio/portfolio-ra-house.webp" },
-  { title: "SS House", image: "/images/portfolio/portfolio-ss-house.webp" },
-  { title: "YO House", image: "/images/portfolio/portfolio-yo-house.webp" },
+    { title: "The Serenity Villa", image: "/images/portfolio/tropical-villa-1.webp" },
+    { title: "Cascading Gardens House", image: "/images/portfolio/tropical-villa-2.webp" },
+    { title: "Oceanbreeze Residence", image: "/images/portfolio/tropical-villa-3.webp" },
+    { title: "The Sanctuary", image: "/images/portfolio/tropical-villa-4.webp" },
+    { title: "Verdant Courtyard Home", image: "/images/portfolio/tropical-villa-5.webp" },
+    { title: "Golden Hour Pavilion", image: "/images/portfolio/tropical-villa-6.webp" },
+    { title: "Nusa Dua Paradise", image: "/images/portfolio/tropical-villa-7.webp" },
+    { title: "Canggu Modern Retreat", image: "/images/portfolio/tropical-villa-8.webp" },
+    { title: "Ubud Jungle Haven", image: "/images/portfolio/tropical-villa-9.webp" },
 ];
 
 const Portfolio = () => {
@@ -54,7 +52,8 @@ const Portfolio = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
-                className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/50 mb-8"
+                className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden border border-white/10 mb-8"
+                style={{ boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 25px 50px -12px rgba(0, 0, 0, 0.3)" }}
               >
                 <Image
                   src={projects[currentIndex].image}
@@ -62,6 +61,7 @@ const Portfolio = () => {
                   layout="fill"
                   objectFit="cover"
                   className="transition-transform duration-500 hover:scale-105"
+                  unoptimized={true} // Tambahkan ini jika gambar dari sumber eksternal
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-6 sm:p-8">
@@ -76,12 +76,13 @@ const Portfolio = () => {
                     <div
                     key={project.title}
                     onClick={() => handleSelectProject(index)}
-                    className={`relative flex-shrink-0 w-32 h-20 sm:w-40 sm:h-24 md:w-48 md:h-28 rounded-xl overflow-hidden cursor-pointer transition-all duration-300 border-2 ${currentIndex === index ? 'border-[#C5A880]' : 'border-transparent opacity-60 hover:opacity-100 hover:border-white/50'}`}>
+                    className={`relative flex-shrink-0 w-32 h-20 sm:w-40 sm:h-24 md:w-48 md:h-28 rounded-xl overflow-hidden cursor-pointer transition-all duration-300 border-2 ${currentIndex === index ? 'border-gold' : 'border-transparent opacity-60 hover:opacity-100 hover:border-white/50'}`}>
                     <Image
                         src={project.image}
                         alt={project.title}
                         layout="fill"
                         objectFit="cover"
+                        unoptimized={true} // Tambahkan ini jika gambar dari sumber eksternal
                     />
                     </div>
                 ))}
