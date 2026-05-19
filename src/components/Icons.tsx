@@ -11,8 +11,5 @@ export {
     Building, 
     Award, 
     Users, 
-    ArrowRight, 
-    Instagram, 
-    Youtube, 
-    Twitter 
+    ArrowRight
 } from 'lucide-react';

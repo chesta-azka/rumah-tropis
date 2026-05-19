@@ -1,6 +1,6 @@
 'use client';
 
-import { Instagram, Youtube, Twitter } from './Icons'; // Corrected import
+import { FaInstagram, FaYoutube, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -13,13 +13,13 @@ const Footer = () => {
         </p>
         <div className="flex space-x-6">
           <a href="#" className="text-[#A3A3A3] hover:text-[#C5A880] transition-colors duration-300">
-            <Instagram size={20} />
+            <FaInstagram size={20} />
           </a>
           <a href="#" className="text-[#A3A3A3] hover:text-[#C5A880] transition-colors duration-300">
-            <Youtube size={20} />
+            <FaYoutube size={20} />
           </a>
           <a href="#" className="text-[#A3A3A3] hover:text-[#C5A880] transition-colors duration-300">
-            <Twitter size={20} />
+            <FaTwitter size={20} />
           </a>
         </div>
       </div>
