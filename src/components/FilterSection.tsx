@@ -42,7 +42,7 @@ const FilterSection = () => {
             <ul className="space-y-5">
               <li className="flex items-start">
                 <X className="text-gray-600 mr-4 mt-1 flex-shrink-0" size={24} />
-                <p className="text-[#A3A3A3] text-base lg:text-lg">Anda mencari solusi 'asal jadi' dan 'harga termurah' tanpa mementingkan kualitas jangka panjang.</p>
+                <p className="text-[#A3A3A3] text-base lg:text-lg">Anda mencari solusi &apos;asal jadi&apos; dan &apos;harga termurah&apos; tanpa mementingkan kualitas jangka panjang.</p>
               </li>
               <li className="flex items-start">
                 <X className="text-gray-600 mr-4 mt-1 flex-shrink-0" size={24} />
