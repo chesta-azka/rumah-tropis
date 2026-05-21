@@ -80,7 +80,7 @@ export default function StickyNavbar() {
             >
               {activeTemplate === "arsitetika-studio" ? (
                 <img
-                  src="/images/logo-rumah-tropiss.webp"
+                  src="/images/logo-rumah-tropis.webp"
                   alt="Rumah Tropis Logo"
                   className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
                   referrerPolicy="no-referrer"

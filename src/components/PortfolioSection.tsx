@@ -128,13 +128,13 @@ export default function PortfolioSection() {
   };
 
   const getDomainText = () => {
-    if (activeTemplate === "arsitetika-studio") return "arsitetikastudio.com";
+    if (activeTemplate === "arsitetika-studio") return "";
     if (activeTemplate === "akademicrypto") return "akademicrypto.com";
     return "akademicreator.com";
   };
 
   const getBrandLogoText = () => {
-    if (activeTemplate === "arsitetika-studio") return "Arsitetika Studio";
+    if (activeTemplate === "arsitetika-studio") return "";
     if (activeTemplate === "akademicrypto") return "Akademi Crypto";
     return "Akademi Creator";
   };
@@ -154,7 +154,7 @@ export default function PortfolioSection() {
 
   const getCtaPlaceholder = () => {
     if (activeTemplate === "arsitetika-studio") {
-      return "Halo%20Arsitetika%20Studio,%20saya%20tertarik%20konsultasi%20mengenai%20desain%20dan%20pembangunan%20properti%20tropis";
+      return "Halo%20Rumah%20Tropis,%20saya%20tertarik%20konsultasi%20mengenai%20desain%20dan%20pembangunan%20properti%20tropis";
     }
     if (activeTemplate === "akademicrypto") {
       return "Halo%20Akademi%20Crypto,%20saya%20tertarik%20untuk%20mendaftar%20dan%20berkonsultasi%20mengenai%20kelas%20intensif%20trading";
@@ -275,11 +275,13 @@ export default function PortfolioSection() {
                       />
 
                       {/* Brand Tag Watermark in Layout */}
-                      <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-3 py-1 rounded shadow-lg border border-white/10 z-10">
-                        <span className="text-[8px] font-sans font-black text-slate-950 tracking-wide">
-                          {getBrandLogoText()}
-                        </span>
-                      </div>
+                      {getBrandLogoText() && (
+                        <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-3 py-1 rounded shadow-lg border border-white/10 z-10">
+                          <span className="text-[8px] font-sans font-black text-slate-950 tracking-wide">
+                            {getBrandLogoText()}
+                          </span>
+                        </div>
+                      )}
 
                       {/* Cover Dark Gradients Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-[#070709] via-black/40 to-transparent z-10" />
@@ -318,9 +320,11 @@ export default function PortfolioSection() {
                       <div className="w-full h-px bg-white/5 my-1" />
 
                       <div className="flex items-center justify-between text-[10px] font-mono">
-                        <span className="text-zinc-500 tracking-wider">
-                          {getDomainText()}
-                        </span>
+                        {getDomainText() && (
+                          <span className="text-zinc-500 tracking-wider">
+                            {getDomainText()}
+                          </span>
+                        )}
                         <span className="text-zinc-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
                           LIHAT DETAIL →
                         </span>
