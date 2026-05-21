@@ -1,0 +1,6 @@
+{
+  "name": "Rumah Tropis",
+  "description": "Landing page premium berkonversi tinggi dan mewah untuk desain dan pembangunan Rumah Tropis oleh PT Tata Ruang Kota.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

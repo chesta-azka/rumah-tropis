@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --color-primary: #C5A880;
+  --color-primary-hover: #e4ccaa;
+  --color-bg: #050505;
+  --color-card: #0D0D0D;
+  --font-title-family: "Playfair Display", Georgia, serif;
+}
+
+@theme {
+  --color-dark-bg: var(--color-bg);
+  --color-dark-card: var(--color-card);
+  --color-light-pure: #FFFFFF;
+  --color-light-muted: #A3A3A3;
+  --color-accent-gold: var(--color-primary);
+  --font-serif: var(--font-title-family);
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+/* Custom scrollbar and smooth scroll */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg);
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-light-pure);
+  background-color: var(--color-bg);
+  transition: background-color 0.5s ease;
+}
+
+/* Base custom classes to support masonry grid and elegant design components */
+.font-serif-title {
+  font-family: var(--font-title-family);
+}
+
+.text-gold {
+  color: var(--color-primary);
+}
+
+.border-gold {
+  border-color: var(--color-primary);
+}
+
+/* Soft transition effects */
+.transition-luxury {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
