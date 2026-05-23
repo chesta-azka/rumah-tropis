@@ -109,24 +109,57 @@ export default function StatsSection() {
         </div>
 
         {/* CTA Button Block at the bottom */}
-        <div className="text-center relative">
-          <a
-            href={waLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            id="stats-cta-btn"
-            className="inline-flex items-center gap-3 px-10 py-5 text-black font-sans font-extrabold text-xs uppercase tracking-[0.2em] rounded-full transition-all duration-300 transform hover:scale-[1.04] active:scale-95 shadow-xl hover:shadow-2xl cursor-pointer"
-            style={{
-              background: `linear-gradient(135s, ${theme.primary} 0%, ${theme.secondary} 100%)`,
-              boxShadow: `0 10px 30px ${theme.primary}40`
-            }}
-          >
-            <PhoneCall className="w-4.5 h-4.5 animate-bounce text-black shrink-0" />
-            <span>Konsultasi Gratis</span>
-          </a>
-          <p className="text-zinc-500 text-[10px] font-mono mt-4 uppercase tracking-[0.15em]">
-            *KONSULTASI DESAIN & ESTIMASI RAB TANPA BIAYA APAPUN
-          </p>
+        <div className="text-center relative select-none flex flex-col items-center">
+          {activeTemplate === "arsitetika-studio" ? (
+            <>
+              <a
+                href="https://wa.me/628138969965?text=Halo%20Rumah%20Tropis,%20saya%20tertarik%20untuk%20berkonsultasi%20mengenai%20investasi%20properti."
+                target="_blank"
+                rel="noopener noreferrer"
+                id="stats-cta-btn"
+                className="group/statsbtn relative px-10 py-5 font-sans font-black text-xs uppercase tracking-[0.25em] text-[#FEF9ED] rounded-xl overflow-hidden transition-all duration-500 shadow-[0_15px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_50px_rgba(184,138,110,0.25)] hover:scale-[1.03] active:scale-95 border border-[#B88A6E]/30 flex items-center gap-3 cursor-pointer"
+              >
+                {/* Button dynamic gradient filling, merging Color 1 (#B88A6E) and Color 3 (#4D3C2F) */}
+                <div 
+                  className="absolute inset-0 transition-opacity duration-500 group-hover/statsbtn:opacity-95"
+                  style={{
+                    background: "linear-gradient(135deg, #B88A6E 0%, #4D3C2F 100%)"
+                  }}
+                />
+                
+                {/* Soft light shimmer inside */}
+                <div className="absolute inset-0 opacity-0 group-hover/statsbtn:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_center,rgba(254,249,237,0.15)_0%,transparent_70%)]" />
+                
+                <PhoneCall className="w-4 h-4 text-[#FEF9ED] relative z-10 animate-pulse group-hover/statsbtn:scale-110 transition-transform" />
+                <span className="relative z-10 transition-colors duration-300">
+                  Konsultasi Gratis
+                </span>
+              </a>
+              <p className="text-zinc-500 text-[9px] font-mono mt-4 uppercase tracking-[0.2em]">
+                * KONSULTASI DESAIN & ESTIMASI RAB TANPA BIAYA APAPUN
+              </p>
+            </>
+          ) : (
+            <>
+              <a
+                href={waLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                id="stats-cta-btn"
+                className="inline-flex items-center gap-3 px-10 py-5 text-black font-sans font-extrabold text-xs uppercase tracking-[0.2em] rounded-full transition-all duration-300 transform hover:scale-[1.04] active:scale-95 shadow-xl hover:shadow-2xl cursor-pointer"
+                style={{
+                  background: `linear-gradient(135deg, ${theme.primary} 0%, ${theme.secondary} 100%)`,
+                  boxShadow: `0 10px 30px ${theme.primary}40`
+                }}
+              >
+                <PhoneCall className="w-4.5 h-4.5 animate-bounce text-black shrink-0" />
+                <span>Konsultasi Gratis</span>
+              </a>
+              <p className="text-zinc-500 text-[10px] font-mono mt-4 uppercase tracking-[0.15em]">
+                *KONSULTASI DESAIN & ESTIMASI RAB TANPA BIAYA APAPUN
+              </p>
+            </>
+          )}
         </div>
 
       </div>

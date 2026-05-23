@@ -317,7 +317,7 @@ export default function ExclusiveFacilities() {
                               <div className="grid grid-cols-2 gap-2 text-[10px] font-mono">
                                 <div className="bg-white/[0.02] border border-white/5 rounded-lg p-2">
                                   <span className="text-zinc-500 block uppercase">Beton Target</span>
-                                  <span className="text-emerald-400 font-extrabold block text-xs">MUTU K-350</span>
+                                  <span className="text-[#5B6A56] font-extrabold block text-xs">MUTU K-350</span>
                                 </div>
                                 <div className="bg-white/[0.02] border border-white/5 rounded-lg p-2">
                                   <span className="text-zinc-500 block uppercase">Cek Slump</span>
@@ -336,9 +336,9 @@ export default function ExclusiveFacilities() {
                                     strokeWidth="2"
                                   />
                                   <circle cx="100" cy="18" r="3" fill="#ffffff" />
-                                  <circle cx="200" cy="5" r="3" fill="#34d399" />
+                                  <circle cx="200" cy="5" r="3" fill="#5B6A56" />
                                 </svg>
-                                <div className="absolute right-2 bottom-1.5 text-[8.5px] font-mono text-emerald-400">Integrity: 98.4%</div>
+                                <div className="absolute right-2 bottom-1.5 text-[8.5px] font-mono text-[#5B6A56]">Integrity: 98.4%</div>
                               </div>
 
                             </div>
@@ -554,6 +554,59 @@ export default function ExclusiveFacilities() {
             );
           })}
         </div>
+
+        {/* Beautiful bottom CTA Button block at the end of Exclusive Facilities */}
+        {activeTemplate === "arsitetika-studio" ? (
+          <div className="text-center mt-20 relative select-none flex flex-col items-center">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/[0.02] border border-white/5 rounded-full mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
+              <span className="text-[8.5px] font-mono text-zinc-400 uppercase tracking-widest">
+                LINDUNGI VALUASI INVESTASI ANDA SEKARANG
+              </span>
+            </div>
+
+            <a
+              href="https://wa.me/628138969965?text=Halo%20Rumah%20Tropis,%20saya%20tertarik%20untuk%20berkonsultasi%20mengenai%20rancang%20dan%20bangun%2520properti."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/facbtn relative px-10 py-5 font-sans font-black text-xs uppercase tracking-[0.25em] text-[#FEF9ED] rounded-xl overflow-hidden transition-all duration-500 shadow-[0_15px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_50px_rgba(184,138,110,0.25)] hover:scale-[1.03] active:scale-95 border border-[#B88A6E]/30 flex items-center gap-3"
+            >
+              {/* Elegant gradient background with copper and aged teak */}
+              <div 
+                className="absolute inset-0 transition-opacity duration-500 group-hover/facbtn:opacity-95"
+                style={{
+                  background: "linear-gradient(135deg, #B88A6E 0%, #4D3C2F 100%)"
+                }}
+              />
+              {/* Luminous shimmer gloss effect */}
+              <div className="absolute inset-0 opacity-0 group-hover/facbtn:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_center,rgba(254,249,237,0.15)_0%,transparent_70%)]" />
+              
+              <PhoneCall className="w-4 h-4 text-[#FEF9ED] relative z-10 animate-pulse group-hover/facbtn:scale-110 transition-transform" />
+              <span className="relative z-10 transition-colors duration-300">
+                Konsultasi Gratis
+              </span>
+            </a>
+            <span className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest block mt-4">
+              * Konsultasi awal gratis via WhatsApp
+            </span>
+          </div>
+        ) : (
+          <div className="text-center mt-20 relative select-none flex flex-col items-center">
+            <a
+              href={`${waLink}?text=Halo,%20saya%20tertarik%20dengan%20fasilitas%20VIP`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-10 py-5 text-black font-sans font-extrabold text-xs uppercase tracking-[0.2em] rounded-full transition-all duration-300 transform hover:scale-[1.04] active:scale-95 shadow-xl hover:shadow-2xl cursor-pointer"
+              style={{
+                background: `linear-gradient(135deg, ${theme.primary} 0%, ${theme.secondary} 100%)`,
+                boxShadow: `0 10px 30px ${theme.primary}40`
+              }}
+            >
+              <PhoneCall className="w-4.5 h-4.5 animate-bounce text-black shrink-0" />
+              <span>Konsultasi Gratis</span>
+            </a>
+          </div>
+        )}
 
       </div>
     </section>

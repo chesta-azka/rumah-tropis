@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, MessageSquare, PhoneCall, Landmark, TrendingUp, Clapperboard } from "lucide-react";
 import { useTemplate } from "../context/TemplateContext";
+import { resolveMediaUrl } from "../utils";
 
 export default function StickyNavbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -78,9 +79,9 @@ export default function StickyNavbar() {
                 borderColor: `${theme.primary}25`
               }}
             >
-              {activeTemplate === "arsitetika-studio" ? (
+              {activeTemplate === "arsitetika-studio" && (data.logoUrl || "/images/logo-rumah-tropis.webp") ? (
                 <img
-                  src="/images/logo-rumah-tropis.webp"
+                  src={resolveMediaUrl(data.logoUrl || "/images/logo-rumah-tropis.webp")}
                   alt="Rumah Tropis Logo"
                   className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
                   referrerPolicy="no-referrer"

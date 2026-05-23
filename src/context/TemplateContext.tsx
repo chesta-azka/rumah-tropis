@@ -1,6 +1,64 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { templates, TemplateData } from "../data";
 
+export interface BrandColor {
+  id: string;
+  name: string;
+  role: string;
+  hex: string;
+  desc: string;
+  textColor: string;
+  glowColor: string;
+}
+
+export const RUMAH_TROPIS_COLORS: BrandColor[] = [
+  {
+    id: "copper",
+    name: "Premium Copper-Bronze",
+    role: "(The Gateway Metal)",
+    hex: "#B88A6E",
+    desc: "Rich, reflective",
+    textColor: "text-[#B88A6E]",
+    glowColor: "rgba(184, 138, 110, 0.22)"
+  },
+  {
+    id: "travertine",
+    name: "Sandy Travertine",
+    role: "(The Foundation Stone)",
+    hex: "#F5E6D3",
+    desc: "Warm, grounded neutral",
+    textColor: "text-[#F5E6D3]",
+    glowColor: "rgba(245, 230, 211, 0.16)"
+  },
+  {
+    id: "teak",
+    name: "Aged Teak",
+    role: "(The Structural Wood)",
+    hex: "#4D3C2F",
+    desc: "Deep, warm dark",
+    textColor: "text-[#4D3C2F]",
+    glowColor: "rgba(77, 60, 47, 0.28)"
+  },
+  {
+    id: "moss",
+    name: "Rainforest Moss",
+    role: "(The Lush Mineral)",
+    hex: "#5B6A56",
+    desc: "Muted, organic green",
+    textColor: "text-[#5B6A56]",
+    glowColor: "rgba(91, 106, 86, 0.2)"
+  },
+  {
+    id: "sunbeam",
+    name: "Filtered Sunbeam",
+    role: "(The Warm Glow)",
+    hex: "#FEF9ED",
+    desc: "Soft, luminous cream",
+    textColor: "text-[#FEF9ED]",
+    glowColor: "rgba(254, 249, 237, 0.15)"
+  }
+];
+
 export interface ThemeConfig {
   primary: string;
   secondary: string;

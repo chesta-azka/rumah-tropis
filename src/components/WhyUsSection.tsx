@@ -30,39 +30,39 @@ export default function WhyUsSection() {
       if (index === 0) {
         return (
           <p className="text-zinc-300 text-sm md:text-lg leading-relaxed font-sans font-medium">
-            <span className="text-emerald-400 font-extrabold">Karena mengurus rancang dan bangun properti sendirian itu mahal dan sangat merugi.</span>{" "}
+            <span className="text-[#5B6A56] font-extrabold font-serif">Karena mengurus rancang dan bangun properti sendirian itu mahal dan sangat merugi.</span>{" "}
             Bersama Rumah Tropis klien{" "}
             <span className="text-white underline decoration-[#B88A6E] underline-offset-4 font-bold">tidak cuma terima gambar</span>
             , klien akan masuk ke{" "}
             <span className="text-[#B88A6E] font-extrabold uppercase tracking-wide">standar kualitas praktisi</span>{" "}
             yang sudah lebih dari lima tahun di bidang konstruksi. Lihat cara kami{" "}
-            <span className="text-white font-bold bg-[#B88A6E]/20 px-1.5 py-0.5 rounded">merespons iklim secara makro</span>,{" "}
+            <span className="text-[#FEF9ED] font-bold bg-[#B88A6E]/20 px-1.5 py-0.5 rounded">merespons iklim secara makro</span>,{" "}
             <span className="text-zinc-100 font-bold border-b border-[#B88A6E]/30">meracik material alamnya</span>, dan{" "}
-            <span className="text-emerald-400 font-bold">menjaga nilai fungsional aset.</span>
+            <span className="text-[#5B6A56] font-bold">menjaga nilai fungsional aset.</span>
           </p>
         );
       }
       if (index === 1) {
         return (
           <p className="text-zinc-300 text-sm md:text-lg leading-relaxed font-sans font-medium">
-            <span className="text-red-400 font-extrabold block mb-3">Kebanyakan orang membuang dana ratusan juta karena membangun properti dengan cara yang keliru, bangunan rusak dulu baru paham.</span>{" "}
+            <span className="text-[#B88A6E] font-extrabold block mb-3">Kebanyakan orang membuang dana ratusan juta karena membangun properti dengan cara yang keliru, bangunan rusak dulu baru paham.</span>{" "}
             Di Rumah Tropis seluruh klien akan{" "}
-            <span className="text-emerald-400 font-extrabold underline decoration-emerald-500/50 underline-offset-4">dipandu dari nol sampai rampung</span>{" "}
+            <span className="text-[#5B6A56] font-extrabold underline decoration-[#5B6A56]/60 underline-offset-4">dipandu dari nol sampai rampung</span>{" "}
             lewat manajemen terpadu yang mencakup{" "}
-            <span className="text-white font-bold">legalitas, kekuatan struktur & presisi desain, sampai lansekap tropis.</span>{" "}
+            <span className="text-[#FEF9ED] font-bold">legalitas, kekuatan struktur & presisi desain, sampai lansekap tropis.</span>{" "}
             Semua dipandu arsitek senior dan kontraktor yang{" "}
-            <span className="text-[#B88A6E] font-bold italic bg-white/[0.03] px-1.5 py-0.5 rounded border border-white/5">hidupnya memang di lapangan.</span>
+            <span className="text-[#B88A6E] font-bold italic bg-[#4D3C2F]/30 px-1.5 py-0.5 rounded border border-white/5">hidupnya memang di lapangan.</span>
           </p>
         );
       }
       if (index === 2) {
         return (
           <p className="text-zinc-300 text-sm md:text-lg leading-relaxed font-sans font-medium">
-            <span className="text-amber-400 font-extrabold">Hampir semua aset properti mewah dan bernilai tinggi dibangun oleh praktisi yang menjaga kualitas, bukan memotong standar mutunya.</span>{" "}
+            <span className="text-[#F5E6D3] font-extrabold">Hampir semua aset properti mewah dan bernilai tinggi dibangun oleh praktisi yang menjaga kualitas, bukan memotong standar mutunya.</span>{" "}
             Setiap klien berhak atas{" "}
-            <span className="text-emerald-400 font-extrabold">akses pendampingan eksklusif di fase perawatan struktur</span>{" "}
+            <span className="text-[#5B6A56] font-extrabold">akses pendampingan eksklusif di fase perawatan struktur</span>{" "}
             demi menjaga kualitas fisik properti, langkah pasti menuju tujuan yang sama yaitu{" "}
-            <span className="text-white font-black uppercase tracking-widest bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded inline-block mt-2">investasi aman.</span>
+            <span className="text-[#FEF9ED] font-black uppercase tracking-widest bg-[#5B6A56]/15 border border-[#5B6A56]/30 px-2.5 py-1 rounded inline-block mt-2">investasi aman.</span>
           </p>
         );
       }
@@ -191,7 +191,7 @@ export default function WhyUsSection() {
               <span className="text-[10px] font-mono tracking-widest text-[#B88A6E] uppercase font-bold">
                 Progress Management Tracker
               </span>
-              <span className="text-[#00FC8B] text-[8px] font-mono bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded font-bold uppercase animate-pulse">
+              <span className="text-[#5B6A56] text-[8px] font-mono bg-[#5B6A56]/15 border border-[#5B6A56]/30 px-2 py-0.5 rounded font-bold uppercase animate-pulse">
                 Active Client Board
               </span>
             </div>
@@ -206,7 +206,7 @@ export default function WhyUsSection() {
                 <div key={i} className={`flex items-center justify-between p-2 rounded-lg border ${phase.current ? 'bg-[#B88A6E]/5 border-[#B88A6E]/30 shadow-md' : 'bg-white/[0.01] border-white/5'}`}>
                   <div className="flex items-center gap-2.5">
                     {phase.verified ? (
-                      <div className="w-4 h-4 rounded-full bg-emerald-500/20 border border-emerald-500 flex items-center justify-center text-emerald-500 text-[8px] font-bold">✓</div>
+                      <div className="w-4 h-4 rounded-full bg-[#5B6A56]/20 border border-[#5B6A56] flex items-center justify-center text-[#5B6A56] text-[8px] font-bold">✓</div>
                     ) : phase.current ? (
                       <div className="w-4 h-4 rounded-full bg-amber-500/20 border border-amber-500 flex items-center justify-center text-amber-500 text-[8px] font-bold animate-spin">•</div>
                     ) : (
@@ -250,7 +250,7 @@ export default function WhyUsSection() {
                 <ul className="space-y-2 mt-2">
                   {["36 Months Structural Rigidity Contract", "180-Day Calibration on Structural Seals", "VIP Priority Restoration Team"].map((bullet, idx) => (
                     <li key={idx} className="flex items-center gap-2 text-[10px] text-zinc-300 font-sans">
-                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#5B6A56]" />
                       <span>{bullet}</span>
                     </li>
                   ))}
@@ -259,7 +259,7 @@ export default function WhyUsSection() {
 
               <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
                 <span className="text-[8px] font-mono text-zinc-500 uppercase">PT ARCHITECTURAL INTEGRATED</span>
-                <span className="text-[9px] font-mono text-[#00FC8B] font-bold uppercase tracking-wider">SECURE ASSET</span>
+                <span className="text-[9px] font-mono text-[#B88A6E] font-bold uppercase tracking-wider">SECURE ASSET</span>
               </div>
             </div>
           </div>
@@ -488,6 +488,41 @@ export default function WhyUsSection() {
             </div>
           ))}
 
+        </div>
+
+        {/* Beautiful bottom CTA Button block at the end of Why Us */}
+        <div className="text-center mt-20 relative select-none flex flex-col items-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/[0.02] border border-white/5 rounded-full mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+            <span className="text-[8.5px] font-mono text-zinc-400 uppercase tracking-widest">
+              LINDUNGI VALUASI INVESTASI ANDA SEKARANG
+            </span>
+          </div>
+
+          <a
+            href="https://wa.me/628138969965?text=Halo%20Rumah%20Tropis,%20saya%20tertarik%20untuk%20berkonsultasi%20mengenai%20rancang%20dan%20bangun%20properti."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/whyusbtn relative px-10 py-5 font-sans font-black text-xs uppercase tracking-[0.25em] text-[#FEF9ED] rounded-xl overflow-hidden transition-all duration-500 shadow-[0_15px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_50px_rgba(184,138,110,0.25)] hover:scale-[1.03] active:scale-95 border border-[#B88A6E]/30 flex items-center gap-3"
+          >
+            {/* Elegant gradient background with copper and aged teak */}
+            <div 
+              className="absolute inset-0 transition-opacity duration-500 group-hover/whyusbtn:opacity-95"
+              style={{
+                background: "linear-gradient(135deg, #B88A6E 0%, #4D3C2F 100%)"
+              }}
+            />
+            {/* Luminous shimmer gloss effect */}
+            <div className="absolute inset-0 opacity-0 group-hover/whyusbtn:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_center,rgba(254,249,237,0.15)_0%,transparent_70%)]" />
+            
+            <PhoneCall className="w-4 h-4 text-[#FEF9ED] relative z-10 animate-pulse group-hover/whyusbtn:scale-110 transition-transform" />
+            <span className="relative z-10 transition-colors duration-300">
+              Konsultasi Gratis
+            </span>
+          </a>
+          <span className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest block mt-4">
+            * Konsultasi awal gratis via WhatsApp
+          </span>
         </div>
 
       </div>

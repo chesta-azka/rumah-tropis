@@ -94,44 +94,66 @@ export default function FAQSection() {
           </p>
           
           <div className="flex flex-col items-center">
-            <a
-              href={
-                activeTemplate === "akademicrypto"
-                  ? `${waLink}?text=Halo%2520Akademi%2520Crypto,%2520saya%2520tertarik%2520bertanya%2520lebih%2520lanjut%2520tentang%2520pembelajaran%2520di%2520kelas`
-                  : activeTemplate === "akademicreator"
-                  ? `${waLink}?text=Halo%2520Akademi%2520Creator,%2520saya%2520ingin%2520konsultasi%2520mengenai%2520cara%2520membangun%2520personal%2520brand`
-                  : `${waLink}?text=Halo%2520Rumah%2520Tropis,%2520saya%2520tertarik%2520konsultasi%2520gratis%2520desain%2520setelah%2520membaca%2520FAQ%2520website`
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-11 py-4.5 font-sans font-black text-xs uppercase tracking-[0.2em] rounded-full transition-all duration-300 transform hover:scale-[1.04] active:scale-95 shadow-2xl cursor-pointer"
-              style={
-                activeTemplate === "akademicrypto"
-                  ? {
-                      background: "linear-gradient(135deg, #c084fc 0%, #7e22ce 100%)",
-                      color: "#ffffff",
-                      boxShadow: "0 10px 25px rgba(126, 34, 206, 0.4)"
-                    }
-                  : {
-                      background: `linear-gradient(135deg, ${theme.primary} 0%, ${theme.secondary} 100%)`,
-                      color: "#000000",
-                      boxShadow: `0 10px 25px ${theme.primary}30`
-                    }
-              }
-            >
-              {activeTemplate === "akademicrypto" ? (
-                <>
-                  <span className="text-[10px] opacity-75">▶</span>
-                  <span>Gabung Sekarang</span>
-                  <span className="text-[10px] opacity-75">◀</span>
-                </>
-              ) : (
-                <>
-                  <PhoneCall className="w-3.5 h-3.5 text-black shrink-0 animate-bounce" />
-                  <span>Konsultasi Gratis</span>
-                </>
-              )}
-            </a>
+            {activeTemplate === "arsitetika-studio" ? (
+              <a
+                href={`${waLink}?text=Halo%2520Rumah%2520Tropis,%2520saya%2520tertarik%2520konsultasi%2520gratis%2520desain%2520setelah%2520membaca%2520FAQ%2520website`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/faqbtn relative px-12 py-5 font-sans font-black text-xs uppercase tracking-[0.25em] text-[#FEF9ED] rounded-xl overflow-hidden transition-all duration-500 shadow-[0_15px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_50px_rgba(184,138,110,0.25)] hover:scale-[1.03] active:scale-95 border border-[#B88A6E]/30 flex items-center gap-3.5 cursor-pointer"
+              >
+                {/* Elegant gradient background with copper and aged teak */}
+                <div 
+                  className="absolute inset-0 transition-opacity duration-500 group-hover/faqbtn:opacity-95"
+                  style={{
+                    background: "linear-gradient(135deg, #B88A6E 0%, #4D3C2F 100%)"
+                  }}
+                />
+                {/* Luminous shimmer gloss effect */}
+                <div className="absolute inset-0 opacity-0 group-hover/faqbtn:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_center,rgba(254,249,237,0.15)_0%,transparent_70%)]" />
+                
+                <PhoneCall className="w-4 h-4 text-[#FEF9ED] relative z-10 animate-pulse group-hover/faqbtn:scale-110 transition-transform" />
+                <span className="relative z-10 transition-colors duration-300">
+                  Konsultasi Gratis
+                </span>
+              </a>
+            ) : (
+              <a
+                href={
+                  activeTemplate === "akademicrypto"
+                    ? `${waLink}?text=Halo%2520Akademi%2520Crypto,%2520saya%2520tertarik%2520bertanya%2520lebih%2520lanjut%2520tentang%2520pembelajaran%2520di%2520kelas`
+                    : `${waLink}?text=Halo%2520Akademi%2520Creator,%2520saya%2520ingin%2520konsultasi%2520mengenai%2520cara%2520membangun%2520personal%2520brand`
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-11 py-4.5 font-sans font-black text-xs uppercase tracking-[0.2em] rounded-full transition-all duration-300 transform hover:scale-[1.04] active:scale-95 shadow-2xl cursor-pointer"
+                style={
+                  activeTemplate === "akademicrypto"
+                    ? {
+                        background: "linear-gradient(135deg, #c084fc 0%, #7e22ce 100%)",
+                        color: "#ffffff",
+                        boxShadow: "0 10px 25px rgba(126, 34, 206, 0.4)"
+                      }
+                    : {
+                        background: `linear-gradient(135deg, ${theme.primary} 0%, ${theme.secondary} 100%)`,
+                        color: "#000000",
+                        boxShadow: `0 10px 25px ${theme.primary}30`
+                      }
+                }
+              >
+                {activeTemplate === "akademicrypto" ? (
+                  <>
+                    <span className="text-[10px] opacity-75">▶</span>
+                    <span>Gabung Sekarang</span>
+                    <span className="text-[10px] opacity-75">◀</span>
+                  </>
+                ) : (
+                  <>
+                    <PhoneCall className="w-3.5 h-3.5 text-black shrink-0 animate-bounce" />
+                    <span>Konsultasi Gratis</span>
+                  </>
+                )}
+              </a>
+            )}
             
             <span className="text-[8.5px] font-mono text-zinc-600 uppercase tracking-widest block mt-4 select-none">
               • TERHUBUNG KE CS WHATSAPP OFFICIAL KAMI 24/7

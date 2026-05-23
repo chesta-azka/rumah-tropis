@@ -51,6 +51,8 @@ export interface FAQItem {
 }
 
 export interface TemplateData {
+  logoUrl?: string;
+  heroVideoUrl?: string;
   name: string;
   subName: string;
   tagline: string;
@@ -123,6 +125,8 @@ export interface TemplateData {
 export const templates: Record<string, TemplateData> = {
   // === TEMPLATE 1: RUMAH TROPIS (ARSITETIKA STUDIO STYLE) ===
   "arsitetika-studio": {
+    logoUrl: "/images/logo-rumah-tropis.webp",
+    heroVideoUrl: "/images/portfolio/IMG_8223.MOV",
     name: "Rumah Tropis",
     subName: "Private Paradise",
     tagline: "PT Tata Ruang Kota",

@@ -14,12 +14,12 @@ export default function ComparisonSection() {
   const getContent = () => {
     if (activeTemplate === "arsitetika-studio") {
       return {
-        label: "PILIH JALAN INVESTASI TERBAIK?",
-        title: "Properti Ini Punya 2 Sisi Nilai",
-        cardLeftText: "1. Aset Tropis Bernilai Tinggi, Dirancang & Dibangun Presisi",
-        cardRightText: "2. Dan Yang Menunda Berinvestasi",
+        label: "Pilih Aset Yang Terbaik?",
+        title: "Properti Ini Punya 2 Sisi Nilai,",
+        cardLeftText: "Aset Tropis Bernilai Tinggi, Dirancang & Dibangun Presisi",
+        cardRightText: "Dan Yang Menunda Berinvestasi.",
         ctaText: "Konsultasi Gratis",
-        ctaPlaceholder: "Halo%20Rumah%20Tropis,%20saya%20tertarik%20untuk%20konsultasi%20mengenai%20perbandingan%20investasi%20dan%20pembangunan%20sisi%20nilai%20aset",
+        ctaPlaceholder: "Halo%20Rumah%20Tropis,%20saya%20tertarik%20untuk%20mengkonsultasikan%20pilihan%20investasi%20aset%20properti.",
         description: "Setiap keputusan konstruksi berdampak langsung pada nilai masa depan. Apakah Anda akan mengamankan aset kokoh tropis bernilai tinggi atau membiarkan dana menguap begitu saja?"
       };
     }
@@ -41,7 +41,7 @@ export default function ComparisonSection() {
       cardLeftText: "Kreator Yang Mengambil Langkah Menguasai Industri",
       cardRightText: "Dan Yang Tetap Menjadi Penonton Pasif",
       ctaText: "Mulai Bangun Personal Brand",
-      ctaPlaceholder: "Halo%20Akademi%20Creator,%20saya%20ingin%20berkonsultasi%20mengenai%20cara%20membangun%20personal%20brand%20saya",
+      ctaPlaceholder: "Halo%20Akademi%20Creator,%2520saya%20ingin%2520berkonsultasi%20mengenai%20cara%2520membangun%2520personal%2520brand%2520saya",
       description: "Ekonomi digital terus bergerak maju. Ambil tindakan nyata dengan formula hook viral, atau melihat kreator lain mendominasi feed media sosial."
     };
   };
@@ -79,9 +79,9 @@ export default function ComparisonSection() {
         <div className="grid md:grid-cols-2 gap-10 md:gap-8 items-center max-w-3xl mx-auto relative">
           
           {/* OR Connector Badge in middle (visible on desktop) */}
-          <div className="hidden md:flex absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 z-20 items-center justify-center w-12 h-12 rounded-full bg-black border border-white/10 shadow-2xl">
+          <div className="hidden md:flex absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 z-20 items-center justify-center w-14 h-14 rounded-full bg-black border border-white/10 shadow-2xl">
             <span className="text-[10px] font-mono text-zinc-400 font-extrabold uppercase tracking-widest">
-              VS
+              {activeTemplate === "arsitetika-studio" ? "Atau" : "VS"}
             </span>
           </div>
 
@@ -93,21 +93,25 @@ export default function ComparisonSection() {
               <div 
                 className="w-10 h-10 rounded-full flex items-center justify-center border-2 border-black text-black"
                 style={{ 
-                  background: `linear-gradient(135deg, #00fc8b 0%, #10b981 100%)`,
-                  boxShadow: '0 0 15px rgba(0, 252, 139, 0.4)'
+                  background: activeTemplate === "arsitetika-studio"
+                    ? "linear-gradient(135deg, #5B6A56 0%, #B88A6E 100%)"
+                    : activeTemplate === "akademicrypto"
+                    ? "linear-gradient(135deg, #00fc8b 0%, #10b981 100%)"
+                    : "linear-gradient(135deg, #D846EF 0%, #f472b6 100%)",
+                  boxShadow: activeTemplate === "arsitetika-studio" ? '0 0 15px rgba(91, 106, 86, 0.4)' : activeTemplate === "akademicrypto" ? '0 0 15px rgba(0, 252, 139, 0.4)' : '0 0 15px rgba(216, 70, 239, 0.4)'
                 }}
               >
-                <svg className="w-5 h-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="4">
+                <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="4">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
             </div>
 
-            {/* Glowing active fuchsia neon outer border envelope (Screenshot matching) */}
+            {/* Glowing active neon outer border envelope (Screenshot matching) */}
             <div 
               className="absolute -inset-0.5 rounded-[24px] opacity-100 blur-sm pointer-events-none transition-opacity duration-500" 
               style={{
-                background: `linear-gradient(180deg, ${theme.primary} 0%, rgba(216, 70, 239, 0.2) 100%)`,
+                background: `linear-gradient(180deg, ${theme.primary} 0%, rgba(255,255,255,0.02) 100%)`,
               }}
             />
 
@@ -132,9 +136,9 @@ export default function ComparisonSection() {
               />
 
               {/* Float code label */}
-              <div className="absolute top-6 left-6 bg-black/60 backdrop-blur-md border border-emerald-500/20 px-3 py-1 rounded z-20 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00FC8B] animate-ping" />
-                <span className="text-[8px] font-mono tracking-widest text-[#00FC8B] uppercase font-bold">
+              <div className="absolute top-6 left-6 bg-black/60 backdrop-blur-md border border-white/5 px-3 py-1 rounded z-20 flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: theme.primary }} />
+                <span className="text-[8px] font-mono tracking-widest uppercase font-bold" style={{ color: theme.primary }}>
                   RECOMMENDED ACTION
                 </span>
               </div>
@@ -145,7 +149,7 @@ export default function ComparisonSection() {
                   {content.cardLeftText}
                 </h3>
                 <div className="flex items-center justify-center md:justify-start gap-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: theme.primary }} />
                   <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">
                     ASET AMAN & KOKOH
                   </span>
@@ -214,20 +218,44 @@ export default function ComparisonSection() {
 
           <div className="flex flex-col items-center justify-center">
             
-            {/* Elegant action link mimicking custom purple pill button from Timothy's layout */}
-            <a
-              href={`${waLink}?text=${content.ctaPlaceholder}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3.5 px-12 py-5 text-black font-sans font-black text-xs uppercase tracking-[0.2em] rounded-full transition-all duration-300 transform hover:scale-[1.04] active:scale-95 shadow-2xl cursor-pointer"
-              style={{
-                background: `linear-gradient(135deg, ${theme.primary} 0%, ${theme.secondary} 100%)`,
-                boxShadow: `0 10px 25px ${theme.primary}30`
-              }}
-            >
-              <PhoneCall className="w-4 h-4 text-black shrink-0 animate-bounce" />
-              <span>{content.ctaText}</span>
-            </a>
+            {activeTemplate === "arsitetika-studio" ? (
+              <a
+                href={`${waLink}?text=${content.ctaPlaceholder}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/compbtn relative px-12 py-5 font-sans font-black text-xs uppercase tracking-[0.25em] text-[#FEF9ED] rounded-xl overflow-hidden transition-all duration-500 shadow-[0_15px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_50px_rgba(184,138,110,0.25)] hover:scale-[1.03] active:scale-95 border border-[#B88A6E]/30 flex items-center gap-3.5 cursor-pointer"
+              >
+                {/* Elegant gradient background with copper and aged teak */}
+                <div 
+                  className="absolute inset-0 transition-opacity duration-500 group-hover/compbtn:opacity-95"
+                  style={{
+                    background: "linear-gradient(135deg, #B88A6E 0%, #4D3C2F 100%)"
+                  }}
+                />
+                {/* Luminous shimmer gloss effect */}
+                <div className="absolute inset-0 opacity-0 group-hover/compbtn:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_center,rgba(254,249,237,0.15)_0%,transparent_70%)]" />
+                
+                <PhoneCall className="w-4 h-4 text-[#FEF9ED] relative z-10 animate-pulse group-hover/compbtn:scale-110 transition-transform" />
+                <span className="relative z-10 transition-colors duration-300">
+                  {content.ctaText}
+                </span>
+              </a>
+            ) : (
+              /* Elegant action link mimicking custom purple pill button from Timothy's layout */
+              <a
+                href={`${waLink}?text=${content.ctaPlaceholder}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3.5 px-12 py-5 text-black font-sans font-black text-xs uppercase tracking-[0.2em] rounded-full transition-all duration-300 transform hover:scale-[1.04] active:scale-95 shadow-2xl cursor-pointer"
+                style={{
+                  background: `linear-gradient(135deg, ${theme.primary} 0%, ${theme.secondary} 100%)`,
+                  boxShadow: `0 10px 25px ${theme.primary}30`
+                }}
+              >
+                <PhoneCall className="w-4 h-4 text-black shrink-0 animate-bounce" />
+                <span>{content.ctaText}</span>
+              </a>
+            )}
 
             {/* Small status line */}
             <span className="text-[9px] font-mono text-zinc-600 uppercase tracking-widest block mt-4">
