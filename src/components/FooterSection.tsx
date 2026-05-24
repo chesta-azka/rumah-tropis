@@ -1,10 +1,38 @@
 import React from "react";
 import { useTemplate } from "../context/TemplateContext";
-import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, Landmark, TrendingUp, Clapperboard } from "lucide-react";
+import { resolveMediaUrl } from "../utils";
 
 export default function FooterSection() {
-  const { data, theme } = useTemplate();
+  const { activeTemplate, data, theme } = useTemplate();
   const currentYear = new Date().getFullYear();
+
+  // Get dynamic logo mark text & icon based on template
+  const getLogoInfo = () => {
+    switch (activeTemplate) {
+      case "akademicrypto":
+        return {
+          text: "AC",
+          icon: TrendingUp,
+          color: "#00FC8B"
+        };
+      case "akademicreator":
+        return {
+          text: "MC",
+          icon: Clapperboard,
+          color: "#D846EF"
+        };
+      default:
+        return {
+          text: "RT",
+          icon: Landmark,
+          color: "#C5A880"
+        };
+    }
+  };
+
+  const logoInfo = getLogoInfo();
+  const LogoIcon = logoInfo.icon;
 
   return (
     <footer id="kontak" className="border-t border-white/5 relative z-10 pt-20 pb-12" style={{ backgroundColor: theme.bg }}>
@@ -14,19 +42,49 @@ export default function FooterSection() {
           {/* Brand Column (5 Columns wide in desktop) */}
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-3.5 mb-6">
-                <div className="w-12 h-12 flex items-center justify-center bg-black/60 border border-white/10 rounded-lg p-1.5">
-                  <span className="text-xl font-bold font-serif-title" style={{ color: theme.primary }}>
-                    {data.name.substring(0, 2).toUpperCase()}
-                  </span>
+              <div className="flex items-center gap-3.5 mb-6 group">
+                <div 
+                  className="w-12 h-12 flex flex-col items-center justify-center relative overflow-hidden rounded-lg p-1 transition-colors border"
+                  style={{ 
+                    backgroundColor: theme.card || "rgba(0,0,0,0.6)",
+                    borderColor: `${theme.primary}25`
+                  }}
+                >
+                  {activeTemplate === "arsitetika-studio" && (data.logoUrl || "/images/logo-rumah-tropis.webp") ? (
+                    <img
+                      src={resolveMediaUrl(data.logoUrl || "/images/logo-rumah-tropis.webp")}
+                      alt="Rumah Tropis Logo"
+                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                      referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        (e.target as HTMLElement).style.display = 'none';
+                        const parent = (e.target as HTMLElement).parentElement;
+                        if (parent) {
+                          const textEl = parent.querySelector('.fallback-lettermark');
+                          if (textEl) textEl.classList.remove('hidden');
+                        }
+                      }}
+                    />
+                  ) : null}
+                  <div 
+                    className={`fallback-lettermark flex flex-col items-center justify-center ${activeTemplate === "arsitetika-studio" ? "hidden" : ""}`}
+                  >
+                    <LogoIcon className="w-5 h-5 mb-0.5" style={{ color: theme.primary }} />
+                    <span className="text-[10px] font-mono font-bold leading-none" style={{ color: theme.primary }}>
+                      {logoInfo.text}
+                    </span>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-white font-serif-title tracking-wider text-xl font-bold uppercase leading-none">
+                
+                <div className="border-l pl-3 flex flex-col justify-center" style={{ borderColor: `${theme.primary}50` }}>
+                  <h3 className="text-white font-serif tracking-wide text-md font-bold uppercase leading-none transition-all duration-300">
                     {data.name}
                   </h3>
-                  <span className="text-[10px] md:text-xs font-sans tracking-widest uppercase mt-1 leading-none font-bold block" style={{ color: theme.primary }}>
-                    {data.subName}
-                  </span>
+                  {data.subName && (
+                    <span className="text-xs font-sans tracking-widest uppercase mt-1 leading-none font-medium transition-all duration-300" style={{ color: theme.primary }}>
+                      {data.subName}
+                    </span>
+                  )}
                 </div>
               </div>
 

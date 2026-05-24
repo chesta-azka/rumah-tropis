@@ -41,3 +41,23 @@ export function resolveMediaUrl(url: string | undefined): string {
 
   return cleanUrl;
 }
+
+/**
+ * Extracts the 11-char video ID from typical YouTube links (shorts, watch, mobile, share URLs).
+ */
+export function getYouTubeId(url: string | undefined): string | null {
+  if (!url) return null;
+  const cleanUrl = url.trim();
+  const match = cleanUrl.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|shorts\/|watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/i);
+  return match ? match[1] : null;
+}
+
+/**
+ * Checks if a given media URL is a YouTube link.
+ */
+export function isYouTubeUrl(url: string | undefined): boolean {
+  if (!url) return false;
+  const cleanUrl = url.trim();
+  return /youtube\.com|youtu\.be/i.test(cleanUrl);
+}
+

@@ -1,7 +1,7 @@
 import React from "react";
 import { PhoneCall, Sparkles } from "lucide-react";
 import { useTemplate } from "../context/TemplateContext";
-import { resolveMediaUrl } from "../utils";
+import { resolveMediaUrl, isYouTubeUrl, getYouTubeId } from "../utils";
 
 export default function HeroSection() {
   const { activeTemplate, data, theme } = useTemplate();
@@ -127,34 +127,45 @@ export default function HeroSection() {
             </>
           )}
 
-          <video
-            src={resolveMediaUrl(data.heroVideoUrl || "/images/portfolio/IMG_8223.MOV")}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-[1.015]"
-            style={{ filter: "brightness(0.9) contrast(1.05)" }}
-            onError={(e) => {
-              // Handle video fail elegantly with a dark beautiful placeholder
-              const parent = (e.target as HTMLElement).parentElement;
-              if (parent) {
-                const placeholder = document.createElement('div');
-                placeholder.className = "absolute inset-0 bg-gradient-to-b from-black/90 to-black/98 flex flex-col items-center justify-center p-6";
-                placeholder.innerHTML = `
-                  <div class="h-14 w-14 rounded-full flex items-center justify-center mb-4 border" style="background-color: ${theme.primary}12; border-color: ${theme.primary}30">
-                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="${theme.primary}" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <h4 class="text-white font-serif text-base font-semibold mb-1 uppercase tracking-wider">${data.name} Video</h4>
-                `;
-                parent.appendChild(placeholder);
-                (e.target as HTMLElement).style.display = 'none';
-              }
-            }}
-          />
+          {isYouTubeUrl(data.heroVideoUrl || "/images/portfolio/IMG_8223.MOV") ? (
+            <iframe
+              src={`https://www.youtube.com/embed/${getYouTubeId(data.heroVideoUrl || "/images/portfolio/IMG_8223.MOV")}?autoplay=1&mute=1&loop=1&playlist=${getYouTubeId(data.heroVideoUrl || "/images/portfolio/IMG_8223.MOV")}&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&playsinline=1&enablejsapi=1`}
+              title="Cinematic Presentation Video"
+              className="w-full h-full object-cover border-0 transition-transform duration-[3s] group-hover:scale-[1.015]"
+              style={{ filter: "brightness(0.9) contrast(1.05)" }}
+              allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          ) : (
+            <video
+              src={resolveMediaUrl(data.heroVideoUrl || "/images/portfolio/IMG_8223.MOV")}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-[1.015]"
+              style={{ filter: "brightness(0.9) contrast(1.05)" }}
+              onError={(e) => {
+                // Handle video fail elegantly with a dark beautiful placeholder
+                const parent = (e.target as HTMLElement).parentElement;
+                if (parent) {
+                  const placeholder = document.createElement('div');
+                  placeholder.className = "absolute inset-0 bg-gradient-to-b from-black/90 to-black/98 flex flex-col items-center justify-center p-6";
+                  placeholder.innerHTML = `
+                    <div class="h-14 w-14 rounded-full flex items-center justify-center mb-4 border" style="background-color: ${theme.primary}12; border-color: ${theme.primary}30">
+                      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="${theme.primary}" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <h4 class="text-white font-serif text-base font-semibold mb-1 uppercase tracking-wider">${data.name} Video</h4>
+                  `;
+                  parent.appendChild(placeholder);
+                  (e.target as HTMLElement).style.display = 'none';
+                }
+              }}
+            />
+          )}
         </div>
 
         {/* Playful and luxurious CTA Button right below the video */}

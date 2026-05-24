@@ -126,9 +126,9 @@ export const templates: Record<string, TemplateData> = {
   // === TEMPLATE 1: RUMAH TROPIS (ARSITETIKA STUDIO STYLE) ===
   "arsitetika-studio": {
     logoUrl: "/images/logo-rumah-tropis.webp",
-    heroVideoUrl: "/images/portfolio/IMG_8223.MOV",
+    heroVideoUrl: "https://youtu.be/KoYgeKFPnx8?si=qu7QYXuFIQw0s_q0",
     name: "Rumah Tropis",
-    subName: "Private Paradise",
+    subName: "",
     tagline: "PT Tata Ruang Kota",
     heroBadge: "PT Tata Ruang Kota — Exclusive Brand",
     heroTitle: "CIPTAKAN BANGUNAN BERNILAI TINGGI",
