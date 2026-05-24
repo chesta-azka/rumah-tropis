@@ -252,9 +252,9 @@ export const templates: Record<string, TemplateData> = {
         id: "investasi-properti",
         title: "Investasi Properti",
         subtitle: "Layanan 5",
-        description: "Aset di lahan emas dinilai 3-5 miilar per tahun. Pemborong biasa mengandalkan tebakan. Tim kontraktor mengandalkan standarisasi dan sistem yang bekerja tanpa drama, tanpa molor, tanpa bias. Dan di dunia properti yang nilainya melonjak tajam. Selama ini, ilmu ini hanya dipakai di proyek mewah dan developer kelas atas. Di proyek ini, klien didampingi desainer yang mengawalnya dari nol sampai klien benar-benar bisa menempati dan menikmati hasil karya aset impiannya sendiri. Mulai dari konsep hingga fasad, klien akan melihat cara menata ruang, memilih material, melakukan cek lokasi untuk membuktikan apakah mutu proyek itu benar-benar sempurna, dan akhirnya menempatinya di akhir proyek Ini bukan jasa kontraktor biasa. Ini adalah standar rancang properti tropis unggulan di dunia dan klien ada di barisan yang menikmati paling awal dari siapapun di Indonesia.",
+        description: "Aset di lahan emas dinilai 3-5 miliar per tahun. Pemborong biasa mengandalkan tebakan. Tim kontraktor mengandalkan standarisasi dan sistem yang bekerja tanpa drama, tanpa molor, tanpa bias. Dan di dunia properti yang nilainya melonjak tajam. Selama ini, ilmu ini hanya dipakai di proyek mewah dan developer kelas atas. Di proyek ini, klien didampingi desainer yang mengawalnya dari nol sampai klien benar-benar bisa menempati dan menikmati hasil karya aset impiannya sendiri. Mulai dari konsep hingga fasad, klien akan melihat cara menata ruang, memilih material, melakukan cek lokasi untuk membuktikan apakah mutu proyek itu benar-benar sempurna, dan akhirnya menempatinya di akhir proyek Ini bukan jasa kontraktor biasa. Ini adalah standar rancang properti tropis unggulan di dunia dan klien ada di barisan yang menikmati paling awal dari siapapun di Indonesia.",
         highlights: [
-          "Apresiasi nilai 3-5 milar per tahun",
+          "Apresiasi nilai 3-5 miliar per tahun",
           "Kerja sistematis tanpa drama & molor",
           "Pendampingan desainer nol-ke-tempat",
           "Uji keaslian material lapangan",
@@ -307,7 +307,7 @@ export const templates: Record<string, TemplateData> = {
     },
     portfolioLabel: "MASTERPIECE PORTFOLIO",
     portfolioTitle: "Buktinya Bukan dari Kata-Kata",
-    portfolioSub: "Lihat Hasil Karya yang Sudah Terwujud (Slide Portfolio Project)",
+    portfolioSub: "Lihat Hasil Karya yang Sudah Terwujud",
     portfolioFilter: ["All", "Jakarta", "Bali", "Bandung", "Surabaya", "Pontianak", "Sulawesi"],
     portfolioItems: [
       {

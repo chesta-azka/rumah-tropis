@@ -212,22 +212,24 @@ export default function ServicesSection() {
                   <div className="absolute top-0 right-0 w-48 h-48 bg-radial from-white/[0.01] to-transparent pointer-events-none" />
 
                   {/* Header visual banner mimicking trading layout photos */}
-                  <div className="h-[200px] w-full relative overflow-hidden">
-                    <img 
-                      src={getServiceCoverImage(service.id, index)} 
-                      alt={service.title}
-                      className="w-full h-full object-cover object-center filter grayscale contrast-110 brightness-75 transition-transform duration-[6000ms] group-hover/service:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-transparent to-black/35" />
-                    
-                    {/* Visual Card Specs Box overlay */}
-                    <div className="absolute bottom-4 left-6 md:left-8 bg-black/60 backdrop-blur-md border border-white/10 px-4 py-2 rounded-lg flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                      <span className="text-[10px] font-mono tracking-widest text-[#A3A3A3] uppercase font-bold">
-                        {service.id.toUpperCase()} MODULE ACT-05
-                      </span>
+                  {activeTemplate !== "arsitetika-studio" && (
+                    <div className="h-[200px] w-full relative overflow-hidden">
+                      <img 
+                        src={getServiceCoverImage(service.id, index)} 
+                        alt={service.title}
+                        className="w-full h-full object-cover object-center filter grayscale contrast-110 brightness-75 transition-transform duration-[6000ms] group-hover/service:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-transparent to-black/35" />
+                      
+                      {/* Visual Card Specs Box overlay */}
+                      <div className="absolute bottom-4 left-6 md:left-8 bg-black/60 backdrop-blur-md border border-white/10 px-4 py-2 rounded-lg flex items-center gap-3">
+                        <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                        <span className="text-[10px] font-mono tracking-widest text-[#A3A3A3] uppercase font-bold">
+                          {service.id.toUpperCase()} MODULE ACT-05
+                        </span>
+                      </div>
                     </div>
-                  </div>
+                  )}
 
                   <div className="p-6 md:p-8 space-y-6">
 

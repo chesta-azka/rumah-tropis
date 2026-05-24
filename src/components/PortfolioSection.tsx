@@ -42,6 +42,22 @@ export default function PortfolioSection() {
     setSelectedProject(null);
   }, [activeTemplate]);
 
+  const getCleanFilenameTitle = (item: PortfolioItem) => {
+    const filenameMap: Record<string, string> = {
+      p1: "ai house",
+      p2: "ss house",
+      p3: "ra house",
+      p4: "fl house",
+      p5: "ad house",
+      p6: "nn house",
+      p7: "nd house",
+      p8: "ea house",
+      p9: "bf house",
+      p10: "yo house"
+    };
+    return filenameMap[item.id] || item.title.toLowerCase();
+  };
+
   // Safe fallback matching Unsplash images if template assets are not loaded
   function getFallbackImage(id: string): string {
     if (activeTemplate === "arsitetika-studio") {
@@ -206,7 +222,7 @@ export default function PortfolioSection() {
         </div>
 
         {/* LUXURY INTERACTIVE FILTER TABS */}
-        {portfolioFilter && portfolioFilter.length > 0 && (
+        {activeTemplate !== "arsitetika-studio" && portfolioFilter && portfolioFilter.length > 0 && (
           <div className="flex flex-wrap justify-center gap-2.5 mb-14 max-w-4xl mx-auto px-2">
             {portfolioFilter.map((filter) => {
               const isActive = activeFilter === filter;
@@ -247,7 +263,47 @@ export default function PortfolioSection() {
           >
             <AnimatePresence mode="popLayout">
               {filteredItems.map((item, index) => {
+                const isArsitetika = activeTemplate === "arsitetika-studio";
+                const displayTitle = isArsitetika ? getCleanFilenameTitle(item) : item.title;
                 const ownerName = getOwnerName(item);
+
+                if (isArsitetika) {
+                  return (
+                    <motion.div
+                      key={item.id}
+                      layout
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      transition={{ duration: 0.5, delay: index * 0.05 }}
+                      className="group relative rounded-2xl overflow-hidden bg-[#070709] border border-white/5 shadow-2xl hover:border-white/10 transition-all duration-500 flex flex-col"
+                    >
+                      {/* Visual Aspect Ratio Container */}
+                      <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#0A0A0D]">
+                        <img 
+                          src={item.path} 
+                          alt={displayTitle} 
+                          className="w-full h-full object-cover transition-transform duration-[4000ms] ease-out-sine group-hover:scale-105"
+                          referrerPolicy="no-referrer"
+                          onError={(e) => {
+                            const img = e.target as HTMLImageElement;
+                            img.src = getFallbackImage(item.id);
+                          }}
+                        />
+                        {/* Soft Cover Dark Vignette Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#030305]/90 via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300 z-10" />
+
+                        {/* Minimal lowercase file name near the bottom-left */}
+                        <div className="absolute bottom-5 left-5 right-5 z-20">
+                          <span className="text-white/90 font-mono text-xs tracking-widest lowercase group-hover:text-amber-500 transition-colors duration-300">
+                            {displayTitle}
+                          </span>
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                }
+
                 return (
                   <motion.div
                     key={item.id}
@@ -364,7 +420,7 @@ export default function PortfolioSection() {
               }}
             >
               <PhoneCall className="w-4 h-4 text-black shrink-0 animate-bounce" />
-              <span>{data.rebateBtnText || "Konsultasi Gratis"}</span>
+              <span>{activeTemplate === "arsitetika-studio" ? "Konsultasi Gratis" : (data.rebateBtnText || "Konsultasi Gratis")}</span>
             </a>
 
             <span className="text-[8.5px] font-mono text-zinc-600 uppercase tracking-widest block mt-4">

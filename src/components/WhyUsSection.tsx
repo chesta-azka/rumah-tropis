@@ -455,19 +455,21 @@ export default function WhyUsSection() {
               </div>
 
               {/* Sequential Content Panel Grid */}
-              <div className="grid md:grid-cols-12 gap-8 items-start">
+              <div className={activeTemplate === "arsitetika-studio" ? "max-w-4xl space-y-4" : "grid md:grid-cols-12 gap-8 items-start"}>
                 
                 {/* Text Block Column */}
-                <div className="md:col-span-7 space-y-4">
+                <div className={activeTemplate === "arsitetika-studio" ? "space-y-4" : "md:col-span-7 space-y-4"}>
                   <div className="flex items-center gap-3">
                     <span 
                       className="text-[10px] font-mono uppercase tracking-widest font-extrabold"
                       style={{ color: theme.primary }}
                     >
-                      DIREKTIF TAHAN ASSET #{i + 1}
+                      {activeTemplate === "arsitetika-studio" ? `EVALUASI PROPERTI #${i + 1}` : `DIREKTIF TAHAN ASSET #${i + 1}`}
                     </span>
                     <div className="w-2.5 h-0.5 bg-white/10" />
-                    <span className="text-[10px] font-sans text-zinc-500">STANDARD PROCESS</span>
+                    <span className="text-[10px] font-sans text-zinc-500">
+                      {activeTemplate === "arsitetika-studio" ? "STANDAR INTEGRITAS" : "STANDARD PROCESS"}
+                    </span>
                   </div>
 
                   {/* High Quality Highlighted Copywriting */}
@@ -477,11 +479,13 @@ export default function WhyUsSection() {
                 </div>
 
                 {/* Highly Visual Layout Mockups Column */}
-                <div className="md:col-span-5">
-                  <div className="transform transition-transform duration-500 group-hover/timeline:scale-[1.02] group-hover/timeline:-translate-y-1">
-                    {renderVisualContent(i)}
+                {activeTemplate !== "arsitetika-studio" && (
+                  <div className="md:col-span-5">
+                    <div className="transform transition-transform duration-500 group-hover/timeline:scale-[1.02] group-hover/timeline:-translate-y-1">
+                      {renderVisualContent(i)}
+                    </div>
                   </div>
-                </div>
+                )}
 
               </div>
 
