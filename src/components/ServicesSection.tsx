@@ -241,8 +241,12 @@ export default function ServicesSection() {
                       >
                         {service.subtitle || `LAYANAN DIREGSI 0${index + 1}`}
                       </span>
-                      <div className="w-2 h-2 rounded-full bg-white/20" />
-                      <span className="text-[9px] font-mono text-zinc-500 uppercase">SYS CODE: SECURE-A3</span>
+                      {activeTemplate !== "arsitetika-studio" && (
+                        <>
+                          <div className="w-2 h-2 rounded-full bg-white/20" />
+                          <span className="text-[9px] font-mono text-zinc-500 uppercase">SYS CODE: SECURE-A3</span>
+                        </>
+                      )}
                     </div>
 
                     {/* Gradient Splitted Big Heading */}
