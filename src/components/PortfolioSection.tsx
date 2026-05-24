@@ -44,18 +44,21 @@ export default function PortfolioSection() {
 
   const getCleanFilenameTitle = (item: PortfolioItem) => {
     const filenameMap: Record<string, string> = {
-      p1: "ai house",
-      p2: "ss house",
-      p3: "ra house",
-      p4: "fl house",
-      p5: "ad house",
-      p6: "nn house",
-      p7: "nd house",
-      p8: "ea house",
-      p9: "bf house",
-      p10: "yo house"
+      p1: "the ai house",
+      p2: "the ss house",
+      p3: "the ra house",
+      p4: "the fl house",
+      p5: "the ad house",
+      p6: "the nn house",
+      p7: "the nd house",
+      p8: "the ea house",
+      p9: "the bf house",
+      p10: "the yo house"
     };
-    return filenameMap[item.id] || item.title.toLowerCase();
+    const title = filenameMap[item.id] || item.title.toLowerCase();
+    // Prepend 'the ' if not already there, e.g. "the nn house"
+    const prefix = title.startsWith("the ") ? "" : "the ";
+    return `${prefix}${title}`.toUpperCase();
   };
 
   // Safe fallback matching Unsplash images if template assets are not loaded
@@ -293,9 +296,9 @@ export default function PortfolioSection() {
                         {/* Soft Cover Dark Vignette Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-[#030305]/90 via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300 z-10" />
 
-                        {/* Minimal lowercase file name near the bottom-left */}
+                        {/* Minimal uppercase project name near the bottom-left */}
                         <div className="absolute bottom-5 left-5 right-5 z-20">
-                          <span className="text-white/90 font-mono text-xs tracking-widest lowercase group-hover:text-amber-500 transition-colors duration-300">
+                          <span className="text-white/90 font-mono text-xs tracking-widest uppercase group-hover:text-amber-500 transition-colors duration-300">
                             {displayTitle}
                           </span>
                         </div>
