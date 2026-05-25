@@ -87,7 +87,7 @@ export default function ExclusiveFacilities() {
         </div>
 
         {/* Modular Feature Row mimicking Timothy's Custom UI Card Layer */}
-        <div className="space-y-24 max-w-5xl mx-auto">
+        <div className="space-y-12 md:space-y-16 max-w-5xl mx-auto">
           {facilities.map((fac, idx) => {
             const isEven = idx % 2 === 1;
             
