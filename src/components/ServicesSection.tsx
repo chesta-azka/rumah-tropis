@@ -153,7 +153,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Main Continuous Dotted Timeline Layout resembling original screenshots */}
-        <div className="relative border-l border-dashed border-white/10 pl-8 md:pl-16 ml-2 sm:ml-4 md:ml-8 space-y-32 pb-12">
+        <div className="relative border-l border-dashed border-white/10 pl-8 md:pl-16 ml-2 sm:ml-4 md:ml-8 space-y-12 md:space-y-16 pb-12">
           
           {/* Vertical Track Tracker Line */}
           <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-[#B88A6E]/30 via-white/5 to-transparent pointer-events-none" />
