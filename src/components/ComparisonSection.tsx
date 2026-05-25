@@ -19,8 +19,7 @@ export default function ComparisonSection() {
         cardLeftText: "Aset Tropis Bernilai Tinggi, Dirancang & Dibangun Presisi",
         cardRightText: "Dan Yang Menunda Berinvestasi.",
         ctaText: "Konsultasi Gratis",
-        ctaPlaceholder: "Halo%20Rumah%20Tropis,%20saya%20tertarik%20untuk%20mengkonsultasikan%20pilihan%20investasi%20aset%20properti.",
-        description: "Setiap keputusan konstruksi berdampak langsung pada nilai masa depan. Apakah Anda akan mengamankan aset kokoh tropis bernilai tinggi atau membiarkan dana menguap begitu saja?"
+        ctaPlaceholder: "Halo%20Rumah%20Tropis,%20saya%20tertarik%20untuk%20mengkonsultasikan%20pilihan%20investasi%20aset%20properti."
       };
     }
     if (activeTemplate === "akademicrypto") {
@@ -212,9 +211,11 @@ export default function ComparisonSection() {
         {/* Action Call Response Zone (Floating take-action layer matching Screenshot 3) */}
         <div className="mt-16 text-center space-y-8 max-w-2xl mx-auto">
           
-          <p className="text-zinc-400 font-sans text-xs md:text-sm leading-relaxed max-w-lg mx-auto opacity-95">
-            {content.description}
-          </p>
+          {content.description && (
+            <p className="text-zinc-400 font-sans text-xs md:text-sm leading-relaxed max-w-lg mx-auto opacity-95">
+              {content.description}
+            </p>
+          )}
 
           <div className="flex flex-col items-center justify-center">
             
@@ -256,11 +257,6 @@ export default function ComparisonSection() {
                 <span>{content.ctaText}</span>
               </a>
             )}
-
-            {/* Small status line */}
-            <span className="text-[9px] font-mono text-zinc-600 uppercase tracking-widest block mt-4">
-              • LAYANAN PRIVASI TINGGI DIRESMIKAN
-            </span>
 
           </div>
 

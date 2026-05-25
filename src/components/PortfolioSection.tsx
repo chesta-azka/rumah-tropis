@@ -400,17 +400,6 @@ export default function PortfolioSection() {
 
         {/* CORE CTA CONVERSION ROW */}
         <div className="text-center pt-20 space-y-6">
-          <div className="inline-flex items-center justify-center gap-2 px-3 py-1 bg-white/[0.02] border border-white/5 rounded-full">
-            <Sparkles className="w-3.5 h-3.5" style={{ color: theme.primary }} />
-            <span className="text-[8.5px] md:text-[10px] font-mono text-zinc-400 uppercase tracking-widest leading-none">
-              DAPATKAN PENAWARAN KHUSUS & SKEMA ESTIMASI
-            </span>
-          </div>
-
-          <p className="text-zinc-400 font-sans text-xs md:text-sm leading-relaxed max-w-md mx-auto opacity-85">
-            Setiap karya kami rancang presisi demi menjaga estetika dasar dan ketahanan jangka panjang yang aman untuk portofolio dana Anda.
-          </p>
-
           <div className="flex flex-col items-center">
             <a
               href={`${waLink}?text=${getCtaPlaceholder()}`}
@@ -425,10 +414,6 @@ export default function PortfolioSection() {
               <PhoneCall className="w-4 h-4 text-black shrink-0 animate-bounce" />
               <span>{activeTemplate === "arsitetika-studio" ? "Konsultasi Gratis" : (data.rebateBtnText || "Konsultasi Gratis")}</span>
             </a>
-
-            <span className="text-[8.5px] font-mono text-zinc-600 uppercase tracking-widest block mt-4">
-              • LAYANAN FAST-RESPONSE DIKELOLA REKANAN BERSERTIFIKAT
-            </span>
           </div>
         </div>
 

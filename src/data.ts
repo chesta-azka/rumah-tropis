@@ -190,77 +190,37 @@ export const templates: Record<string, TemplateData> = {
       { value: "30+", label: "Professional Team", iconId: "users" }
     ],
     servicesLabel: "CORE SERVICES",
-    servicesTitle: "Layanan Utama",
+    servicesTitle: "Layanan",
     services: [
       {
         id: "rancang-bangunan",
         title: "Rancang Bangunan",
-        subtitle: "Layanan 1",
-        description: "Kebanyakan klien bangun properti secara asal dan rugi karena salah kelola budget serta mutu bangunan. Layanan ini merombak cara pandang standar, dari sekadar mendirikan tembok menjadi pencipta aset berkelas dengan spesifikasi tinggi. Ini bukti nyata yang dipakai klien sukses untuk menaikkan nilai properti. Klien akan menguasai cara membaca iklim tapak sebelum lahan terbangun, strategi tata ruang & fasad yang murni berbasis fungsi bukan ego estetika, cara memilih material alam yang tahan cuaca, tahap mengelola struktur dari nol, dan cara membaca rencana anggaran biaya yang dipakai arsitek untuk mencegah bocornya dana tunai. Klien akan dapat Analisis iklim tapak alami, Strategi denah & struktur pas, Manajemen risiko konstruksi, Pilihan material & tata udara, Ceklis mutu proyek, dan Cara ukur nilai aset properti.",
-        highlights: [
-          "Analisis iklim tapak alami",
-          "Strategi denah & struktur pas",
-          "Manajemen risiko konstruksi",
-          "Pilihan material & tata udara",
-          "Ceklis mutu proyek",
-          "Cara ukur nilai aset properti"
-        ]
+        description: "Kebanyakan klien bangun properti secara asal dan rugi karena salah kelola budget serta mutu bangunan. Layanan ini merombak cara pandang standar, dari sekadar mendirikan tembok menjadi pencipta aset berkelas dengan spesifikasi tinggi. Ini bukti nyata yang dipakai klien sukses untuk menaikkan nilai properti.\n\nKlien akan menguasai cara membaca iklim tapak sebelum lahan terbangun, strategi tata ruang & fasad yang murni berbasis fungsi bukan ego estetika, cara memilih material alam yang tahan cuaca, tahap mengelola struktur dari nol, dan cara membaca rencana anggaran biaya yang dipakai arsitek untuk mencegah bocornya dana tunai. Klien akan dapat Analisis iklim tapak alami, Strategi denah & struktur pas, Manajemen risiko konstruksi, Pilihan material & tata udara, Ceklis mutu proyek, dan Cara ukur nilai aset properti.",
+        highlights: []
       },
       {
         id: "konstruksi-presisi",
         title: "Konstruksi Presisi",
-        subtitle: "Layanan 2",
-        description: "97% proyek gagal. Klien tidak harus jadi salah korbannya. Kebanyakan orang rugi di lapangan bukan karena material yang jelek, tapi karena belum menguasai satu hal yang tidak diajarkan di mana-mana, yaitu kontrol & sistem yang tepat. Di layanan ini, klien akan belajar cara membaca mutu asli material saat pengerjaan, mengenali jebakan seperti overbudgeting, mark-up, dan molor waktu sebelum hal itu menguras saldo proyek. Lebih dari itu, klien akan paham bagaimana arsitek merancang, cara menggunakan proporsi ruang demi kenyamanan, dan bagaimana menerapkan standar sipil, interior, serta taman sesuai gaya hidup klien.",
-        highlights: [
-          "Kontrol & standar sipil",
-          "Proporsi ruang kenyamanan",
-          "Cegah jebakan overbudgeting",
-          "Deteksi mark-up & molor waktu",
-          "Mutu asli material lapangan",
-          "Sistem taman & estetika tropis"
-        ]
+        description: "97% proyek gagal. Klien tidak harus jadi salah korbannya. Kebanyakan orang rugi di lapangan bukan karena material yang jelek, tapi karena belum menguasai satu hal yang tidak diajarkan di mana-mana, yaitu kontrol & sistem yang tepat.\n\nDi layanan ini, klien akan belajar cara membaca mutu asli material saat pengerjaan, mengenali jebakan seperti overbudgeting, mark-up, dan molor waktu sebelum hal itu menguras saldo proyek. Lebih dari itu, klien akan paham bagaimana arsitek merancang, cara menggunakan proporsi ruang demi kenyamanan, dan bagaimana menerapkan standar sipil, interior, serta taman sesuai gaya hidup klien.",
+        highlights: []
       },
       {
         id: "ilmu-rancang",
         title: "Ilmu Rancang Bangunan",
-        subtitle: "Layanan 3",
-        description: "Banyak orang bangun rumah mewah bertahun-tahun tanpa paham inti struktur yang menopangnya. Padahal, klien yang paham sistem bangunan inilah yang selangkah lebih maju dari yang lain, baik sebagai pemakai, pemilik, maupun para pewarisnya. Di proyek ini, klien melihat realisasi dari nol secara konkret bukan sekadar gambar 3D diarahkan langsung oleh desainer. Klien akan memahami bagaimana baja dirangkai dan dikuatkan dalam kerangka balok utama, bagaimana utilitas dan sirkulasi bekerja di balik dinding, apa itu standar kerja dan mengapa mampu mengamankan nilai aset investasi, hingga material terbaru seperti natural stone yang sedang membentuk masa depan gaya tropis ini.",
-        highlights: [
-          "Realisasi struktur riil nol-ke-akhir",
-          "Perakitan rangka baja utama",
-          "Sirkulasi & utilitas balik dinding",
-          "Formulasi natural stone premium",
-          "Pengamanan nilai fisik investasi",
-          "Diarahkan langsung oleh desainer"
-        ]
+        description: "Banyak orang bangun rumah mewah bertahun-tahun tanpa paham inti struktur yang menopangnya. Padahal, klien yang paham sistem bangunan inilah yang selangkah lebih maju dari yang lain, baik sebagai pemakai, pemilik, maupun para pewarisnya.\n\nDi proyek ini, klien melihat realisasi dari nol secara konkret bukan sekadar gambar 3D diarahkan langsung oleh desainer. Klien akan memahami bagaimana baja dirangkai dan dikuatkan dalam kerangka balok utama, bagaimana utilitas dan sirkulasi bekerja di balik dinding, apa itu standar kerja dan mengapa mampu mengamankan nilai aset investasi, hingga material terbaru seperti natural stone yang sedang membentuk masa depan gaya tropis ini.",
+        highlights: []
       },
       {
         id: "manajemen-konstruksi",
         title: "Manajemen Konstruksi",
-        subtitle: "Layanan 4",
-        description: "Skill pengawasan ketat sangat dicari di ranah mewah. Sementara banyak orang asyik menumpuk lahan, hanya segelintir yang mau mengawal standar kokoh di atasnya. Mereka yang bisa jaga konstruksi presisi adalah yang menentukan naiknya nilai bangunan tersebut Di proyek ini, klien tidak hanya terima gambar. Klien dikawal langsung tahap demi tahap oleh praktisi yang hidup di lapangan, mulai dari nol hingga klien bisa merasakan kemewahan rumah tropis ini tanpa ada beban cemas. Klien akan menguasai Standardisasi, bahasa material tropis modern, memahami struktur pembesian beton yang padat, bekerja dengan kontrak terperinci, mengamankan budget dengan Checklist pengawasan, hingga proses serah terima yang memuaskan. Kualitas ini tidak ada di kontraktor biasa manapun di Indonesia. Yang klien dapatkan di sini adalah aset yang tidak lekang waktu, bukan tren sesaat saja.",
-        highlights: [
-          "Standarisasi bahasa material tropis",
-          "Struktur pembesian beton padat",
-          "Kontrak kerja detail & aman",
-          "Checklist pengawasan ketat",
-          "Proses serah terima tanpa cemas",
-          "Dunia arsitektur bebas risiko meluap"
-        ]
+        description: "Skill pengawasan ketat sangat dicari di ranah mewah. Sementara banyak orang asyik menumpuk lahan, hanya segelintir yang mau mengawal standar kokoh di atasnya. Mereka yang bisa jaga konstruksi presisi adalah yang menentukan naiknya nilai bangunan tersebut Di proyek ini, klien tidak hanya terima gambar. Klien dikawal langsung tahap demi tahap oleh praktisi yang hidup di lapangan, mulai dari nol hingga klien bisa merasakan kemewahan rumah tropis ini tanpa ada beban cemas.\n\nKlien akan menguasai Standardisasi, bahasa material tropis modern, memahami struktur pembesian beton yang padat, bekerja dengan kontrak terperinci, mengamankan budget dengan Checklist pengawasan, hingga proses serah terima yang memuaskan. Kualitas ini tidak ada di kontraktor biasa manapun di Indonesia. Yang klien dapatkan di sini adalah aset yang tidak lekang waktu, bukan tren sesaat saja.",
+        highlights: []
       },
       {
         id: "investasi-properti",
         title: "Investasi Properti",
-        subtitle: "Layanan 5",
-        description: "Aset di lahan emas dinilai 3-5 miliar per tahun. Pemborong biasa mengandalkan tebakan. Tim kontraktor mengandalkan standarisasi dan sistem yang bekerja tanpa drama, tanpa molor, tanpa bias. Dan di dunia properti yang nilainya melonjak tajam. Selama ini, ilmu ini hanya dipakai di proyek mewah dan developer kelas atas. Di proyek ini, klien didampingi desainer yang mengawalnya dari nol sampai klien benar-benar bisa menempati dan menikmati hasil karya aset impiannya sendiri. Mulai dari konsep hingga fasad, klien akan melihat cara menata ruang, memilih material, melakukan cek lokasi untuk membuktikan apakah mutu proyek itu benar-benar sempurna, dan akhirnya menempatinya di akhir proyek Ini bukan jasa kontraktor biasa. Ini adalah standar rancang properti tropis unggulan di dunia dan klien ada di barisan yang menikmati paling awal dari siapapun di Indonesia.",
-        highlights: [
-          "Apresiasi nilai 3-5 miliar per tahun",
-          "Kerja sistematis tanpa drama & molor",
-          "Pendampingan desainer nol-ke-tempat",
-          "Uji keaslian material lapangan",
-          "Standar tata ruang tropis unggulan",
-          "Eksklusivitas pertama di Indonesia"
-        ]
+        description: "Aset di lahan emas dinilai 3-5 miliar per tahun. Pemborong biasa mengandalkan tebakan. Tim kontraktor mengandalkan standarisasi dan sistem yang bekerja tanpa drama, tanpa molor, tanpa bias. Dan di dunia properti yang nilainya melonjak tajam. Selama ini, ilmu ini hanya dipakai di proyek mewah dan developer kelas atas. Di proyek ini, klien didampingi desainer yang mengawalnya dari nol sampai klien benar-benar bisa menempati dan menikmati hasil karya aset impiannya sendiri.\n\nMulai dari konsep hingga fasad, klien akan melihat cara menata ruang, memilih material, melakukan cek lokasi untuk membuktikan apakah mutu proyek itu benar-benar sempurna, dan akhirnya menempatinya di akhir proyek Ini bukan jasa kontraktor biasa. Ini adalah standar rancang properti tropis unggulan di dunia dan klien ada di barisan yang menikmatinya paling awal dari siapapun di Indonesia.",
+        highlights: []
       }
     ],
     facilitiesLabel: "CLIENT PRIVILEGE",

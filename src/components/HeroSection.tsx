@@ -193,9 +193,6 @@ export default function HeroSection() {
                 Konsultasi Gratis
               </span>
             </a>
-            <span className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest block mt-4">
-              * Konsultasi awal gratis via WhatsApp
-            </span>
           </div>
         )}
       </div>

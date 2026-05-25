@@ -129,18 +129,13 @@ export default function TestimonialSection() {
               </button>
             </div>
 
-            {/* Display Portrait Screenshot Card */}
+            {/* Display Frameless Portrait Screenshot Container */}
             <div 
-              className="relative overflow-hidden group/card bg-[#0a0a0c]/90 rounded-[28px] border-[3px] transition-all duration-500"
-              style={{ 
-                borderColor: `${theme.primary}50`,
-                boxShadow: `0 25px 55px rgba(0, 0, 0, 0.95), 0 0 35px ${theme.primary}12`
-              }}
+              className="relative group/card transition-all duration-500"
               onMouseEnter={() => setIsAutoPlay(false)}
               onMouseLeave={() => setIsAutoPlay(true)}
             >
-              {/* Aspect box containing screenshot with swiping triggers */}
-              <div className="relative aspect-[9/16] w-full overflow-hidden bg-black/80">
+              <div className="relative w-full overflow-visible flex items-start justify-center min-h-[400px]">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeSlide}
@@ -159,7 +154,7 @@ export default function TestimonialSection() {
                         handleNext();
                       }
                     }}
-                    className="w-full h-full cursor-grab active:cursor-grabbing select-none"
+                    className="w-full h-full flex items-start justify-center cursor-grab active:cursor-grabbing select-none"
                   >
                     {!imgErrors[activeSlide] ? (
                       <img 
@@ -168,7 +163,7 @@ export default function TestimonialSection() {
                         onError={() => {
                           setImgErrors(prev => ({ ...prev, [activeSlide]: true }));
                         }}
-                        className="w-full h-full object-contain pointer-events-none"
+                        className="w-full h-auto max-h-[80vh] object-contain object-top pointer-events-none rounded-xl"
                         referrerPolicy="no-referrer"
                       />
                     ) : (

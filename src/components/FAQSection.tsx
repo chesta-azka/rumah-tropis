@@ -84,14 +84,6 @@ export default function FAQSection() {
 
         {/* CTA Button Block underneath FAQs matching structural requirements */}
         <div className="text-center mt-16 space-y-6 max-w-lg mx-auto">
-          <p className="text-zinc-400 font-sans text-xs sm:text-sm leading-relaxed opacity-85">
-            {activeTemplate === "arsitetika-studio" 
-              ? "Masih ragu atau ingin mendiskusikan rencana tata ruang impian Anda langsung dengan tim ahli kami? Mulai obrolan gratis sekarang!"
-              : activeTemplate === "akademicrypto"
-              ? "Masih butuh penjelasan tambahan mengenai silabus kurikulum tokenomics & live session kami? Tanya tim admin kami langsung."
-              : "Ingin mengetahui strategi jitu melipatgandakan followers & views di seluruh platform media sosial Anda?"
-            }
-          </p>
           
           <div className="flex flex-col items-center">
             {activeTemplate === "arsitetika-studio" ? (
@@ -154,10 +146,6 @@ export default function FAQSection() {
                 )}
               </a>
             )}
-            
-            <span className="text-[8.5px] font-mono text-zinc-600 uppercase tracking-widest block mt-4 select-none">
-              • TERHUBUNG KE CS WHATSAPP OFFICIAL KAMI 24/7
-            </span>
           </div>
         </div>
 

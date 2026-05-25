@@ -135,9 +135,6 @@ export default function StatsSection() {
                   Konsultasi Gratis
                 </span>
               </a>
-              <p className="text-zinc-500 text-[9px] font-mono mt-4 uppercase tracking-[0.2em]">
-                * KONSULTASI DESAIN & ESTIMASI RAB TANPA BIAYA APAPUN
-              </p>
             </>
           ) : (
             <>
@@ -155,9 +152,6 @@ export default function StatsSection() {
                 <PhoneCall className="w-4.5 h-4.5 animate-bounce text-black shrink-0" />
                 <span>Konsultasi Gratis</span>
               </a>
-              <p className="text-zinc-500 text-[10px] font-mono mt-4 uppercase tracking-[0.15em]">
-                *KONSULTASI DESAIN & ESTIMASI RAB TANPA BIAYA APAPUN
-              </p>
             </>
           )}
         </div>

@@ -79,6 +79,13 @@ export default function ServicesSection() {
 
   // Helper parser to split a single description paragraph into two separate ones based on natural topic transition markers
   const splitDescription = (desc: string) => {
+    // Check if newlines are present
+    if (desc.includes('\n\n')) {
+      const parts = desc.split('\n\n');
+      return [parts[0], parts.slice(1).join('\n\n')];
+    }
+    
+    // Fallback logic
     const markers = [
       "Klien akan menguasai cara membaca",
       "Di layanan ini, klien akan belajar",
@@ -112,37 +119,7 @@ export default function ServicesSection() {
       return [part1, part2];
     }
     
-    // Fallback split by sentences
-    const sentences = desc.split(/(?<=\. )/g);
-    if (sentences.length > 2) {
-      const part1 = sentences.slice(0, 3).join(" ").trim();
-      const part2 = sentences.slice(3).join(" ").trim();
-      return [part1, part2];
-    }
-    
     return [desc, ""];
-  };
-
-  // Render the first sentence in extra-bold, large style mapping reference screenshots
-  const renderFormattedPart1 = (text: string) => {
-    const sentences = text.split(/(?<=\. )/g);
-    if (sentences.length > 0) {
-      const first = sentences[0];
-      const rest = sentences.slice(1).join(" ");
-      return (
-        <div className="space-y-4">
-          <p className="font-extrabold text-[#ffffff] text-base md:text-[19px] leading-snug tracking-normal">
-            {first}
-          </p>
-          {rest && (
-            <p className="text-zinc-300 font-sans text-sm md:text-base leading-relaxed text-justify opacity-95">
-              {rest}
-            </p>
-          )}
-        </div>
-      );
-    }
-    return <p className="text-zinc-300 font-sans text-sm md:text-base leading-relaxed text-justify">{text}</p>;
   };
 
   const getHighlightHeading = () => {
@@ -233,24 +210,8 @@ export default function ServicesSection() {
 
                   <div className="p-6 md:p-8 space-y-6">
 
-                    {/* Meta Category Indicator */}
-                    <div className="flex items-center gap-3">
-                      <span 
-                        className="text-[9px] font-mono uppercase tracking-[0.2em] font-extrabold"
-                        style={{ color: theme.primary }}
-                      >
-                        {service.subtitle || `LAYANAN DIREGSI 0${index + 1}`}
-                      </span>
-                      {activeTemplate !== "arsitetika-studio" && (
-                        <>
-                          <div className="w-2 h-2 rounded-full bg-white/20" />
-                          <span className="text-[9px] font-mono text-zinc-500 uppercase">SYS CODE: SECURE-A3</span>
-                        </>
-                      )}
-                    </div>
-
                     {/* Gradient Splitted Big Heading */}
-                    <h3 className="text-white font-sans text-2xl sm:text-3xl font-extrabold uppercase tracking-tight leading-none">
+                    <h3 className="text-white font-sans text-2xl sm:text-3xl font-extrabold uppercase tracking-tight leading-none mb-6">
                       {firstPartTitle}{" "}
                       <span 
                         style={{ color: theme.primary }} 
@@ -260,20 +221,22 @@ export default function ServicesSection() {
                       </span>
                     </h3>
 
-                    {/* Paragraph Block 1: Intro (with bold first sentence) */}
-                    <div className="border-l border-white/5 pl-4 md:pl-6 py-2">
-                      {renderFormattedPart1(part1)}
+                    <div className="space-y-4">
+                      {/* Paragraph Block 1: Intro */}
+                      <p className="text-zinc-300 font-sans text-sm md:text-base leading-relaxed text-left opacity-95">
+                        {part1}
+                      </p>
+
+                      {/* Paragraph Block 2: Detailed explanation text */}
+                      {part2 && (
+                        <p className="text-zinc-300 font-sans text-sm md:text-base leading-relaxed text-left opacity-95">
+                          {part2}
+                        </p>
+                      )}
                     </div>
 
-                    {/* Paragraph Block 2: Detailed explanation text */}
-                    {part2 && (
-                      <p className="text-zinc-400 font-sans text-xs md:text-sm leading-relaxed text-justify opacity-90 pr-2">
-                        {part2}
-                      </p>
-                    )}
-
                     {/* Grid highlights & specifics details */}
-                    {service.highlights && service.highlights.length > 0 && (
+                    {activeTemplate !== "arsitetika-studio" && service.highlights && service.highlights.length > 0 && (
                       <div className="bg-[#050507] border border-white/5 rounded-xl p-5 md:p-6 space-y-4">
                         <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest block font-bold">
                           {getHighlightHeading()}
@@ -289,99 +252,34 @@ export default function ServicesSection() {
                         </div>
                       </div>
                     )}
-
-                     {/* Core CTA Action Row resembling the floating action buttons of reference */}
-                    <div className="pt-4 border-t border-white/5 flex flex-wrap items-center justify-between gap-6">
-                      
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-white/[0.02] border border-white/5 flex items-center justify-center text-zinc-400">
-                          <Award className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <span className="text-[9px] font-mono text-zinc-500 uppercase block">Guarantee Act</span>
-                          <span className="text-[11px] font-sans text-white font-bold block leading-none">Standard Mutu Terjamin</span>
-                        </div>
-                      </div>
-
-                      {activeTemplate === "arsitetika-studio" ? (
-                        <a
-                          href={`${waLink}?text=Halo%20Rumah%20Tropis,%20saya%20tertarik%20dengan%20Layanan%20${encodeURIComponent(service.title)}.`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group/servbtn relative px-8 py-4 font-sans font-black text-[10px] uppercase tracking-[0.2em] text-[#FEF9ED] rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.03] active:scale-95 border border-[#B88A6E]/30 flex items-center gap-2.5 shadow-md shrink-0 cursor-pointer"
-                        >
-                          {/* Inner gradient filling */}
-                          <div 
-                            className="absolute inset-0 transition-opacity duration-300 group-hover/servbtn:opacity-95"
-                            style={{
-                              background: "linear-gradient(135deg, #B88A6E 0%, #4D3C2F 100%)"
-                            }}
-                          />
-                          <PhoneCall className="w-3.5 h-3.5 text-[#FEF9ED] relative z-10 animate-pulse" />
-                          <span className="relative z-10">Konsultasi Gratis</span>
-                        </a>
-                      ) : (
-                        <a
-                          href={`${waLink}?text=Halo,%20saya%20tertarik%20dengan%20Layanan%20${encodeURIComponent(service.title)}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-3 px-8 py-4.5 text-black font-sans font-extrabold text-[10px] uppercase tracking-[0.2em] rounded-full transition-all duration-300 transform hover:scale-[1.03] active:scale-95 shadow-lg shrink-0 cursor-pointer"
-                          style={{
-                            background: `linear-gradient(135deg, ${theme.primary} 0%, ${theme.secondary} 100%)`,
-                            boxShadow: `0 8px 20px ${theme.primary}20`
-                          }}
-                        >
-                          <PhoneCall className="w-3.5 h-3.5 animate-bounce text-black shrink-0" />
-                          <span>Konsultasi Gratis</span>
-                        </a>
-                      )}
-
-                    </div>
-
                   </div>
-
                 </div>
               </div>
             );
           })}
-
         </div>
 
         {/* Global Bottom Section CTA for Services list to drive maximum conversion */}
-        <div className="text-center mt-20 relative select-none flex flex-col items-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/[0.02] border border-white/5 rounded-full mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
-            <span className="text-[8.5px] font-mono text-zinc-400 uppercase tracking-widest">
-              MULAI STRATEGI RANCANG & BANGUN PREMIUM HARI INI
-            </span>
-          </div>
-
+        <div className="text-center mt-20 relative select-none flex justify-center">
           <a
             href="https://wa.me/628138969965?text=Halo%20Rumah%20Tropis,%20saya%20tertarik%20untuk%20mengkonsultasikan%20rencana%20layanan%20rancang%20dan%20pembangunan%20aset%20properti."
             target="_blank"
             rel="noopener noreferrer"
-            className="group/servsccta relative px-12 py-5 font-sans font-black text-xs uppercase tracking-[0.25em] text-[#FEF9ED] rounded-xl overflow-hidden transition-all duration-500 shadow-[0_15px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_50px_rgba(184,138,110,0.25)] hover:scale-[1.03] active:scale-95 border border-[#B88A6E]/30 flex items-center gap-3"
+            className="group/servsccta relative px-12 py-5 font-sans font-black text-xs uppercase tracking-[0.25em] text-[#000000] rounded-xl overflow-hidden transition-all duration-500 shadow-[0_15px_40px_rgba(0,0,0,0.6)] hover:scale-[1.03] active:scale-95 flex items-center gap-3"
+            style={{
+              background: `linear-gradient(135deg, ${theme.primary} 0%, ${theme.secondary} 100%)`,
+              border: `1px solid ${theme.primary}50`
+            }}
           >
-            {/* Elegant gradient background with copper and aged teak */}
-            <div 
-              className="absolute inset-0 transition-opacity duration-500 group-hover/servsccta:opacity-95"
-              style={{
-                background: "linear-gradient(135deg, #B88A6E 0%, #4D3C2F 100%)"
-              }}
-            />
             {/* Luminous shimmer gloss effect */}
-            <div className="absolute inset-0 opacity-0 group-hover/servsccta:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_center,rgba(254,249,237,0.15)_0%,transparent_70%)]" />
+            <div className="absolute inset-0 opacity-0 group-hover/servsccta:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.15)_0%,transparent_70%)]" />
             
-            <PhoneCall className="w-4 h-4 text-[#FEF9ED] relative z-10 animate-pulse group-hover/servsccta:scale-110 transition-transform" />
+            <PhoneCall className="w-4 h-4 text-[#000000] relative z-10 hover:animate-bounce transition-transform" />
             <span className="relative z-10 transition-colors duration-300">
               Konsultasi Gratis
             </span>
           </a>
-          <span className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest block mt-4">
-            * Seluruh konsultasi awal dipandu Arsitek Senior & Bebas Biaya
-          </span>
         </div>
-
       </div>
     </section>
   );

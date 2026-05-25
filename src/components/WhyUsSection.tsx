@@ -496,13 +496,6 @@ export default function WhyUsSection() {
 
         {/* Beautiful bottom CTA Button block at the end of Why Us */}
         <div className="text-center mt-20 relative select-none flex flex-col items-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/[0.02] border border-white/5 rounded-full mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-            <span className="text-[8.5px] font-mono text-zinc-400 uppercase tracking-widest">
-              LINDUNGI VALUASI INVESTASI ANDA SEKARANG
-            </span>
-          </div>
-
           <a
             href="https://wa.me/628138969965?text=Halo%20Rumah%20Tropis,%20saya%20tertarik%20untuk%20berkonsultasi%20mengenai%20rancang%20dan%20bangun%20properti."
             target="_blank"
@@ -524,9 +517,6 @@ export default function WhyUsSection() {
               Konsultasi Gratis
             </span>
           </a>
-          <span className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest block mt-4">
-            * Konsultasi awal gratis via WhatsApp
-          </span>
         </div>
 
       </div>

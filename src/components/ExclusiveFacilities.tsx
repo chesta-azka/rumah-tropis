@@ -26,86 +26,7 @@ export default function ExclusiveFacilities() {
   const { data, theme, activeTemplate } = useTemplate();
   const waLink = "https://wa.me/628138969965";
 
-  // Helper custom parser to split and bold specific key words for high-converting landing copy
   const renderHighlightedDescription = (id: string, desc: string) => {
-    const lowerId = id.toLowerCase();
-    
-    // 1. ARSITETIKA STUDIO (Rumah Tropis) highlights
-    if (activeTemplate === "arsitetika-studio") {
-      if (lowerId.includes("progress")) {
-        return (
-          <>
-            Kondisi proyek berubah setiap bulan. Harga bahan di bulan Januari belum tentu stabil di bulan Maret. Lewat sesi update bulanan, <strong className="font-extrabold text-white">klien tidak akan kecolongan</strong> pembengkakan dana, jadwal lama, dan progres yang sedang terhambat di proyek <strong className="font-extrabold text-[#B88A6E]">langsung dari praktisi</strong> yang aktif kontrol tiap harinya.
-          </>
-        );
-      }
-      if (lowerId.includes("mutu")) {
-        return (
-          <>
-            Rugi terparah di proyek hampir selalu <strong className="font-extrabold text-white">dipicu oleh faktor cuaca</strong> bukan hanya material. Dengan pengawasan ketat yang selalu update setiap ada progres, klien tahu kapan tahap melaju dan <strong className="font-extrabold text-[#B88A6E]">kapan waktu amankan modal</strong>. Bukan cuma menduga. Bukan cemas. Tapi <strong className="font-extrabold text-white">mengambil keputusan berdasarkan data murni</strong> dan struktur kokoh.
-          </>
-        );
-      }
-      if (lowerId.includes("desain")) {
-        return (
-          <>
-            Aset properti impian <strong className="font-extrabold text-zinc-100">bukan hanya soal fasad</strong>. Kami akan susun rincian tata kelola bangunan dengan tahapan yang pasti untuk bantu klien memahami <strong className="font-extrabold text-[#B88A6E] underline decoration-[#B88A6E]/30 decoration-2 underline-offset-4">kerangka berpikir tentang standar kualitas lapangan</strong> dan bisa kontrol keamanan dananya <strong className="font-extrabold text-white">dengan presisi</strong>.
-          </>
-        );
-      }
-    }
-
-    // 2. AKADEMI CRYPTO (Crypto Elite) highlights
-    if (activeTemplate === "akademicrypto") {
-      if (lowerId.includes("signals") || lowerId.includes("market") || lowerId.includes("progress")) {
-        return (
-          <>
-            Market crypto berubah setiap bulan. Strategi yang bekerja di Januari belum tentu relevan di Maret. Dengan sesi update bulanan, <strong className="font-extrabold text-white">kamu tidak akan ketinggalan pergeseran tren, narasi baru, dan peluang yang sedang terbuka di market</strong> langsung dari mentor yang aktif trading setiap harinya.
-          </>
-        );
-      }
-      if (lowerId.includes("community") || lowerId.includes("mutu")) {
-        return (
-          <>
-            Crash terbesar di crypto hampir selalu <strong className="font-extrabold text-white">dipicu oleh faktor makro bukan hanya teknikal</strong>. Dengan pemahaman makro yang selalu update secara real-time, kamu tahu kapan <strong className="font-extrabold text-[#00FC8B]">harus agresif dan kapan harus melindungi modal</strong>. Bukan cuma menebak. Bukan panik. Tapi mengambil <strong className="font-extrabold text-white">keputusan berdasarkan data fakta dan angka yang ada</strong>.
-          </>
-        );
-      }
-      if (lowerId.includes("whale") || lowerId.includes("alerts") || lowerId.includes("desain")) {
-        return (
-          <>
-            Ide trading terbaik <strong className="font-extrabold text-zinc-100">bukan hanya soal profit</strong>. Kita <strong className="font-extrabold text-[#00FC8B]">akan memberikan monthly trade/investment ideas</strong> dengan thesis yang jelas untuk bantu kalian memiliki <strong className="font-extrabold text-white underline decoration-[#00FC8B]/30 decoration-2 underline-offset-4">framework berpikir gimana cara dunia market bekerja</strong> dan bisa belajar memancing ikan sendiri.
-          </>
-        );
-      }
-    }
-
-    // 3. AKADEMI CREATOR (Creator Curriculum) highlights
-    if (activeTemplate === "akademicreator") {
-      if (lowerId.includes("progress") || lowerId.includes("market") || lowerId.includes("hooks")) {
-        return (
-          <>
-            Tren konten media sosial berevolusi setiap minggu. Algoritma bulan lalu belum tentu efektif hari ini. Lewat sesi audit berkala, <strong className="font-extrabold text-white">kamu tidak akan kehilangan relevansi di feed</strong>, mempelajari pola retensi audiens terbaru, dan strategi hook <strong className="font-extrabold text-[#D846EF]">langsung dari praktisi media sosial</strong> yang mengelola jutaan view.
-          </>
-        );
-      }
-      if (lowerId.includes("mutu") || lowerId.includes("community")) {
-        return (
-          <>
-            Pecahnya traffic video hampir selalu <strong className="font-extrabold text-white">dipicu oleh hook audio-visual</strong> bukan sekadar resolusi kamera. Dengan analisis performa ketat, kamu tahu kapan video siap viral dan <strong className="font-extrabold text-[#D846EF]">bagaimana cara mempertahankan audiens</strong>. Mengembangkan channel bukan tebakan, melainkan <strong className="font-extrabold text-white">keputusan objektif berdasarkan metrik analitis</strong>.
-          </>
-        );
-      }
-      if (lowerId.includes("desain") || lowerId.includes("alerts") || lowerId.includes("monetization")) {
-        return (
-          <>
-            Kreator bernilai tinggi <strong className="font-extrabold text-zinc-100">bukan cuma mengincar like</strong>. Kami membagikan <strong className="font-extrabold text-[#D846EF]">formula komersial penawaran kolaborasi brand</strong> dengan dokumen rate-card matang agar kamu menguasai <strong className="font-extrabold text-white underline decoration-[#D846EF]/30 decoration-2 underline-offset-4">bisnis di balik pembuatan konten kreatif</strong> secara berkelanjutan.
-          </>
-        );
-      }
-    }
-
-    // Standard fallback parser
     return <span>{desc}</span>;
   };
 
@@ -193,10 +114,10 @@ export default function ExclusiveFacilities() {
                   ? "space-y-6 w-full"
                   : `space-y-6 lg:col-span-6 ${isEven ? "lg:order-2" : ""}`}>
                   
-                  {/* Fac Number & Icon Badge row */}
-                  <div className="flex items-center gap-4">
+                  {/* Heading with Elegant Font and Number on the same line */}
+                  <div className="flex flex-row items-start sm:items-center gap-3 sm:gap-4 mb-2">
                     <span 
-                      className="text-3xl md:text-4xl font-mono font-black italic select-none"
+                      className="text-3xl md:text-4xl font-mono font-black italic select-none shrink-0 leading-none"
                       style={{ 
                         color: theme.primary,
                         textShadow: `0 0 20px ${theme.primary}20`
@@ -204,27 +125,15 @@ export default function ExclusiveFacilities() {
                     >
                       0{idx + 1}.
                     </span>
-                    <div className="w-8 h-px bg-white/10" />
-                    <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
-                      FACILITY VERIFIED
-                    </span>
+                    <h3 className="text-white font-serif-title text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-tight leading-none transition-colors">
+                      {fac.title}
+                    </h3>
                   </div>
-
-                  {/* Heading with Elegant Font */}
-                  <h3 className="text-white font-serif-title text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-tight leading-none group-hover:text-white transition-colors">
-                    {fac.title}
-                  </h3>
 
                   {/* Parsed Custom Highlight Description */}
                   <p className="text-zinc-400 font-sans text-xs sm:text-sm md:text-[15px] leading-relaxed text-justify opacity-95">
                     {renderHighlightedDescription(fac.id, fac.description)}
                   </p>
-
-                  {/* Standard security check indicators */}
-                  <div className="pt-4 border-t border-white/5 flex items-center gap-4 text-xs text-zinc-500 font-mono">
-                    <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>HAK AKSES RESMI & PRESEDEN TERJAMIN</span>
-                  </div>
 
                 </div>
 
@@ -565,13 +474,6 @@ export default function ExclusiveFacilities() {
         {/* Beautiful bottom CTA Button block at the end of Exclusive Facilities */}
         {activeTemplate === "arsitetika-studio" ? (
           <div className="text-center mt-20 relative select-none flex flex-col items-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/[0.02] border border-white/5 rounded-full mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
-              <span className="text-[8.5px] font-mono text-zinc-400 uppercase tracking-widest">
-                LINDUNGI VALUASI INVESTASI ANDA SEKARANG
-              </span>
-            </div>
-
             <a
               href="https://wa.me/628138969965?text=Halo%20Rumah%20Tropis,%20saya%20tertarik%20untuk%20berkonsultasi%20mengenai%20rancang%20dan%20bangun%2520properti."
               target="_blank"
@@ -593,9 +495,6 @@ export default function ExclusiveFacilities() {
                 Konsultasi Gratis
               </span>
             </a>
-            <span className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest block mt-4">
-              * Konsultasi awal gratis via WhatsApp
-            </span>
           </div>
         ) : (
           <div className="text-center mt-20 relative select-none flex flex-col items-center">
