@@ -55,7 +55,7 @@ export default function TestimonialSection() {
   const getSectionTexts = () => {
     if (activeTemplate === "arsitetika-studio") {
       return {
-        label: "",
+        label: "Testimonial",
         title: "Simak ulasan para klien",
         sub: "Bukan asal visualisasi 3D dan janji seperti kontraktor di pasaran luar, tetapi tim Rumah Tropis menghadirkan properti yang berhasil naik valuasinya lewat detail struktur yang kokoh."
       };
@@ -135,7 +135,7 @@ export default function TestimonialSection() {
               onMouseEnter={() => setIsAutoPlay(false)}
               onMouseLeave={() => setIsAutoPlay(true)}
             >
-              <div className="relative w-full overflow-visible flex items-start justify-center min-h-[400px]">
+              <div className="relative w-full overflow-hidden flex items-center justify-center min-h-[300px]">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeSlide}
@@ -154,7 +154,7 @@ export default function TestimonialSection() {
                         handleNext();
                       }
                     }}
-                    className="w-full h-full flex items-start justify-center cursor-grab active:cursor-grabbing select-none"
+                    className="w-full h-full flex flex-col items-center justify-center cursor-grab active:cursor-grabbing select-none"
                   >
                     {!imgErrors[activeSlide] ? (
                       <img 
@@ -163,7 +163,7 @@ export default function TestimonialSection() {
                         onError={() => {
                           setImgErrors(prev => ({ ...prev, [activeSlide]: true }));
                         }}
-                        className="w-full h-auto max-h-[80vh] object-contain object-top pointer-events-none rounded-xl"
+                        className="w-auto h-auto max-h-[80vh] max-w-full object-contain object-center pointer-events-none rounded-xl"
                         referrerPolicy="no-referrer"
                       />
                     ) : (
@@ -207,7 +207,7 @@ export default function TestimonialSection() {
             </div>
 
             {/* Bullet List Navigation Indicators */}
-            <div className="flex items-center justify-center gap-1.5 mt-6">
+            <div className="flex items-center justify-center gap-1.5 -mt-4">
               {testimonials.map((_, dotIdx) => (
                 <button
                   key={dotIdx}

@@ -24,7 +24,7 @@ export default function StatsSection() {
   const sloganText = data.whyUsSlogan || "Rumah Tropis tidak akan bisa menciptakan aset properti asli sebanyak ini jika kami tidak konsisten dan disiplin mengontrol konstruksi serta fasilitas perawatan struktur terbaik.";
 
   return (
-    <section id="prestasi" className="py-28 relative overflow-hidden border-b border-white/[0.03] min-h-[90vh] flex items-center justify-center">
+    <section id="prestasi" className="py-16 relative overflow-hidden border-b border-white/[0.03] min-h-[70vh] flex items-center justify-center">
       {/* Immersive Dusk Render Background Photo */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -45,6 +45,7 @@ export default function StatsSection() {
           <p className="text-zinc-200 font-sans text-sm sm:text-base md:text-lg leading-relaxed font-medium uppercase tracking-wide border-x border-white/10 px-6 sm:px-10 py-1 inline-block">
             "{sloganText}"
           </p>
+          <h3 className="text-white font-serif-title font-black text-3xl md:text-4xl mt-6">"INVESTASI TERBAIK ADALAH PROPERTI"</h3>
           <div className="w-10 h-0.5 mx-auto mt-4" style={{ backgroundColor: theme.primary }} />
         </div>
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { useTemplate } from "../context/TemplateContext";
-import { PhoneCall, Sparkles, AlertTriangle, ArrowRight } from "lucide-react";
+import { PhoneCall, Sparkles, ArrowRight } from "lucide-react";
 
 // Importing the generated success and regret illustrations
 import jumpToSuccessImg from "../assets/images/jump_to_success_1779364845069.png";
@@ -14,7 +14,7 @@ export default function ComparisonSection() {
   const getContent = () => {
     if (activeTemplate === "arsitetika-studio") {
       return {
-        label: "",
+        label: "Pilih Aset Yang Terbaik?",
         title: "Properti Ini Punya 2 Sisi Nilai,",
         cardLeftText: "Aset Tropis Bernilai Tinggi, Dirancang & Dibangun Presisi",
         cardRightText: "Dan Yang Menunda Berinvestasi.",
@@ -47,6 +47,14 @@ export default function ComparisonSection() {
 
   const content = getContent();
 
+  const leftImg = activeTemplate === "arsitetika-studio" 
+    ? "/images/aset_tropis_presisi.webp" 
+    : jumpToSuccessImg;
+
+  const rightImg = activeTemplate === "arsitetika-studio" 
+    ? "/images/menunda_investasi_stagnasi.webp" 
+    : idleRegretImg;
+
   return (
     <section id="komparasi" className="py-12 border-b border-white/[0.03] relative overflow-hidden bg-[#030305]" style={{ backgroundColor: theme.bg }}>
       
@@ -69,7 +77,6 @@ export default function ComparisonSection() {
             {content.title}
           </h2>
           <p className="text-zinc-500 font-mono text-[9px] uppercase tracking-[0.15em] block pt-1">
-            * PILIHAN TEPAT MENENTUKAN KEPUTUSAN FINANSIAL ANDA *
           </p>
           <div className="w-12 h-1 mx-auto mt-4 rounded-full" style={{ backgroundColor: theme.primary }} />
         </div>
@@ -119,7 +126,7 @@ export default function ComparisonSection() {
               
               {/* Image Underlay */}
               <img 
-                src={jumpToSuccessImg} 
+                src={leftImg} 
                 alt="Jumping to success illustration"
                 referrerPolicy="no-referrer"
                 className="absolute inset-0 w-full h-full object-cover filter brightness-[0.7] contrast-125 transition-transform duration-[8000ms] group-hover:scale-105"
@@ -134,13 +141,6 @@ export default function ComparisonSection() {
                 style={{ borderColor: `${theme.primary}50` }}
               />
 
-              {/* Float code label */}
-              <div className="absolute top-6 left-6 bg-black/60 backdrop-blur-md border border-white/5 px-3 py-1 rounded z-20 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: theme.primary }} />
-                <span className="text-[8px] font-mono tracking-widest uppercase font-bold" style={{ color: theme.primary }}>
-                  RECOMMENDED ACTION
-                </span>
-              </div>
 
               {/* Content overlay */}
               <div className="p-6 md:p-8 space-y-4 relative z-20 text-center md:text-left">
@@ -149,9 +149,6 @@ export default function ComparisonSection() {
                 </h3>
                 <div className="flex items-center justify-center md:justify-start gap-2.5">
                   <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: theme.primary }} />
-                  <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">
-                    ASET AMAN & KOKOH
-                  </span>
                 </div>
               </div>
 
@@ -173,7 +170,7 @@ export default function ComparisonSection() {
               
               {/* Image Underlay */}
               <img 
-                src={idleRegretImg} 
+                src={rightImg} 
                 alt="Idle regret illustration"
                 referrerPolicy="no-referrer"
                 className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-110 brightness-[0.55] transition-transform duration-[6000ms] group-hover:scale-102"
@@ -182,25 +179,12 @@ export default function ComparisonSection() {
               {/* Gradient dark fade layer */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10" />
 
-              {/* Float code label */}
-              <div className="absolute top-6 left-6 bg-black/40 backdrop-blur-sm border border-white/5 px-3 py-1 rounded z-20 flex items-center gap-2">
-                <AlertTriangle className="w-3 h-3 text-rose-500/80" />
-                <span className="text-[8px] font-mono tracking-widest text-zinc-400 uppercase">
-                  STAGNATION VALUE
-                </span>
-              </div>
 
               {/* Content overlay */}
               <div className="p-6 md:p-8 space-y-4 relative z-20 text-center md:text-left">
                 <h3 className="text-zinc-300 font-sans text-lg sm:text-[21px] font-black leading-snug tracking-tight uppercase">
                   {content.cardRightText}
                 </h3>
-                <div className="flex items-center justify-center md:justify-start gap-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-rose-500/60" />
-                  <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
-                    RISIKO INFLASI & PEMBENGKAKAN
-                  </span>
-                </div>
               </div>
 
             </div>

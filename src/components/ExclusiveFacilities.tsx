@@ -35,8 +35,8 @@ export default function ExclusiveFacilities() {
     if (activeTemplate === "arsitetika-studio") {
       return {
         label: "",
-        title: "SEBAGAI KLIEN RESMI RUMAH TROPIS",
-        subtitle: ""
+        title: "FASILITAS EKSKLUSIF PROYEK",
+        subtitle: "SEBAGAI KLIEN RESMI RUMAH TROPIS"
       };
     }
     if (activeTemplate === "akademicrypto") {
@@ -57,7 +57,7 @@ export default function ExclusiveFacilities() {
   const facilities = data.facilities || [];
 
   return (
-    <section id="fasilitas" className="py-12 border-b border-white/[0.03] relative overflow-hidden bg-[#030305]" style={{ backgroundColor: theme.bg }}>
+    <section id="fasilitas" className="py-16 border-b border-white/[0.03] relative overflow-hidden bg-[#030305]" style={{ backgroundColor: theme.bg }}>
       
       {/* Decorative premium glass circles in background */}
       <div className="absolute inset-0 pointer-events-none opacity-10">
@@ -467,7 +467,7 @@ export default function ExclusiveFacilities() {
 
         {/* Beautiful bottom CTA Button block at the end of Exclusive Facilities */}
         {activeTemplate === "arsitetika-studio" ? (
-          <div className="text-center mt-20 relative select-none flex flex-col items-center">
+          <div className="text-center mt-10 relative select-none flex flex-col items-center">
             <a
               href="https://wa.me/628138969965?text=Halo%20Rumah%20Tropis,%20saya%20tertarik%20untuk%20berkonsultasi%20mengenai%20rancang%20dan%20bangun%2520properti."
               target="_blank"
@@ -491,7 +491,7 @@ export default function ExclusiveFacilities() {
             </a>
           </div>
         ) : (
-          <div className="text-center mt-20 relative select-none flex flex-col items-center">
+          <div className="text-center mt-10 relative select-none flex flex-col items-center">
             <a
               href={`${waLink}?text=Halo,%20saya%20tertarik%20dengan%20fasilitas%20VIP`}
               target="_blank"

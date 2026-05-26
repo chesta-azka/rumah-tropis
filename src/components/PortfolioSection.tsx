@@ -34,13 +34,19 @@ export default function PortfolioSection() {
   const portfolioFilter = (data.portfolioFilter || []) as string[];
   const [activeFilter, setActiveFilter] = useState<string>("All");
   const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null);
+  const [showAll, setShowAll] = useState<boolean>(false);
   const waLink = "https://wa.me/628138969965";
 
   // Reset filter when template changes
   useEffect(() => {
     setActiveFilter("All");
     setSelectedProject(null);
+    setShowAll(false);
   }, [activeTemplate]);
+
+  useEffect(() => {
+    setShowAll(false);
+  }, [activeFilter]);
 
   const getCleanFilenameTitle = (item: PortfolioItem) => {
     const filenameMap: Record<string, string> = {
@@ -195,6 +201,8 @@ export default function PortfolioSection() {
     return locationMatch || titleMatch || idMatch || themeMatch;
   });
 
+  const itemsToDisplay = showAll ? filteredItems : filteredItems.slice(0, 3);
+
   return (
     <section id="portofolio" className="py-12 border-b border-white/[0.03] relative overflow-hidden bg-[#030305]" style={{ backgroundColor: theme.bg }}>
       
@@ -259,7 +267,7 @@ export default function PortfolioSection() {
             className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
           >
             <AnimatePresence mode="popLayout">
-              {filteredItems.map((item, index) => {
+              {itemsToDisplay.map((item, index) => {
                 const isArsitetika = activeTemplate === "arsitetika-studio";
                 const displayTitle = isArsitetika ? getCleanFilenameTitle(item) : item.title;
                 const ownerName = getOwnerName(item);
@@ -390,6 +398,24 @@ export default function PortfolioSection() {
               })}
             </AnimatePresence>
           </motion.div>
+        )}
+
+        {/* Tampilkan Selengkapnya Button */}
+        {filteredItems.length > 3 && (
+          <div className="flex justify-center mt-10">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="px-8 py-3.5 rounded-full text-[10px] font-mono tracking-widest uppercase transition-all duration-300 font-extrabold cursor-pointer border hover:scale-[1.02] active:scale-95"
+              style={{
+                backgroundColor: theme.card || "#070709",
+                borderColor: showAll ? theme.primary : "rgba(255, 255, 255, 0.1)",
+                color: showAll ? theme.primary : "#FFFFFF",
+                boxShadow: showAll ? `0 0 15px ${theme.primary}20` : "none"
+              }}
+            >
+              {showAll ? "TAMPILKAN SEBAGIAN ↑" : "LIHAT SELENGKAPNYA ↓"}
+            </button>
+          </div>
         )}
 
         {/* CORE CTA CONVERSION ROW */}

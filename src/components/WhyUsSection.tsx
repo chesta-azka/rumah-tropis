@@ -24,7 +24,7 @@ export default function WhyUsSection() {
         </div>
 
         {/* Timeline Layout Container */}
-        <div className="relative border-l-2 border-white/5 pl-8 md:pl-16 ml-4 sm:ml-6 md:ml-12 space-y-10 pb-12">
+        <div className="relative border-l-2 border-white/5 pl-8 md:pl-16 ml-4 sm:ml-6 md:ml-12 space-y-10 pb-6">
           
           {/* Vertical Lines Indicator */}
           <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#B88A6E] via-white/5 to-transparent pointer-events-none" />
@@ -65,7 +65,7 @@ export default function WhyUsSection() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-10">
+        <div className="text-center mt-6">
           <a
             href={`${waLink}?text=Halo%20Rumah%20Tropis,%20saya%20tertarik%20untuk%20berkonsultasi%20mengenai%20rancang%20dan%20bangun%20properti.`}
             target="_blank"

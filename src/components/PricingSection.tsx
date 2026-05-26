@@ -23,7 +23,7 @@ export default function PricingSection() {
             {data.pricingTitle}
           </h2>
           <p className="text-zinc-400 font-sans text-xs md:text-sm max-w-2xl mx-auto opacity-90">
-            {data.pricingSub}
+            Pilih Layanan yang Paling Tepat Sesuai Kebutuhan Proyek
           </p>
           <div className="w-12 h-1 mx-auto mt-4 rounded-full" style={{ backgroundColor: theme.primary }} />
         </div>
@@ -64,11 +64,6 @@ export default function PricingSection() {
                     <h3 className="text-white font-serif-title text-sm lg:text-sm font-black uppercase tracking-widest mt-1 mb-2 leading-snug text-zinc-100 group-hover:text-white transition-colors duration-200">
                       {pkg.title}
                     </h3>
-
-                    {/* Strikethrough Coret Menyala (Realistic High-fidelity Promo styling) */}
-                    <p className="text-[10px] sm:text-[10.5px] leading-relaxed text-zinc-400 font-medium">
-                      PROMO SPESIAL HINGGA 50% Dari Harga Normal <span className="line-through decoration-rose-500/80 decoration-[2.5px] font-extrabold text-zinc-100 font-mono ml-1">{pkg.normalPrice.split(" ")[0]}</span>
-                    </p>
                   </div>
 
                   {/* Horizontal solid separator */}
@@ -124,8 +119,8 @@ export default function PricingSection() {
         </div>
 
         {/* REBATE BANNER matching "Lanjut ke Tahap Pembangunan Bersama Rumah Tropis? Seluruh Biaya Desain Akan Dikembalikan 100% Menjadi Gratis!" */}
-        {data.rebateTitle && (
-          <div className="max-w-4xl mx-auto mb-20 select-none">
+        {/* REBATE BANNER */}
+        <div className="max-w-4xl mx-auto mb-10 select-none">
             <div 
               className="rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden ring-1 ring-white/10"
               style={{ backgroundColor: theme.card }}
@@ -137,21 +132,9 @@ export default function PricingSection() {
               />
               
               <div className="flex items-start md:items-center gap-5 relative z-10 max-w-xl">
-                <div 
-                  className="w-12 h-12 rounded-2xl flex items-center justify-center border flex-shrink-0 mt-1 md:mt-0"
-                  style={{ 
-                    backgroundColor: `${theme.primary}15`,
-                    borderColor: `${theme.primary}30`
-                  }}
-                >
-                  <Sparkles className="w-6 h-6 animate-pulse" style={{ color: theme.primary }} />
-                </div>
                 <div>
-                  <span className="text-[9px] font-mono uppercase tracking-[0.2em] font-extrabold" style={{ color: theme.primary }}>
-                    {data.rebateLabel || "PROMO KHUSUS PEMBANGUNAN"}
-                  </span>
-                  <h3 className="text-white font-serif-title text-base sm:text-lg md:text-xl font-black leading-snug mt-1.5 uppercase tracking-wide">
-                    {data.rebateTitle}
+                  <h3 className="text-white font-serif-title text-base sm:text-lg md:text-xl font-black leading-snug uppercase tracking-wide whitespace-pre-line">
+                    {data.rebateTitle || "MISSING TITLE"}
                   </h3>
                 </div>
               </div>
@@ -170,8 +153,7 @@ export default function PricingSection() {
                 <span>Konsultasi Gratis</span>
               </a>
             </div>
-          </div>
-        )}
+        </div>
 
         {/* QUOTE SECTION */}
         {data.quoteText && (

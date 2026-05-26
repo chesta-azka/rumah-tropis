@@ -134,6 +134,8 @@ export const TemplateProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const data = templates[activeTemplate] || templates["arsitetika-studio"];
   const theme = themes[activeTemplate] || themes["arsitetika-studio"];
 
+  console.log("TEMPLATE DEBUG:", { activeTemplate, hasData: !!data, rbTitle: data?.rebateTitle });
+
   // Dynamically update CSS Variables on :root so that global selectors in index.css automatically adapt
   useEffect(() => {
     const root = document.documentElement;

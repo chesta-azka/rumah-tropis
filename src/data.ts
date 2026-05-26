@@ -568,9 +568,9 @@ export const templates: Record<string, TemplateData> = {
         ]
       }
     ],
-    rebateLabel: "REBATE BANNER • PROMO TAHAP PEMBANGUNAN",
-    rebateTitle: "Lanjut ke Tahap Pembangunan Bersama Rumah Tropis? Seluruh Biaya Desain Akan Dikembalikan 100% Menjadi Gratis!",
-    rebateBtnText: "Klaim Gratis Biaya Desain",
+    rebateLabel: "PROMO TAHAP PEMBANGUNAN",
+    rebateTitle: "Lanjut ke Tahap Pembangunan Bersama Rumah Tropis?\n\nSeluruh Biaya Desain Akan Dikembalikan 100% Menjadi Gratis!",
+    rebateBtnText: "Konsultasi Gratis",
     quoteText: "“Good buildings come from good people, and all problems are solved by good design.”",
     quoteAuthor: "Stephen Gardiner",
     faqLabel: "",
