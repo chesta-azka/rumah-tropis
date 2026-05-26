@@ -208,32 +208,27 @@ export default function StickyNavbar() {
 
       {/* Floating Call-to-Action (Wajib Melayang dan Mengarah ke WhatsApp) */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3 group">
-        <a
-          href={waLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-3 text-black px-5 py-3.5 rounded-full shadow-2xl transition-luxury duration-300 transform hover:scale-105 hover:-translate-y-1"
-          aria-label="WhatsApp Sticky Banner"
-          id="floating-wa-btn"
-          style={{
-            backgroundColor: theme.primary,
-            boxShadow: `0 15px 30px ${theme.primary}35`
-          }}
-        >
-          <span className="text-[11px] md:text-xs font-bold uppercase tracking-widest pr-1 pl-1">
-            Free Consultation
-          </span>
-          <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center shadow-lg animate-pulse">
-            <svg
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              style={{ color: theme.primary }}
-            >
-              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.665.988 3.3 1.488 5.352 1.489 5.517 0 10.002-4.48 10.005-9.995.001-2.672-1.041-5.183-2.936-7.078-1.895-1.895-4.409-2.936-7.08-2.937-5.523 0-10.012 4.48-10.015 10.003-.001 2.155.562 4.254 1.631 6.096l-.991 3.615 3.738-.979s1.3.784 2.3.784zM16.5 12.85c-.247-.125-1.47-.723-1.696-.807-.228-.083-.393-.125-.558.125-.165.25-.637.807-.781.968-.145.163-.29.184-.537.06-.247-.125-1.045-.385-1.99-1.23-.73-.652-1.223-1.458-1.368-1.7-.145-.246-.015-.38.109-.502.112-.11.247-.29.37-.435.125-.145.165-.25.247-.417.082-.166.04-.312-.02-.437-.06-.125-.558-1.347-.765-1.848-.2-.486-.4-.411-.558-.42-.144-.01-.31-.01-.475-.01-.166 0-.434.062-.661.312-.227.25-.866.848-.866 2.067s.887 2.395.986 2.532c.1.137 1.745 2.664 4.225 3.736.59.255 1.05.408 1.41.52.593.189 1.133.162 1.558.1.475-.07 1.47-.6 1.677-1.18.207-.58.207-1.077.145-1.18-.06-.103-.227-.165-.475-.29z" />
-            </svg>
-          </div>
-        </a>
+          <button
+            onClick={() => window.open(waLink, '_blank')}
+            className="w-14 h-14 rounded-full shadow-2xl transition-luxury duration-300 transform hover:scale-105 hover:-translate-y-1 flex items-center justify-center"
+            aria-label="WhatsApp Sticky Banner"
+            id="floating-wa-btn"
+            style={{
+              backgroundColor: theme.primary,
+              boxShadow: `0 15px 30px ${theme.primary}35`
+            }}
+          >
+            <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center shadow-lg animate-pulse">
+              <svg
+                className="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                style={{ color: theme.primary }}
+              >
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.665.988 3.3 1.488 5.352 1.489 5.517 0 10.002-4.48 10.005-9.995.001-2.672-1.041-5.183-2.936-7.078-1.895-1.895-4.409-2.936-7.08-2.937-5.523 0-10.012 4.48-10.015 10.003-.001 2.155.562 4.254 1.631 6.096l-.991 3.615 3.738-.979s1.3.784 2.3.784zM16.5 12.85c-.247-.125-1.47-.723-1.696-.807-.228-.083-.393-.125-.558.125-.165.25-.637.807-.781.968-.145.163-.29.184-.537.06-.247-.125-1.045-.385-1.99-1.23-.73-.652-1.223-1.458-1.368-1.7-.145-.246-.015-.38.109-.502.112-.11.247-.29.37-.435.125-.145.165-.25.247-.417.082-.166.04-.312-.02-.437-.06-.125-.558-1.347-.765-1.848-.2-.486-.4-.411-.558-.42-.144-.01-.31-.01-.475-.01-.166 0-.434.062-.661.312-.227.25-.866.848-.866 2.067s.887 2.395.986 2.532c.1.137 1.745 2.664 4.225 3.736.59.255 1.05.408 1.41.52.593.189 1.133.162 1.558.1.475-.07 1.47-.6 1.677-1.18.207-.58.207-1.077.145-1.18-.06-.103-.227-.165-.475-.29z" />
+              </svg>
+            </div>
+          </button>
       </div>
     </>
   );

@@ -14,7 +14,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section id="faq" className="py-24 border-b border-white/[0.03] relative" style={{ backgroundColor: theme.card }}>
+    <section id="faq" className="py-12 border-b border-white/[0.03] relative" style={{ backgroundColor: theme.card }}>
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div 
           className="absolute top-1/4 right-1/10 w-80 h-80 rounded-full blur-[90px]" 
@@ -83,7 +83,7 @@ export default function FAQSection() {
         </div>
 
         {/* CTA Button Block underneath FAQs matching structural requirements */}
-        <div className="text-center mt-16 space-y-6 max-w-lg mx-auto">
+        <div className="text-center mt-8 space-y-6 max-w-lg mx-auto">
           
           <div className="flex flex-col items-center">
             {activeTemplate === "arsitetika-studio" ? (

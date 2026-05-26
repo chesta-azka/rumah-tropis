@@ -55,7 +55,7 @@ export default function TestimonialSection() {
   const getSectionTexts = () => {
     if (activeTemplate === "arsitetika-studio") {
       return {
-        label: "TESTIMONI",
+        label: "",
         title: "Simak ulasan para klien",
         sub: "Bukan asal visualisasi 3D dan janji seperti kontraktor di pasaran luar, tetapi tim Rumah Tropis menghadirkan properti yang berhasil naik valuasinya lewat detail struktur yang kokoh."
       };
@@ -207,7 +207,7 @@ export default function TestimonialSection() {
             </div>
 
             {/* Bullet List Navigation Indicators */}
-            <div className="flex items-center justify-center gap-2.5 mt-8">
+            <div className="flex items-center justify-center gap-1.5 mt-6">
               {testimonials.map((_, dotIdx) => (
                 <button
                   key={dotIdx}

@@ -34,7 +34,7 @@ export default function ExclusiveFacilities() {
   const getHeaders = () => {
     if (activeTemplate === "arsitetika-studio") {
       return {
-        label: "FASILITAS EKSKLUSIF PROYEK",
+        label: "",
         title: "SEBAGAI KLIEN RESMI RUMAH TROPIS",
         subtitle: ""
       };
@@ -57,7 +57,7 @@ export default function ExclusiveFacilities() {
   const facilities = data.facilities || [];
 
   return (
-    <section id="fasilitas" className="py-24 border-b border-white/[0.03] relative overflow-hidden bg-[#030305]" style={{ backgroundColor: theme.bg }}>
+    <section id="fasilitas" className="py-12 border-b border-white/[0.03] relative overflow-hidden bg-[#030305]" style={{ backgroundColor: theme.bg }}>
       
       {/* Decorative premium glass circles in background */}
       <div className="absolute inset-0 pointer-events-none opacity-10">
@@ -69,12 +69,6 @@ export default function ExclusiveFacilities() {
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-20 space-y-4">
-          <span 
-            className="text-[10px] md:text-xs font-mono uppercase tracking-[0.25em] block font-extrabold transition-all duration-300"
-            style={{ color: theme.primary }}
-          >
-            {headers.label}
-          </span>
           <h2 className="text-white font-serif-title font-black text-3xl sm:text-4xl md:text-5xl uppercase tracking-tight leading-none mb-4">
             {headers.title}
           </h2>

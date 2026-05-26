@@ -196,7 +196,7 @@ export default function PortfolioSection() {
   });
 
   return (
-    <section id="portofolio" className="py-24 border-b border-white/[0.03] relative overflow-hidden bg-[#030305]" style={{ backgroundColor: theme.bg }}>
+    <section id="portofolio" className="py-12 border-b border-white/[0.03] relative overflow-hidden bg-[#030305]" style={{ backgroundColor: theme.bg }}>
       
       {/* Dynamic luxury backdrop light */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full blur-[180px] opacity-[0.08] pointer-events-none"
@@ -209,12 +209,6 @@ export default function PortfolioSection() {
         
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4 max-w-3xl mx-auto">
-          <span 
-            className="text-[10px] md:text-xs font-mono uppercase tracking-[0.25em] font-extrabold block"
-            style={{ color: theme.primary }}
-          >
-            {data.portfolioLabel || "PORTOFOLIO"}
-          </span>
           <h2 className="text-white font-serif-title font-black text-3xl sm:text-4xl md:text-5xl uppercase tracking-tight leading-none">
             {data.portfolioTitle || "Hasil Project Yang Kami Kerjakan"}
           </h2>
@@ -399,7 +393,7 @@ export default function PortfolioSection() {
         )}
 
         {/* CORE CTA CONVERSION ROW */}
-        <div className="text-center pt-20 space-y-6">
+        <div className="text-center pt-10 space-y-6">
           <div className="flex flex-col items-center">
             <a
               href={`${waLink}?text=${getCtaPlaceholder()}`}

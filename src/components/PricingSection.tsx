@@ -19,9 +19,6 @@ export default function PricingSection() {
         
         {/* PRICING PACKAGES HEADER */}
         <div className="text-center mb-20 space-y-4">
-          <span className="text-[10px] md:text-xs font-mono uppercase tracking-[0.25em] font-extrabold block" style={{ color: theme.primary }}>
-            {data.pricingLabel || "REGULAR & PROMO PACKAGES"}
-          </span>
           <h2 className="text-white font-serif-title font-black text-3xl sm:text-4xl md:text-5xl uppercase tracking-tight leading-none">
             {data.pricingTitle}
           </h2>

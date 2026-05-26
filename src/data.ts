@@ -157,7 +157,7 @@ export const templates: Record<string, TemplateData> = {
       "Suka atur tukang dan pusing"
     ],
     whyUsTitle: "KENAPA RUMAH TROPIS?",
-    whyUsLabel: "FILOSOFI & INTEGRITAS",
+    whyUsLabel: "",
     whyUsCards: [
       {
         iconId: "award",
@@ -181,7 +181,7 @@ export const templates: Record<string, TemplateData> = {
       "Hampir semua aset properti mewah dan bernilai tinggi dibangun oleh praktisi yang menjaga kualitas, bukan memotong standar mutunya. Setiap klien berhak atas akses pendampingan eksklusif di fase perawatan struktur demi menjaga kualitas fisik properti, langkah pasti menuju tujuan yang sama yaitu investasi aman."
     ],
     whyUsSlogan: "Rumah Tropis tidak akan bisa menciptakan aset properti asli sebanyak ini jika kami tidak konsisten dan disiplin mengontrol konstruksi serta fasilitas perawatan struktur terbaik.",
-    statsLabel: "INVESTASI TERBAIK ADALAH PROPERTI",
+    statsLabel: "",
     statsSub: "Kredibilitas Kokoh & Bukti Kerja Terstandar",
     stats: [
       { value: "7+", label: "Years Of Experience", iconId: "milestone" },
@@ -189,7 +189,7 @@ export const templates: Record<string, TemplateData> = {
       { value: "10.000+", label: "SQ Meter Realized", iconId: "ruler" },
       { value: "30+", label: "Professional Team", iconId: "users" }
     ],
-    servicesLabel: "CORE SERVICES",
+    servicesLabel: "",
     servicesTitle: "Layanan",
     services: [
       {
@@ -265,7 +265,7 @@ export const templates: Record<string, TemplateData> = {
       ],
       footer: "DEVALUASI DAN DEPRESIASI NILAI"
     },
-    portfolioLabel: "MASTERPIECE PORTFOLIO",
+    portfolioLabel: "",
     portfolioTitle: "Buktinya Bukan dari Kata-Kata",
     portfolioSub: "Lihat Hasil Karya yang Sudah Terwujud",
     portfolioFilter: ["All", "Jakarta", "Bali", "Bandung", "Surabaya", "Pontianak", "Sulawesi"],
@@ -573,7 +573,7 @@ export const templates: Record<string, TemplateData> = {
     rebateBtnText: "Klaim Gratis Biaya Desain",
     quoteText: "“Good buildings come from good people, and all problems are solved by good design.”",
     quoteAuthor: "Stephen Gardiner",
-    faqLabel: "FREQUENTLY ASKED QUESTION",
+    faqLabel: "",
     faqTitle: "Frequently Asked Question",
     faqs: [
       {

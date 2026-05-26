@@ -139,13 +139,7 @@ export default function ServicesSection() {
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <span 
-            className="text-[10px] font-mono uppercase tracking-[0.25em] block mb-4 font-bold" 
-            style={{ color: theme.primary }}
-          >
-            {data.servicesLabel || "LAYANAN UTAMA RUMAH TROPIS"}
-          </span>
+        <div className="text-center mb-8 max-w-3xl mx-auto">
           <h2 className="text-white font-serif-title font-black text-3xl sm:text-4xl md:text-5xl uppercase tracking-tight leading-none">
             {data.servicesTitle || "PILIHAN LAYANAN KLIEN"}
           </h2>
@@ -153,7 +147,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Main Continuous Dotted Timeline Layout resembling original screenshots */}
-        <div className="relative border-l border-dashed border-white/10 pl-8 md:pl-16 ml-2 sm:ml-4 md:ml-8 space-y-12 md:space-y-16 pb-12">
+        <div className="relative border-l border-dashed border-white/10 pl-8 md:pl-16 ml-2 sm:ml-4 md:ml-8 space-y-8 md:space-y-12 pb-6">
           
           {/* Vertical Track Tracker Line */}
           <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-[#B88A6E]/30 via-white/5 to-transparent pointer-events-none" />
@@ -260,7 +254,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Global Bottom Section CTA for Services list to drive maximum conversion */}
-        <div className="text-center mt-20 relative select-none flex justify-center">
+        <div className="text-center mt-10 relative select-none flex justify-center">
           <a
             href="https://wa.me/628138969965?text=Halo%20Rumah%20Tropis,%20saya%20tertarik%20untuk%20mengkonsultasikan%20rencana%20layanan%20rancang%20dan%20pembangunan%20aset%20properti."
             target="_blank"

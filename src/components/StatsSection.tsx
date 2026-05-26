@@ -41,13 +41,7 @@ export default function StatsSection() {
       <div className="max-w-5xl mx-auto px-6 relative z-10 w-full text-center py-6">
         
         {/* Premium Core Slogan / Statement Block */}
-        <div className="max-w-3xl mx-auto mb-16 space-y-4">
-          <span 
-            className="text-[10px] font-mono uppercase tracking-[0.25em] font-extrabold block mb-3 animate-pulse-slow" 
-            style={{ color: theme.primary }}
-          >
-            {data.statsLabel || "INVESTASI TERBAIK ADALAH PROPERTI"}
-          </span>
+        <div className="max-w-3xl mx-auto mb-8 space-y-4">
           <p className="text-zinc-200 font-sans text-sm sm:text-base md:text-lg leading-relaxed font-medium uppercase tracking-wide border-x border-white/10 px-6 sm:px-10 py-1 inline-block">
             "{sloganText}"
           </p>
@@ -55,7 +49,7 @@ export default function StatsSection() {
         </div>
 
         {/* 2x2 Architectural Grid with exact white/border dividers from the reference image */}
-        <div className="max-w-3xl mx-auto border border-white/10 rounded-2xl overflow-hidden bg-black/40 backdrop-blur-md shadow-[0_0_50px_rgba(0,0,0,0.8)] mb-16 relative">
+        <div className="max-w-3xl mx-auto border border-white/10 rounded-2xl overflow-hidden bg-black/40 backdrop-blur-md shadow-[0_0_50px_rgba(0,0,0,0.8)] mb-8 relative">
           
           {/* Accent corners mimicking structural blueprints */}
           <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/30" />

@@ -14,7 +14,7 @@ export default function ComparisonSection() {
   const getContent = () => {
     if (activeTemplate === "arsitetika-studio") {
       return {
-        label: "Pilih Aset Yang Terbaik?",
+        label: "",
         title: "Properti Ini Punya 2 Sisi Nilai,",
         cardLeftText: "Aset Tropis Bernilai Tinggi, Dirancang & Dibangun Presisi",
         cardRightText: "Dan Yang Menunda Berinvestasi.",
@@ -48,7 +48,7 @@ export default function ComparisonSection() {
   const content = getContent();
 
   return (
-    <section id="komparasi" className="py-24 border-b border-white/[0.03] relative overflow-hidden bg-[#030305]" style={{ backgroundColor: theme.bg }}>
+    <section id="komparasi" className="py-12 border-b border-white/[0.03] relative overflow-hidden bg-[#030305]" style={{ backgroundColor: theme.bg }}>
       
       {/* Visual luxury ambient lights in background */}
       <div className="absolute inset-0 pointer-events-none opacity-5">
@@ -209,7 +209,7 @@ export default function ComparisonSection() {
         </div>
 
         {/* Action Call Response Zone (Floating take-action layer matching Screenshot 3) */}
-        <div className="mt-16 text-center space-y-8 max-w-2xl mx-auto">
+        <div className="mt-8 text-center space-y-8 max-w-2xl mx-auto">
           
           {content.description && (
             <p className="text-zinc-400 font-sans text-xs md:text-sm leading-relaxed max-w-lg mx-auto opacity-95">
