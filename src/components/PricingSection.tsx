@@ -8,7 +8,7 @@ export default function PricingSection() {
   const pricingPackages = data.pricingPackages || [];
 
   return (
-    <section id="paket" className="py-24 border-b border-white/[0.03] relative overflow-hidden" style={{ backgroundColor: theme.bg }}>
+    <section id="paket" className="pt-8 pb-16 border-b border-white/[0.03] relative overflow-hidden" style={{ backgroundColor: theme.bg }}>
       
       {/* Absolute luxurious background element */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.02]">
@@ -55,15 +55,22 @@ export default function PricingSection() {
                 <div>
                   
                   {/* Top Price Badge / Sticker matching References */}
-                  <div className="mb-6 flex flex-col items-start">
-                    <div className="font-serif-title text-2xl lg:text-3xl font-black text-white tracking-tight leading-none mb-1">
-                      {pkg.promoPrice.split(" ")[0]} <span className="text-[11px] font-sans font-medium text-zinc-400">/ m²</span>
+                  <div className="mb-6 flex flex-col items-start gap-1">
+                    <div className="font-sans text-xs text-zinc-500 line-through decoration-zinc-600 decoration-1">
+                      {pkg.normalPrice}
+                    </div>
+                    <div className="font-serif-title text-2xl lg:text-3xl font-black tracking-tight leading-none" style={{ color: theme.primary }}>
+                      {pkg.promoPrice}
                     </div>
                     
                     {/* Header Package Title */}
-                    <h3 className="text-white font-serif-title text-sm lg:text-sm font-black uppercase tracking-widest mt-1 mb-2 leading-snug text-zinc-100 group-hover:text-white transition-colors duration-200">
+                    <h3 className="text-white font-serif-title text-sm lg:text-sm font-black uppercase tracking-widest mt-2 mb-2 leading-snug text-zinc-100 group-hover:text-white transition-colors duration-200">
                       {pkg.title}
                     </h3>
+                    {/* Promo Text */}
+                    <p className="text-[10px] text-zinc-400 font-sans tracking-wide mb-2 italic">
+                      {pkg.promoText}
+                    </p>
                   </div>
 
                   {/* Horizontal solid separator */}
@@ -91,7 +98,7 @@ export default function PricingSection() {
                 {/* CTA Button: Konsultasi Gratis (Tailored specifically for WhatsApp redirections) */}
                 <div className="pt-5 border-t border-white/5 mt-auto">
                   <a
-                    href={`${waLink}?text=Halo%2520Rumah%2520Tropis,%2520saya%2520tertarik%2520konsultasi%2520gratis%2520mengenai%2520rancangan%2520paket%2520${encodeURIComponent(pkg.title)}%2520dengan%2520promo%2520spesial`}
+                    href={`${waLink}?text=${encodeURIComponent(`Halo Rumah Tropis, saya tertarik konsultasi gratis mengenai rancangan paket ${pkg.title} dengan promo spesial`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full h-11 flex items-center justify-center gap-2 rounded-xl font-sans font-black text-[10px] uppercase tracking-widest transition-all duration-350 cursor-pointer"
@@ -140,7 +147,7 @@ export default function PricingSection() {
               </div>
 
               <a
-                href={`${waLink}?text=Halo%2520Rumah%2520Tropis,%2520saya%2520tertarik%2520mewujudkan%2520pembangunan%2520dan%2520ingin%2520mengklaim%2520ongkos%2520desain%2520dikembalikan%2520100%2525%2520menjadi%2520gratis`}
+                href={`${waLink}?text=${encodeURIComponent(`Halo Rumah Tropis, saya tertarik mewujudkan pembangunan dan ingin mengklaim ongkos desain dikembalikan 100% menjadi gratis`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-shrink-0 inline-flex items-center gap-2.5 px-8 h-12 hover:opacity-90 font-sans font-black text-[10px] uppercase tracking-widest rounded-full transition-all duration-300 shadow-xl active:scale-95 cursor-pointer relative z-10"
@@ -174,10 +181,10 @@ export default function PricingSection() {
                 <a
                   href={
                     activeTemplate === "akademicrypto"
-                      ? `${waLink}?text=Halo%2520Akademi%2520Crypto,%2520saya%2520ingin%2520gabung%2520sekarang%2520belajar%2520on-chain`
+                      ? `${waLink}?text=${encodeURIComponent(`Halo Akademi Crypto, saya ingin gabung sekarang belajar on-chain`)}`
                       : activeTemplate === "akademicreator"
-                      ? `${waLink}?text=Halo%2520Akademi%2520Creator,%2520saya%2520tertarik%2520konsultasi%2520gratis%2520mewujudkan%2520personal%2520brand`
-                      : `${waLink}?text=Halo%2520Rumah%2520Tropis,%2520saya%2520tertarik%2520berkonsultasi%2520desain%2520dan%2520struktur%2520bangunan`
+                      ? `${waLink}?text=${encodeURIComponent(`Halo Akademi Creator, saya tertarik konsultasi gratis mewujudkan personal brand`)}`
+                      : `${waLink}?text=${encodeURIComponent(`Halo Rumah Tropis, saya tertarik berkonsultasi desain dan struktur bangunan`)}`
                   }
                   target="_blank"
                   rel="noopener noreferrer"

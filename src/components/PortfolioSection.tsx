@@ -179,12 +179,12 @@ export default function PortfolioSection() {
 
   const getCtaPlaceholder = () => {
     if (activeTemplate === "arsitetika-studio") {
-      return "Halo%20Rumah%20Tropis,%20saya%20tertarik%20konsultasi%20mengenai%20desain%20dan%20pembangunan%20properti%20tropis";
+      return encodeURIComponent("Halo Rumah Tropis, saya tertarik konsultasi mengenai desain dan pembangunan properti tropis");
     }
     if (activeTemplate === "akademicrypto") {
-      return "Halo%20Akademi%20Crypto,%20saya%20tertarik%20untuk%20mendaftar%20dan%20berkonsultasi%20mengenai%20kelas%20intensif%20trading";
+      return encodeURIComponent("Halo Akademi Crypto, saya tertarik untuk mendaftar dan berkonsultasi mengenai kelas intensif trading");
     }
-    return "Halo%20Akademi%20Creator,%20saya%20tertarik%20untuk%20konsultasi%20mengenai%20kelas%20membangun%20personal%20branding";
+    return encodeURIComponent("Halo Akademi Creator, saya tertarik untuk konsultasi mengenai kelas membangun personal branding");
   };
 
   // Filter logic

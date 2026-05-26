@@ -19,7 +19,7 @@ export default function ComparisonSection() {
         cardLeftText: "Aset Tropis Bernilai Tinggi, Dirancang & Dibangun Presisi",
         cardRightText: "Dan Yang Menunda Berinvestasi.",
         ctaText: "Konsultasi Gratis",
-        ctaPlaceholder: "Halo%20Rumah%20Tropis,%20saya%20tertarik%20untuk%20mengkonsultasikan%20pilihan%20investasi%20aset%20properti."
+        ctaPlaceholder: encodeURIComponent("Halo Rumah Tropis, saya tertarik untuk mengkonsultasikan pilihan investasi aset properti.")
       };
     }
     if (activeTemplate === "akademicrypto") {
@@ -29,7 +29,7 @@ export default function ComparisonSection() {
         cardLeftText: "Orang Yang Mau Melompat Untuk Merubah Hidupnya",
         cardRightText: "Dan Yang Mau Berdiam Diri",
         ctaText: "Take Action Sekarang",
-        ctaPlaceholder: "Halo%20Akademi%20Crypto,%20saya%20siap%20mengambil%20tindakan%20untuk%20merubah%20hidup%20saya",
+        ctaPlaceholder: encodeURIComponent("Halo Akademi Crypto, saya siap mengambil tindakan untuk merubah hidup saya"),
         description: "Kesempatan emas dalam siklus pasar tidak datang dua kali. Putuskan jalan finansial Anda hari ini sebelum gelombang inflasi melahap habis modal tersisa."
       };
     }
@@ -40,7 +40,7 @@ export default function ComparisonSection() {
       cardLeftText: "Kreator Yang Mengambil Langkah Menguasai Industri",
       cardRightText: "Dan Yang Tetap Menjadi Penonton Pasif",
       ctaText: "Mulai Bangun Personal Brand",
-      ctaPlaceholder: "Halo%20Akademi%20Creator,%2520saya%20ingin%2520berkonsultasi%20mengenai%20cara%2520membangun%2520personal%2520brand%2520saya",
+      ctaPlaceholder: encodeURIComponent("Halo Akademi Creator, saya ingin berkonsultasi mengenai cara membangun personal brand saya"),
       description: "Ekonomi digital terus bergerak maju. Ambil tindakan nyata dengan formula hook viral, atau melihat kreator lain mendominasi feed media sosial."
     };
   };

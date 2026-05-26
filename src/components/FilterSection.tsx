@@ -32,16 +32,16 @@ export default function FilterSection() {
   // Get CTA Placeholder Link
   const getCtaPlaceholder = () => {
     if (activeTemplate === "arsitetika-studio") {
-      return "Halo%20Rumah%2520Tropis,%2520saya%2520tertarik%2520konsultasi%2520gratis%2520desain%2520setelah%2520membaca%2520kualifikasi%2520website";
+      return encodeURIComponent("Halo Rumah Tropis, saya tertarik konsultasi gratis desain setelah membaca kualifikasi website");
     }
     if (activeTemplate === "akademicrypto") {
-      return "Halo%20Akademi%2520Crypto,%2520saya%2520tertarik%2520mengikuti%2520pembelajaran%2520kelas%2520trading%2520blockchain";
+      return encodeURIComponent("Halo Akademi Crypto, saya tertarik mengikuti pembelajaran kelas trading blockchain");
     }
-    return "Halo%20Akademi%2520Creator,%2520saya%2520tertarik%2520konsultasi%2520cara%2520membangun%2520personal%2520brand";
+    return encodeURIComponent("Halo Akademi Creator, saya tertarik konsultasi cara membangun personal brand");
   }
 
   return (
-    <section id="kualifikasi" className="py-24 border-b border-white/[0.03] relative" style={{ backgroundColor: theme.bg }}>
+    <section id="kualifikasi" className="py-16 border-b border-white/[0.03] relative" style={{ backgroundColor: theme.bg }}>
       
       {/* Space Grotesk background mesh grid effect */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.007)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none opacity-60" />

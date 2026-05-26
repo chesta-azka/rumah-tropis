@@ -40,6 +40,7 @@ export interface PricingPackage {
   title: string;
   normalPrice: string;
   promoPrice: string;
+  promoText: string;
   popular?: boolean;
   specs: string[];
 }
@@ -201,7 +202,7 @@ export const templates: Record<string, TemplateData> = {
       {
         id: "konstruksi-presisi",
         title: "Konstruksi Presisi",
-        description: "97% proyek gagal. Klien tidak harus jadi salah korbannya. Kebanyakan orang rugi di lapangan bukan karena material yang jelek, tapi karena belum menguasai satu hal yang tidak diajarkan di mana-mana, yaitu kontrol & sistem yang tepat.\n\nDi layanan ini, klien akan belajar cara membaca mutu asli material saat pengerjaan, mengenali jebakan seperti overbudgeting, mark-up, dan molor waktu sebelum hal itu menguras saldo proyek. Lebih dari itu, klien akan paham bagaimana arsitek merancang, cara menggunakan proporsi ruang demi kenyamanan, dan bagaimana menerapkan standar sipil, interior, serta taman sesuai gaya hidup klien.",
+        description: "97% proyek gagal. Klien tidak harus jadi salah satu korbannya. Kebanyakan orang rugi di lapangan bukan karena material yang jelek, tapi karena belum menguasai satu hal yang tidak diajarkan di mana-mana, yaitu kontrol & sistem yang tepat.\n\nDi layanan ini, klien akan belajar cara membaca mutu asli material saat pengerjaan, mengenali jebakan seperti overbudgeting, mark-up, dan molor waktu sebelum hal itu menguras saldo proyek. Lebih dari itu, klien akan paham bagaimana arsitek merancang, cara menggunakan proporsi ruang demi kenyamanan, dan bagaimana menerapkan standar sipil, interior, serta taman sesuai gaya hidup klien.",
         highlights: []
       },
       {
@@ -495,6 +496,7 @@ export const templates: Record<string, TemplateData> = {
         title: "FURNITURE PACKAGE",
         normalPrice: "Rp150.000 / m²",
         promoPrice: "Rp75.000 / m²",
+        promoText: "PROMO SPESIAL HINGGA 50% Dari Harga Normal Rp150.000 per m²",
         specs: [
           "3D Furniture Design",
           "3D Visualization",
@@ -509,6 +511,7 @@ export const templates: Record<string, TemplateData> = {
         title: "LANDSCAPE PACKAGE",
         normalPrice: "Rp200.000 / m²",
         promoPrice: "Rp100.000 / m²",
+        promoText: "PROMO SPESIAL HINGGA 50% Dari Harga Normal Rp200.000 per m²",
         specs: [
           "3D Landscape Design",
           "3D Visualization",
@@ -523,6 +526,7 @@ export const templates: Record<string, TemplateData> = {
         title: "INTERIOR PACKAGE",
         normalPrice: "Rp250.000 / m²",
         promoPrice: "Rp125.000 / m²",
+        promoText: "PROMO SPESIAL HINGGA 50% Dari Harga Normal Rp250.000 per m²",
         specs: [
           "3D Interior Design",
           "3D Visualization",
@@ -537,6 +541,7 @@ export const templates: Record<string, TemplateData> = {
         title: "ARCHITECTURE PACKAGE",
         normalPrice: "Rp300.000 / m²",
         promoPrice: "Rp150.000 / m²",
+        promoText: "PROMO SPESIAL HINGGA 50% Dari Harga Normal Rp300.000 per m²",
         specs: [
           "3D Architecture Design",
           "3D Interior Design (Basic Reference Layout)",
@@ -555,6 +560,7 @@ export const templates: Record<string, TemplateData> = {
         title: "ALL IN DESIGN (ARCHITECTURE, INTERIOR, LANDSCAPE, FURNITURE) PACKAGE",
         normalPrice: "Rp350.000 / m²",
         promoPrice: "Rp175.000 / m²",
+        promoText: "PROMO SPESIAL HINGGA 50% Dari Harga Normal Rp350.000 per m²",
         popular: true,
         specs: [
           "3D Architecture Design",

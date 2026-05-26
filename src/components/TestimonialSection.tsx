@@ -78,7 +78,7 @@ export default function TestimonialSection() {
   const currentItem = testimonials[activeSlide];
 
   return (
-    <section id="testimonial" className="py-24 border-b border-white/[0.03] relative overflow-hidden bg-[#020204]" style={{ backgroundColor: theme.bg }}>
+    <section id="testimonial" className="pt-16 pb-8 border-b border-white/[0.03] relative overflow-hidden bg-[#020204]" style={{ backgroundColor: theme.bg }}>
       
       {/* Absolute luxurious background effects */}
       <div className="absolute inset-0 pointer-events-none opacity-5">
@@ -89,7 +89,7 @@ export default function TestimonialSection() {
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center mb-0 space-y-2">
           <span 
             className="text-[10px] md:text-xs font-mono uppercase tracking-[0.25em] font-extrabold block"
             style={{ color: theme.primary }}
@@ -107,10 +107,10 @@ export default function TestimonialSection() {
 
         {/* Carousel Content */}
         {totalSlides > 0 && currentItem ? (
-          <div className="max-w-md mx-auto relative px-8 sm:px-0">
+          <div className="max-w-md mx-auto relative px-8 sm:px-0 -mt-6">
             
             {/* Left Control Arrow */}
-            <div className="absolute left-[-24px] sm:left-[-64px] top-1/2 -translate-y-1/2 z-30">
+            <div className="absolute left-[-24px] sm:left-[-64px] top-[45%] -translate-y-1/2 z-30">
               <button 
                 onClick={handlePrev}
                 className="w-11 h-11 rounded-full bg-[#1A1A22]/80 hover:bg-[#252530] text-white border border-white/10 hover:border-white/20 shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-[1.08] active:scale-95 cursor-pointer"
@@ -120,7 +120,7 @@ export default function TestimonialSection() {
             </div>
 
             {/* Right Control Arrow */}
-            <div className="absolute right-[-24px] sm:right-[-64px] top-1/2 -translate-y-1/2 z-30">
+            <div className="absolute right-[-24px] sm:right-[-64px] top-[45%] -translate-y-1/2 z-30">
               <button 
                 onClick={handleNext}
                 className="w-11 h-11 rounded-full bg-[#1A1A22]/80 hover:bg-[#252530] text-white border border-white/10 hover:border-white/20 shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-[1.08] active:scale-95 cursor-pointer"
@@ -207,7 +207,7 @@ export default function TestimonialSection() {
             </div>
 
             {/* Bullet List Navigation Indicators */}
-            <div className="flex items-center justify-center gap-1.5 -mt-4">
+            <div className="flex items-center justify-center gap-1.5 -mt-4 relative z-30 pb-4">
               {testimonials.map((_, dotIdx) => (
                 <button
                   key={dotIdx}

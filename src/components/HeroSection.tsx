@@ -172,7 +172,7 @@ export default function HeroSection() {
         {activeTemplate === "arsitetika-studio" && (
           <div className="mt-12 select-none flex flex-col items-center">
             <a
-              href="https://wa.me/628138969965?text=Halo%20Rumah%20Tropis,%20saya%20tertarik%20untuk%20melakukan%20Konsultasi%20Gratis."
+              href={`https://wa.me/628138969965?text=${encodeURIComponent('Halo Rumah Tropis, saya tertarik untuk melakukan Konsultasi Gratis.')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="group/btn relative px-10 py-4.5 font-sans font-black text-xs uppercase tracking-[0.25em] text-[#FEF9ED] rounded-xl overflow-hidden transition-all duration-500 shadow-[0_15px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_50px_rgba(184,138,110,0.25)] hover:scale-[1.03] active:scale-95 border border-[#B88A6E]/30 flex items-center gap-3"

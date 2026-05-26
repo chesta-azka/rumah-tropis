@@ -88,7 +88,7 @@ export default function FAQSection() {
           <div className="flex flex-col items-center">
             {activeTemplate === "arsitetika-studio" ? (
               <a
-                href={`${waLink}?text=Halo%2520Rumah%2520Tropis,%2520saya%2520tertarik%2520konsultasi%2520gratis%2520desain%2520setelah%2520membaca%2520FAQ%2520website`}
+                href={`${waLink}?text=${encodeURIComponent("Halo Rumah Tropis, saya tertarik konsultasi gratis desain setelah membaca FAQ website")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group/faqbtn relative px-12 py-5 font-sans font-black text-xs uppercase tracking-[0.25em] text-[#FEF9ED] rounded-xl overflow-hidden transition-all duration-500 shadow-[0_15px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_50px_rgba(184,138,110,0.25)] hover:scale-[1.03] active:scale-95 border border-[#B88A6E]/30 flex items-center gap-3.5 cursor-pointer"
@@ -112,8 +112,8 @@ export default function FAQSection() {
               <a
                 href={
                   activeTemplate === "akademicrypto"
-                    ? `${waLink}?text=Halo%2520Akademi%2520Crypto,%2520saya%2520tertarik%2520bertanya%2520lebih%2520lanjut%2520tentang%2520pembelajaran%2520di%2520kelas`
-                    : `${waLink}?text=Halo%2520Akademi%2520Creator,%2520saya%2520ingin%2520konsultasi%2520mengenai%2520cara%2520membangun%2520personal%2520brand`
+                    ? `${waLink}?text=${encodeURIComponent("Halo Akademi Crypto, saya tertarik bertanya lebih lanjut tentang pembelajaran di kelas")}`
+                    : `${waLink}?text=${encodeURIComponent("Halo Akademi Creator, saya ingin konsultasi mengenai cara membangun personal brand")}`
                 }
                 target="_blank"
                 rel="noopener noreferrer"

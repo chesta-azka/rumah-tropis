@@ -129,7 +129,7 @@ export default function ServicesSection() {
   };
 
   return (
-    <section id="layanan" className="py-24 border-b border-white/[0.03] relative" style={{ backgroundColor: theme.bg }}>
+    <section id="layanan" className="py-16 border-b border-white/[0.03] relative" style={{ backgroundColor: theme.bg }}>
       {/* Background radial soft light blobs decor */}
       <div className="absolute inset-0 pointer-events-none opacity-5">
         <div className="absolute top-1/3 left-1/10 w-[600px] h-[600px] rounded-full blur-[160px]" style={{ backgroundColor: theme.primary }} />
@@ -256,7 +256,7 @@ export default function ServicesSection() {
         {/* Global Bottom Section CTA for Services list to drive maximum conversion */}
         <div className="text-center mt-10 relative select-none flex justify-center">
           <a
-            href="https://wa.me/628138969965?text=Halo%20Rumah%20Tropis,%20saya%20tertarik%20untuk%20mengkonsultasikan%20rencana%20layanan%20rancang%20dan%20pembangunan%20aset%20properti."
+            href={`${waLink}?text=${encodeURIComponent('Halo Rumah Tropis, saya tertarik untuk mengkonsultasikan rencana layanan rancang dan pembangunan aset properti.')}`}
             target="_blank"
             rel="noopener noreferrer"
             className="group/servsccta relative px-12 py-5 font-sans font-black text-xs uppercase tracking-[0.25em] text-[#000000] rounded-xl overflow-hidden transition-all duration-500 shadow-[0_15px_40px_rgba(0,0,0,0.6)] hover:scale-[1.03] active:scale-95 flex items-center gap-3"

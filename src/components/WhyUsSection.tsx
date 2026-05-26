@@ -10,7 +10,7 @@ export default function WhyUsSection() {
   const waLink = "https://wa.me/628138969965";
 
   return (
-    <section id="whyus" className="py-20 border-b border-white/[0.03] relative overflow-hidden" style={{ backgroundColor: theme.bg }}>
+    <section id="whyus" className="py-16 border-b border-white/[0.03] relative overflow-hidden" style={{ backgroundColor: theme.bg }}>
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full blur-[160px] pointer-events-none opacity-[0.03]" style={{ backgroundColor: theme.primary }} />
 
       <div className="max-w-5xl mx-auto px-6 relative z-10">
@@ -67,7 +67,7 @@ export default function WhyUsSection() {
         {/* Bottom CTA */}
         <div className="text-center mt-6">
           <a
-            href={`${waLink}?text=Halo%20Rumah%20Tropis,%20saya%20tertarik%20untuk%20berkonsultasi%20mengenai%20rancang%20dan%20bangun%20properti.`}
+            href={`${waLink}?text=${encodeURIComponent('Halo Rumah Tropis, saya tertarik untuk berkonsultasi mengenai rancang dan bangun properti.')}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-10 py-5 font-sans font-black text-xs uppercase tracking-[0.25em] text-[#FEF9ED] rounded-xl transition-all duration-300 hover:scale-[1.02] border border-white/10 hover:border-white/20"
