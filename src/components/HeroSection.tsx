@@ -129,20 +129,20 @@ export default function HeroSection() {
 
           {isYouTubeUrl(data.heroVideoUrl || "/images/portfolio/IMG_8223.MOV") ? (
             <iframe
-              src={`https://www.youtube.com/embed/${getYouTubeId(data.heroVideoUrl || "/images/portfolio/IMG_8223.MOV")}?autoplay=1&mute=1&loop=1&playlist=${getYouTubeId(data.heroVideoUrl || "/images/portfolio/IMG_8223.MOV")}&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&playsinline=1&enablejsapi=1`}
+              src={`https://www.youtube.com/embed/${getYouTubeId(data.heroVideoUrl || "/images/portfolio/IMG_8223.MOV")}?mute=1&loop=1&playlist=${getYouTubeId(data.heroVideoUrl || "/images/portfolio/IMG_8223.MOV")}&controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&playsinline=1&enablejsapi=1`}
               title="Cinematic Presentation Video"
               className="w-full h-full object-cover border-0 transition-transform duration-[3s] group-hover:scale-[1.015]"
               style={{ filter: "brightness(0.9) contrast(1.05)" }}
-              allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allow="encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
           ) : (
             <video
               src={resolveMediaUrl(data.heroVideoUrl || "/images/portfolio/IMG_8223.MOV")}
-              autoPlay
               loop
               muted
               playsInline
+              controls
               className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-[1.015]"
               style={{ filter: "brightness(0.9) contrast(1.05)" }}
               onError={(e) => {

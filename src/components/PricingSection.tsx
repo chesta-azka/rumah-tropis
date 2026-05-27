@@ -68,9 +68,20 @@ export default function PricingSection() {
                       {pkg.title}
                     </h3>
                     {/* Promo Text */}
-                    <p className="text-[10px] text-zinc-400 font-sans tracking-wide mb-2 italic">
-                      {pkg.promoText}
-                    </p>
+                    <div className="text-[10px] text-zinc-400 font-sans tracking-wide mb-2 italic">
+                      {pkg.promoText ? (
+                        pkg.promoText.includes('Rp') && pkg.promoText.includes('Harga Normal') ? (
+                          <>
+                            {pkg.promoText.substring(0, pkg.promoText.indexOf('Rp'))}
+                            <span className="line-through decoration-zinc-500 block mt-1">
+                              {pkg.promoText.substring(pkg.promoText.indexOf('Rp'))}
+                            </span>
+                          </>
+                        ) : (
+                          pkg.promoText
+                        )
+                      ) : null}
+                    </div>
                   </div>
 
                   {/* Horizontal solid separator */}
