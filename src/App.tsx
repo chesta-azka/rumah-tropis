@@ -13,6 +13,8 @@ import PricingSection from "./components/PricingSection";
 import FAQSection from "./components/FAQSection";
 import FooterSection from "./components/FooterSection";
 import { useTemplate } from "./context/TemplateContext";
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
   const { activeTemplate } = useTemplate();
@@ -87,6 +89,8 @@ export default function App() {
 
         {/* 14. Support & FAQ Accordion */}
         <FAQSection />
+        <SpeedInsights />
+        <Analytics />
       </main>
 
       {/* 15. Footer & Contacts */}
