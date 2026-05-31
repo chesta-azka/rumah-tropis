@@ -129,7 +129,7 @@ export const templates: Record<string, TemplateData> = {
     logoUrl: "/images/logo-rumah-tropis.webp",
     heroVideoUrl: "https://youtu.be/KoYgeKFPnx8?si=qu7QYXuFIQw0s_q0",
     name: "Rumah Tropis",
-    subName: "",
+    subName: "Jasa Desain dan Bangun Rumah, Kantor, Ruang Usaha",
     tagline: "PT Tata Ruang Kota",
     heroBadge: "PT Tata Ruang Kota — Exclusive Brand",
     heroTitle: "CIPTAKAN BANGUNAN BERNILAI TINGGI",

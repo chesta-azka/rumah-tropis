@@ -146,7 +146,7 @@ export const TemplateProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     root.style.setProperty("--font-title-family", theme.fontTitle);
     
     // Also update document title for high fidelity experience
-    document.title = data.name + " - " + data.subName;
+    document.title = data.subName ? `${data.name} - ${data.subName}` : data.name;
   }, [activeTemplate, theme, data]);
 
   return (
