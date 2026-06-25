@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /tmp/
+Disallow: /_next/
+Disallow: /build/
 
-Sitemap: https://rumah-tropis.vercel.app/sitemap.xml
+Sitemap: https://rumahtropis.co.id/sitemap.xml
