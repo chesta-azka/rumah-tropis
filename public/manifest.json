@@ -1,0 +1,21 @@
+{
+  "name": "Rumah Tropis",
+  "short_name": "Rumah Tropis",
+  "description": "Jasa Desain dan Bangun Rumah, Kantor, Ruang Usaha Premium di Indonesia.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
