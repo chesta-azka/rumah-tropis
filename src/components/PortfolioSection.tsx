@@ -288,6 +288,7 @@ export default function PortfolioSection() {
                         <img 
                           src={item.path} 
                           alt={displayTitle} 
+                          loading="lazy"
                           className="w-full h-full object-cover transition-transform duration-[4000ms] ease-out-sine group-hover:scale-105"
                           referrerPolicy="no-referrer"
                           onError={(e) => {
@@ -327,6 +328,7 @@ export default function PortfolioSection() {
                       <img 
                         src={item.path} 
                         alt={item.title} 
+                        loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-[4000ms] ease-out-sine group-hover:scale-110"
                         referrerPolicy="no-referrer"
                         onError={(e) => {
@@ -475,6 +477,7 @@ export default function PortfolioSection() {
                 <img
                   src={selectedProject.path}
                   alt={selectedProject.title}
+                  loading="lazy"
                   className="w-full h-full object-cover md:absolute md:inset-0"
                   referrerPolicy="no-referrer"
                   onError={(e) => {
