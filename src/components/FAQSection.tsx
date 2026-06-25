@@ -35,6 +35,27 @@ export default function FAQSection() {
           <div className="w-16 h-0.5 mx-auto mt-4" style={{ backgroundColor: theme.primary }} />
         </div>
 
+        {/* Dynamic FAQ JSON-LD Schema */}
+        {faqs.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: faqs.map((faq) => ({
+                  "@type": "Question",
+                  name: faq.question,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: faq.answer,
+                  },
+                })),
+              }),
+            }}
+          />
+        )}
+
         {/* Interactive Accordion List */}
         <div className="space-y-4">
           {faqs.map((faq) => {
