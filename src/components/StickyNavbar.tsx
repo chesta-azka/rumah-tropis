@@ -108,9 +108,9 @@ export default function StickyNavbar() {
             
             {/* Visual alignment of Logo details */}
             <div className="border-l pl-3 flex flex-col justify-center" style={{ borderColor: `${theme.primary}50` }}>
-              <h1 className="text-white font-serif tracking-wide text-md md:text-lg font-bold uppercase leading-none transition-all duration-300">
+              <span className="block text-white font-serif tracking-wide text-md md:text-lg font-bold uppercase leading-none transition-all duration-300">
                 {data.name}
-              </h1>
+              </span>
               {data.subName && activeTemplate !== "arsitetika-studio" && (
                 <span className="text-xs font-sans tracking-widest uppercase mt-1 leading-none font-medium transition-all duration-300" style={{ color: theme.primary }}>
                   {data.subName}
