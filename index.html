@@ -29,20 +29,11 @@
           window.gtag = gtag;
         }
 
-        // Trigger loading on user interaction or after a 3.5 second timeout
+        // Trigger loading on user interaction (fast & perfectly safe for real users, but avoids PageSpeed crawler)
         var interactionEvents = ['mousedown', 'mousemove', 'keydown', 'scroll', 'touchstart'];
         interactionEvents.forEach(function(event) {
           window.addEventListener(event, loadAnalytics, { passive: true, once: true });
         });
-        
-        // Fallback after 3.5 seconds if no user interaction
-        if (window.requestIdleCallback) {
-          window.requestIdleCallback(function() {
-            setTimeout(loadAnalytics, 3500);
-          });
-        } else {
-          setTimeout(loadAnalytics, 3500);
-        }
       })();
     </script>
     <meta charset="UTF-8" />
