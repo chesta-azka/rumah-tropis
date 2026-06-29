@@ -138,7 +138,7 @@ export default function FooterSection() {
                 </a>
               </li>
               <li>
-                <a href="?blog" className="text-[#A3A3A3] hover:text-white text-xs uppercase tracking-wider font-sans transition-colors">
+                <a href="/blog" className="text-[#A3A3A3] hover:text-white text-xs uppercase tracking-wider font-sans transition-colors">
                   Jurnal Arsitektur (Blog)
                 </a>
               </li>
