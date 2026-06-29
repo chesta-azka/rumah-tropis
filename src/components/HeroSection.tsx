@@ -38,7 +38,7 @@ export default function HeroSection() {
       {/* Abstract luxury geometric mesh in background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden bg-black">
         {activeTemplate === "arsitetika-studio" ? (
-          <>
+          <div className="hidden md:block">
             {/* Color 1: #B88A6E (Premium Copper-Bronze) Blur Glow Top Left */}
             <div className="absolute top-12 left-10 w-[450px] h-[450px] rounded-full blur-[180px] opacity-[0.25] mix-blend-screen" style={{ backgroundColor: "#B88A6E" }} />
             
@@ -60,9 +60,9 @@ export default function HeroSection() {
             {/* Blurry horizontal glow bar right at the intersection of Section 1 and Section 2 */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[85%] h-[6px] rounded-full blur-[12px] opacity-[0.4] mix-blend-screen bg-gradient-to-r from-transparent via-[#4D3C2F] via-[#B88A6E] via-[#FEF9ED] via-[#F5E6D3] via-[#5B6A56] via-transparent" />
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[60%] h-[2px] rounded-full blur-[2px] opacity-[0.6] mix-blend-screen bg-gradient-to-r from-transparent via-[#B88A6E] via-[#FEF9ED] via-[#F5E6D3] via-transparent" />
-          </>
+          </div>
         ) : (
-          <>
+          <div className="hidden md:block">
             <div 
               className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full blur-[150px] -translate-x-1/2 -translate-y-1/2" 
               style={{ backgroundColor: `${theme.primary}15` }}
@@ -71,7 +71,7 @@ export default function HeroSection() {
               className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full blur-[140px] translate-x-1/2 translate-y-1/2" 
               style={{ backgroundColor: `${theme.secondary || theme.primary}10` }}
             />
-          </>
+          </div>
         )}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:5rem_5rem]" />
       </div>
