@@ -19,31 +19,73 @@ const BlogPage = lazy(() => import("./components/BlogPage"));
 
 export default function App() {
   const { activeTemplate } = useTemplate();
-  const [currentHash, setCurrentHash] = useState(window.location.hash);
+  const getUrlState = () => {
+    const params = new URLSearchParams(window.location.search);
+    const hash = window.location.hash;
+
+    if (params.has("blog")) {
+      const slug = params.get("blog") || undefined;
+      return { isBlog: true, slug };
+    }
+
+    if (hash.startsWith("#blog")) {
+      const slug = hash.startsWith("#blog/") ? hash.replace("#blog/", "") : undefined;
+      return { isBlog: true, slug };
+    }
+
+    return { isBlog: false, slug: undefined };
+  };
+
+  const [urlState, setUrlState] = useState(getUrlState());
 
   useEffect(() => {
-    const handleHashChange = () => {
-      setCurrentHash(window.location.hash);
+    const handleLocationChange = () => {
+      setUrlState(getUrlState());
     };
-    window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
+
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest("a");
+      if (anchor) {
+        const href = anchor.getAttribute("href");
+        if (href && (href.startsWith("?blog") || href === "?blog")) {
+          e.preventDefault();
+          window.history.pushState(null, "", href);
+          window.dispatchEvent(new Event("popstate"));
+        }
+      }
+    };
+
+    window.addEventListener("popstate", handleLocationChange);
+    window.addEventListener("hashchange", handleLocationChange);
+    document.addEventListener("click", handleAnchorClick);
+
+    return () => {
+      window.removeEventListener("popstate", handleLocationChange);
+      window.removeEventListener("hashchange", handleLocationChange);
+      document.removeEventListener("click", handleAnchorClick);
+    };
   }, []);
 
-  const isBlogView = currentHash.startsWith("#blog");
-  const selectedPostSlug = currentHash.startsWith("#blog/") 
-    ? currentHash.replace("#blog/", "") 
-    : undefined;
+  const isBlogView = urlState.isBlog;
+  const selectedPostSlug = urlState.slug;
 
   const handleSelectPost = (slug: string | null) => {
     if (slug) {
-      window.location.hash = `#blog/${slug}`;
+      const newUrl = `${window.location.origin}${window.location.pathname}?blog=${slug}`;
+      window.history.pushState(null, "", newUrl);
+      window.dispatchEvent(new Event("popstate"));
     } else {
-      window.location.hash = "#blog";
+      const newUrl = `${window.location.origin}${window.location.pathname}?blog`;
+      window.history.pushState(null, "", newUrl);
+      window.dispatchEvent(new Event("popstate"));
     }
   };
 
   const handleBackToHome = () => {
-    window.location.hash = "#beranda";
+    const newUrl = `${window.location.origin}${window.location.pathname}`;
+    window.history.pushState(null, "", newUrl);
+    window.dispatchEvent(new Event("popstate"));
   };
 
   return (
