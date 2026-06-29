@@ -6,38 +6,43 @@ import { useTemplate } from "./context/TemplateContext";
 
 // Lazy loaded components for improved initial load speed
 const WhyUsSection = lazy(() => import("./components/WhyUsSection"));
-const StatsSection = lazy(() => import("./components/StatsSection"));
 const ServicesSection = lazy(() => import("./components/ServicesSection"));
-const ExclusiveFacilities = lazy(() => import("./components/ExclusiveFacilities"));
-const ComparisonSection = lazy(() => import("./components/ComparisonSection"));
 const PortfolioSection = lazy(() => import("./components/PortfolioSection"));
-const TestimonialSection = lazy(() => import("./components/TestimonialSection"));
 const PricingSection = lazy(() => import("./components/PricingSection"));
+const StatsSection = lazy(() => import("./components/StatsSection"));
+const TestimonialSection = lazy(() => import("./components/TestimonialSection"));
 const FAQSection = lazy(() => import("./components/FAQSection"));
 const FooterSection = lazy(() => import("./components/FooterSection"));
+const ComparisonSection = lazy(() => import("./components/ComparisonSection"));
+const ExclusiveFacilities = lazy(() => import("./components/ExclusiveFacilities"));
 const BlogPage = lazy(() => import("./components/BlogPage"));
 
 export default function App() {
   const { activeTemplate } = useTemplate();
   const getUrlState = () => {
-    const params = new URLSearchParams(window.location.search);
-    const hash = window.location.hash;
+    const pathname = window.location.pathname;
 
-    if (params.has("blog")) {
-      const slug = params.get("blog") || undefined;
+    // Handle old hash links
+    if (window.location.hash.startsWith("#blog")) {
+      const slug = window.location.hash.startsWith("#blog/") ? window.location.hash.replace("#blog/", "") : undefined;
+      const newUrl = slug ? `/blog/${slug}` : `/blog`;
+      window.history.replaceState(null, "", newUrl);
       return { isBlog: true, slug };
     }
 
-    if (hash.startsWith("#blog")) {
-      const slug = hash.startsWith("#blog/") ? hash.replace("#blog/", "") : undefined;
-      
-      // Auto-rewrite the URL to remove the '#' and use clean query parameter instead
-      const newUrl = slug 
-        ? `${window.location.origin}${window.location.pathname}?blog=${slug}`
-        : `${window.location.origin}${window.location.pathname}?blog`;
-      
+    // Handle old query params
+    if (window.location.search.includes("blog")) {
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get("blog") || undefined;
+      const newUrl = slug ? `/blog/${slug}` : `/blog`;
       window.history.replaceState(null, "", newUrl);
       return { isBlog: true, slug };
+    }
+
+    // Modern clean path
+    if (pathname.startsWith("/blog")) {
+      const slug = pathname.replace("/blog", "").replace(/^\//, "");
+      return { isBlog: true, slug: slug || undefined };
     }
 
     return { isBlog: false, slug: undefined };
@@ -55,7 +60,7 @@ export default function App() {
       const anchor = target.closest("a");
       if (anchor) {
         const href = anchor.getAttribute("href");
-        if (href && (href.startsWith("?blog") || href === "?blog")) {
+        if (href && (href.startsWith("/blog") || href === "/blog" || href === "/")) {
           e.preventDefault();
           window.history.pushState(null, "", href);
           window.dispatchEvent(new Event("popstate"));
@@ -79,18 +84,18 @@ export default function App() {
 
   const handleSelectPost = (slug: string | null) => {
     if (slug) {
-      const newUrl = `${window.location.origin}${window.location.pathname}?blog=${slug}`;
+      const newUrl = `/blog/${slug}`;
       window.history.pushState(null, "", newUrl);
       window.dispatchEvent(new Event("popstate"));
     } else {
-      const newUrl = `${window.location.origin}${window.location.pathname}?blog`;
+      const newUrl = `/blog`;
       window.history.pushState(null, "", newUrl);
       window.dispatchEvent(new Event("popstate"));
     }
   };
 
   const handleBackToHome = () => {
-    const newUrl = `${window.location.origin}${window.location.pathname}`;
+    const newUrl = `/`;
     window.history.pushState(null, "", newUrl);
     window.dispatchEvent(new Event("popstate"));
   };
@@ -128,53 +133,35 @@ export default function App() {
         </div>
       )}
 
-      {/* 1. Sticky Navbar & Floating Actions */}
-      <StickyNavbar />
+      {/* Modern Top Navigation that sticks on scroll */}
+      <StickyNavbar isBlogView={isBlogView} onBackToHome={handleBackToHome} />
 
-      {/* Main Composition Grid */}
-      <main className="relative z-10">
+      <main className="relative z-10 w-full overflow-hidden">
         {isBlogView ? (
-          <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-[#050505] text-stone-400 font-mono text-sm">Memuat Jurnal...</div>}>
-            <BlogPage
-              onBackToHome={handleBackToHome}
-              selectedPostSlug={selectedPostSlug}
-              onSelectPost={handleSelectPost}
+          <Suspense fallback={
+            <div className="min-h-screen flex items-center justify-center pt-24 pb-12">
+              <div className="w-8 h-8 border-2 border-[#C5A880] border-t-transparent rounded-full animate-spin"></div>
+            </div>
+          }>
+            <BlogPage 
+              onBackToHome={handleBackToHome} 
+              onSelectPost={handleSelectPost} 
+              selectedPostSlug={selectedPostSlug} 
             />
           </Suspense>
         ) : (
           <>
-            {/* 2. Hero Section (Headline & Video Utama) */}
             <HeroSection />
-
-            {/* 3. Kualifikasi Filter Section */}
             <FilterSection />
-
-            <Suspense fallback={<div className="h-20 w-full bg-[#050505]" />}>
-              {/* 4. Alasan Utama "Kenapa Rumah Tropis?" */}
+            <Suspense fallback={<div className="h-40 w-full flex items-center justify-center"><div className="w-8 h-8 border-2 border-[#C5A880] border-t-transparent rounded-full animate-spin"></div></div>}>
               <WhyUsSection />
-
-              {/* 5. Statistik Pencapaian Counter */}
-              <StatsSection />
-
-              {/* 6. Layanan Utama Core Services */}
-              <ServicesSection />
-
-              {/* 7. Fasilitas Eksklusif Klien */}
-              <ExclusiveFacilities />
-
-              {/* 8. Komparasi Dua Sisi Nilai */}
               <ComparisonSection />
-
-              {/* 9. Portfolio Masterpiece Grid */}
+              <StatsSection />
+              <ServicesSection />
+              <ExclusiveFacilities />
               <PortfolioSection />
-
-              {/* 10. Testimonial WhatsApp Bubbles / Photos */}
-              <TestimonialSection />
-
-              {/* 11, 12, 13. Pricing Packages, Rebate Banner & Stephen Gardiner Quote */}
               <PricingSection />
-
-              {/* 14. Support & FAQ Accordion */}
+              <TestimonialSection />
               <FAQSection />
             </Suspense>
           </>
@@ -182,7 +169,6 @@ export default function App() {
       </main>
 
       <Suspense fallback={<div className="h-20 w-full bg-[#050505]" />}>
-        {/* 15. Footer & Contacts */}
         <FooterSection />
       </Suspense>
     </div>
