@@ -1,7 +1,7 @@
 export interface Service {
   id: string;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   description: string;
   highlights: string[];
 }
@@ -40,7 +40,7 @@ export interface PricingPackage {
   title: string;
   normalPrice: string;
   promoPrice: string;
-  promoText: string;
+  promoText?: string;
   popular?: boolean;
   specs: string[];
 }
