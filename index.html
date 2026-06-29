@@ -1,13 +1,50 @@
 <!doctype html>
 <html lang="id">
   <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KFJFFXQJ');</script>
-    <!-- End Google Tag Manager -->
+    <!-- Optimized Script Deferral for Ultra-High Performance & Lighthouse 90+ -->
+    <script>
+      (function() {
+        var loaded = false;
+        function loadAnalytics() {
+          if (loaded) return;
+          loaded = true;
+          
+          // Defer load Google Tag Manager
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-KFJFFXQJ');
+
+          // Defer load Google Analytics 4
+          var gaScript = document.createElement('script');
+          gaScript.async = true;
+          gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-WXQ3YPN0T1';
+          document.head.appendChild(gaScript);
+          
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-WXQ3YPN0T1');
+          window.gtag = gtag;
+        }
+
+        // Trigger loading on user interaction or after a 3.5 second timeout
+        var interactionEvents = ['mousedown', 'mousemove', 'keydown', 'scroll', 'touchstart'];
+        interactionEvents.forEach(function(event) {
+          window.addEventListener(event, loadAnalytics, { passive: true, once: true });
+        });
+        
+        // Fallback after 3.5 seconds if no user interaction
+        if (window.requestIdleCallback) {
+          window.requestIdleCallback(function() {
+            setTimeout(loadAnalytics, 3500);
+          });
+        } else {
+          setTimeout(loadAnalytics, 3500);
+        }
+      })();
+    </script>
     <meta charset="UTF-8" />
     <!-- V2.1: SEO & Official Brand Logo Meta Assets -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, viewport-fit=cover" />
@@ -39,20 +76,13 @@
     <link rel="preload" href="/images/logo-rumah-tropis.webp" as="image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" as="style" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" /></noscript>
     <link rel="icon" type="image/webp" href="/favicon.webp" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="shortcut icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <title>Rumah Tropis - Arsitek Rumah Tropis Mewah & Jasa Bangun Rumah Premium</title>
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXQ3YPN0T1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-WXQ3YPN0T1');
-    </script>
     <!-- LocalBusiness Schema -->
     <script type="application/ld+json">
     {
