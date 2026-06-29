@@ -165,6 +165,7 @@ export default function ExclusiveFacilities() {
                                   : "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" // tablet analytics
                               } 
                               alt="Live report presentation"
+                              loading="lazy"
                               className="w-full h-full object-cover filter grayscale contrast-115 brightness-90 transition-transform duration-[4000ms] group-hover:scale-105"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
