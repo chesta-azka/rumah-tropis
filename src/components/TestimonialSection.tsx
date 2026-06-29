@@ -160,6 +160,7 @@ export default function TestimonialSection() {
                       <img 
                         src={getTestimonialPath(currentItem.avatar)}
                         alt={`Testimonial screenshot`}
+                        loading="lazy"
                         onError={() => {
                           setImgErrors(prev => ({ ...prev, [activeSlide]: true }));
                         }}
