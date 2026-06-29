@@ -30,6 +30,13 @@ export default function App() {
 
     if (hash.startsWith("#blog")) {
       const slug = hash.startsWith("#blog/") ? hash.replace("#blog/", "") : undefined;
+      
+      // Auto-rewrite the URL to remove the '#' and use clean query parameter instead
+      const newUrl = slug 
+        ? `${window.location.origin}${window.location.pathname}?blog=${slug}`
+        : `${window.location.origin}${window.location.pathname}?blog`;
+      
+      window.history.replaceState(null, "", newUrl);
       return { isBlog: true, slug };
     }
 
