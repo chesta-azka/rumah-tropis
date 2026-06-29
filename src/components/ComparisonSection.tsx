@@ -129,6 +129,7 @@ export default function ComparisonSection() {
                 src={leftImg} 
                 alt="Jumping to success illustration"
                 referrerPolicy="no-referrer"
+                loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover filter brightness-[0.7] contrast-125 transition-transform duration-[8000ms] group-hover:scale-105"
               />
 
@@ -173,6 +174,7 @@ export default function ComparisonSection() {
                 src={rightImg} 
                 alt="Idle regret illustration"
                 referrerPolicy="no-referrer"
+                loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-110 brightness-[0.55] transition-transform duration-[6000ms] group-hover:scale-102"
               />
 
