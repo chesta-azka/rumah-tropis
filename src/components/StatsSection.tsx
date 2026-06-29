@@ -30,6 +30,7 @@ export default function StatsSection() {
         <img 
           src={getBackgroundImage()} 
           alt="Premium Architecture Backdrop"
+          loading="lazy"
           className="w-full h-full object-cover object-center scale-105 transition-transform duration-[12000ms] ease-out-sine select-none"
         />
         {/* Layered cinematic dark filters & soft overlays to guarantee text legibility */}
