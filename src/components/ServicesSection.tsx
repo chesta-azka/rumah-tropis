@@ -188,6 +188,7 @@ export default function ServicesSection() {
                       <img 
                         src={getServiceCoverImage(service.id, index)} 
                         alt={service.title}
+                        loading="lazy"
                         className="w-full h-full object-cover object-center filter grayscale contrast-110 brightness-75 transition-transform duration-[6000ms] group-hover/service:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-transparent to-black/35" />
