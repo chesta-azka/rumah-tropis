@@ -1,20 +1,22 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import StickyNavbar from "./components/StickyNavbar";
 import HeroSection from "./components/HeroSection";
 import FilterSection from "./components/FilterSection";
-import WhyUsSection from "./components/WhyUsSection";
-import StatsSection from "./components/StatsSection";
-import ServicesSection from "./components/ServicesSection";
-import ExclusiveFacilities from "./components/ExclusiveFacilities";
-import ComparisonSection from "./components/ComparisonSection";
-import PortfolioSection from "./components/PortfolioSection";
-import TestimonialSection from "./components/TestimonialSection";
-import PricingSection from "./components/PricingSection";
-import FAQSection from "./components/FAQSection";
-import FooterSection from "./components/FooterSection";
 import { useTemplate } from "./context/TemplateContext";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
+
+// Lazy loaded components for improved initial load speed
+const WhyUsSection = lazy(() => import("./components/WhyUsSection"));
+const StatsSection = lazy(() => import("./components/StatsSection"));
+const ServicesSection = lazy(() => import("./components/ServicesSection"));
+const ExclusiveFacilities = lazy(() => import("./components/ExclusiveFacilities"));
+const ComparisonSection = lazy(() => import("./components/ComparisonSection"));
+const PortfolioSection = lazy(() => import("./components/PortfolioSection"));
+const TestimonialSection = lazy(() => import("./components/TestimonialSection"));
+const PricingSection = lazy(() => import("./components/PricingSection"));
+const FAQSection = lazy(() => import("./components/FAQSection"));
+const FooterSection = lazy(() => import("./components/FooterSection"));
 
 export default function App() {
   const { activeTemplate } = useTemplate();
@@ -63,38 +65,42 @@ export default function App() {
         {/* 3. Kualifikasi Filter Section */}
         <FilterSection />
 
-        {/* 4. Alasan Utama "Kenapa Rumah Tropis?" */}
-        <WhyUsSection />
+        <Suspense fallback={<div className="h-20 w-full bg-[#050505]" />}>
+          {/* 4. Alasan Utama "Kenapa Rumah Tropis?" */}
+          <WhyUsSection />
 
-        {/* 5. Statistik Pencapaian Counter */}
-        <StatsSection />
+          {/* 5. Statistik Pencapaian Counter */}
+          <StatsSection />
 
-        {/* 6. Layanan Utama Core Services */}
-        <ServicesSection />
+          {/* 6. Layanan Utama Core Services */}
+          <ServicesSection />
 
-        {/* 7. Fasilitas Eksklusif Klien */}
-        <ExclusiveFacilities />
+          {/* 7. Fasilitas Eksklusif Klien */}
+          <ExclusiveFacilities />
 
-        {/* 8. Komparasi Dua Sisi Nilai */}
-        <ComparisonSection />
+          {/* 8. Komparasi Dua Sisi Nilai */}
+          <ComparisonSection />
 
-        {/* 9. Portfolio Masterpiece Grid */}
-        <PortfolioSection />
+          {/* 9. Portfolio Masterpiece Grid */}
+          <PortfolioSection />
 
-        {/* 10. Testimonial WhatsApp Bubbles / Photos */}
-        <TestimonialSection />
+          {/* 10. Testimonial WhatsApp Bubbles / Photos */}
+          <TestimonialSection />
 
-        {/* 11, 12, 13. Pricing Packages, Rebate Banner & Stephen Gardiner Quote */}
-        <PricingSection />
+          {/* 11, 12, 13. Pricing Packages, Rebate Banner & Stephen Gardiner Quote */}
+          <PricingSection />
 
-        {/* 14. Support & FAQ Accordion */}
-        <FAQSection />
+          {/* 14. Support & FAQ Accordion */}
+          <FAQSection />
+        </Suspense>
         <SpeedInsights />
         <Analytics />
       </main>
 
-      {/* 15. Footer & Contacts */}
-      <FooterSection />
+      <Suspense fallback={<div className="h-20 w-full bg-[#050505]" />}>
+        {/* 15. Footer & Contacts */}
+        <FooterSection />
+      </Suspense>
     </div>
   );
 }
