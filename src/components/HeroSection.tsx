@@ -143,6 +143,7 @@ export default function HeroSection() {
               muted
               playsInline
               controls
+              preload="none"
               className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-[1.015]"
               style={{ filter: "brightness(0.9) contrast(1.05)" }}
               onError={(e) => {
