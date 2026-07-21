@@ -122,43 +122,49 @@
       ]
     }
     </script>
-    <!-- SiteNavigationElement Schema -->
+    <!-- BreadcrumbList Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ItemList",
+      "@type": "BreadcrumbList",
       "itemListElement": [
         {
-          "@type": "SiteNavigationElement",
+          "@type": "ListItem",
           "position": 1,
           "name": "Beranda",
-          "url": "https://rumahtropis.co.id/#beranda"
+          "item": "https://rumahtropis.co.id/"
         },
         {
-          "@type": "SiteNavigationElement",
+          "@type": "ListItem",
           "position": 2,
-          "name": "Kualifikasi",
-          "url": "https://rumahtropis.co.id/#kualifikasi"
-        },
-        {
-          "@type": "SiteNavigationElement",
-          "position": 3,
-          "name": "Filosofi",
-          "url": "https://rumahtropis.co.id/#tentang"
-        },
-        {
-          "@type": "SiteNavigationElement",
-          "position": 4,
           "name": "Layanan",
-          "url": "https://rumahtropis.co.id/#layanan"
+          "item": "https://rumahtropis.co.id/layanan"
         },
         {
-          "@type": "SiteNavigationElement",
-          "position": 5,
-          "name": "Portofolio",
-          "url": "https://rumahtropis.co.id/#portofolio"
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Jurnal & Blog",
+          "item": "https://rumahtropis.co.id/blog"
         }
       ]
+    }
+    </script>
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Rumah Tropis",
+      "url": "https://rumahtropis.co.id/",
+      "logo": "https://rumahtropis.co.id/images/logo-rumah-tropis.webp",
+      "description": "Jasa Arsitek, Kontraktor, dan Desain Interior Rumah Tropis Premium di Indonesia.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+62-811-1234-5678",
+        "contactType": "customer service",
+        "areaServed": "ID",
+        "availableLanguage": "Indonesian"
+      }
     }
     </script>
   </head>
