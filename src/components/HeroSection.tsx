@@ -143,7 +143,8 @@ export default function HeroSection() {
               muted
               playsInline
               controls
-              preload="none"
+              preload="metadata"
+              poster="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1600"
               className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-[1.015]"
               style={{ filter: "brightness(0.9) contrast(1.05)" }}
               onError={(e) => {
