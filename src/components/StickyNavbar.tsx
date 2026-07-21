@@ -20,11 +20,25 @@ export default function StickyNavbar() {
     { label: "Beranda", href: "#beranda" },
     { label: "Kualifikasi", href: "#kualifikasi" },
     { label: "Filosofi", href: "#tentang" },
-    { label: "Layanan", href: "#layanan" },
+    { label: "Layanan", href: "/services" },
     { label: "Portofolio", href: "#portofolio" },
     { label: "Paket", href: "#paket" },
     { label: "FAQ", href: "#faq" }
   ];
+
+  const handleItemClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("#")) {
+      if (window.location.pathname !== "/") {
+        e.preventDefault();
+        window.location.href = "/" + href;
+      }
+    } else {
+      e.preventDefault();
+      window.history.pushState(null, "", href);
+      window.dispatchEvent(new Event("popstate"));
+    }
+    setMobileMenuOpen(false);
+  };
 
   const waLink = "https://wa.me/628138969965";
 
@@ -125,6 +139,7 @@ export default function StickyNavbar() {
               <a
                 key={item.label}
                 href={item.href}
+                onClick={(e) => handleItemClick(e, item.href)}
                 className="text-[#A3A3A3] hover:text-white font-sans text-xs tracking-wider uppercase transition-colors relative py-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] hover:after:w-full after:transition-all after:duration-300"
                 style={{
                   // Accent style hover indicator
@@ -175,7 +190,7 @@ export default function StickyNavbar() {
                 <a
                   key={item.label}
                   href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => handleItemClick(e, item.href)}
                   className="text-2xl text-[#A3A3A3] hover:text-[#C5A880] font-serif font-medium tracking-wide transition-colors py-1 block border-b border-white/5"
                   style={{
                     // Switcher color hover style
