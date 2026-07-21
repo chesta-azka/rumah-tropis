@@ -14,9 +14,27 @@ export default function BlogPage({ onBackToHome, selectedPostSlug, onSelectPost 
   const [selectedTag, setSelectedTag] = useState<string>("Semua");
   const [copied, setCopied] = useState(false);
 
-  // Scroll to top when view changes
+  // Scroll to top and update document title for SEO when view changes
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    
+    // Dynamic SEO Updates
+    if (selectedPostSlug) {
+      const post = blogPosts.find((p) => p.slug === selectedPostSlug);
+      if (post) {
+        document.title = `${post.title} | Jurnal Rumah Tropis`;
+        let metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+          metaDesc.setAttribute("content", post.excerpt);
+        }
+      }
+    } else {
+      document.title = "Jurnal & Inspirasi | Rumah Tropis";
+      let metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute("content", "Jurnal, wawasan, dan inspirasi desain arsitektur Rumah Tropis mewah dan premium di Indonesia.");
+      }
+    }
   }, [selectedPostSlug]);
 
   const activePost = blogPosts.find((post) => post.slug === selectedPostSlug);
