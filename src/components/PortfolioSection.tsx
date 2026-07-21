@@ -28,6 +28,44 @@ interface PortfolioItem {
   designStory?: string;
 }
 
+interface BlurImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+  fallbackSrc: string;
+}
+
+const BlurImage: React.FC<BlurImageProps> = ({ src, fallbackSrc, alt, className, ...props }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  
+  // A generic low-res placeholder (1x1 gray pixel)
+  const base64Placeholder = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=";
+
+  return (
+    <div className="absolute inset-0 w-full h-full">
+      {/* Base64 Placeholder Layer with blur effect */}
+      <div 
+        className={`absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-700 ${isLoaded ? 'opacity-0' : 'opacity-100'}`}
+        style={{ backgroundImage: `url(${base64Placeholder})` }}
+      >
+        <div className="absolute inset-0 backdrop-blur-xl bg-black/20" />
+      </div>
+      
+      {/* Actual Image */}
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+        onLoad={() => setIsLoaded(true)}
+        onError={(e) => {
+          const img = e.target as HTMLImageElement;
+          img.src = fallbackSrc;
+        }}
+        {...props}
+      />
+    </div>
+  );
+};
+
 export default function PortfolioSection() {
   const { data, theme, activeTemplate } = useTemplate();
   const portfolioItems = (data.portfolioItems || []) as PortfolioItem[];
@@ -285,16 +323,13 @@ export default function PortfolioSection() {
                     >
                       {/* Visual Aspect Ratio Container */}
                       <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#0A0A0D]">
-                        <img 
+                        <BlurImage 
                           src={item.path} 
                           alt={displayTitle} 
                           loading="lazy"
                           className="w-full h-full object-cover transition-transform duration-[4000ms] ease-out-sine group-hover:scale-105"
                           referrerPolicy="no-referrer"
-                          onError={(e) => {
-                            const img = e.target as HTMLImageElement;
-                            img.src = getFallbackImage(item.id);
-                          }}
+                          fallbackSrc={getFallbackImage(item.id)}
                         />
                         {/* Soft Cover Dark Vignette Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-[#030305]/90 via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300 z-10" />
@@ -325,16 +360,13 @@ export default function PortfolioSection() {
                     {/* Visual Aspect Ratio Container */}
                     <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#0A0A0D]">
                       
-                      <img 
+                      <BlurImage 
                         src={item.path} 
                         alt={item.title} 
                         loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-[4000ms] ease-out-sine group-hover:scale-110"
                         referrerPolicy="no-referrer"
-                        onError={(e) => {
-                          const img = e.target as HTMLImageElement;
-                          img.src = getFallbackImage(item.id);
-                        }}
+                        fallbackSrc={getFallbackImage(item.id)}
                       />
 
                       {/* Brand Tag Watermark in Layout */}
@@ -474,16 +506,13 @@ export default function PortfolioSection() {
 
               {/* Column Left: Visual High-Res Frame */}
               <div className="md:col-span-6 relative bg-black flex flex-col justify-center overflow-hidden min-h-[300px] md:min-h-0">
-                <img
+                <BlurImage
                   src={selectedProject.path}
                   alt={selectedProject.title}
                   loading="lazy"
                   className="w-full h-full object-cover md:absolute md:inset-0"
                   referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    const img = e.target as HTMLImageElement;
-                    img.src = getFallbackImage(selectedProject.id);
-                  }}
+                  fallbackSrc={getFallbackImage(selectedProject.id)}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent pointer-events-none" />
                 
