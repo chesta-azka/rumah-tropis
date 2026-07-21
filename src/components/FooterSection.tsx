@@ -118,8 +118,8 @@ export default function FooterSection() {
                 </a>
               </li>
               <li>
-                <a href="#layanan" className="text-[#A3A3A3] hover:text-white text-xs uppercase tracking-wider font-sans transition-colors">
-                  Layanan Kami
+                <a href="/services" className="text-[#A3A3A3] hover:text-white text-xs uppercase tracking-wider font-sans transition-colors">
+                  Layanan & Lingkup Kerja
                 </a>
               </li>
               <li>
